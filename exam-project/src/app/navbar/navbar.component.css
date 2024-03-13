@@ -2,3 +2,23 @@
     height: 60px;
     width: 60px;
 }
+
+.navbar-links {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: aqua;
+    float: flex;
+}
+
+.navbar-links a {
+
+    padding: 20px;
+    font-size: 110%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:hover .navbar-links a {
+
+    cursor: pointer;
+}
