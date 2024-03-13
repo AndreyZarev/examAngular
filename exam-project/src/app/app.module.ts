@@ -18,7 +18,16 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
   { path: 'register', component: RegisterComponent },
-  // { path: 'contact', component: ContactComponent },
+  { path: 'create-offer', component: CreateOfferComponent },
+  { path: 'login', component: LoginComponent },
+
+  { path: 'logout', component: LogoutComponent },
+
+  { path: 'offers', component: OffersComponent },
+
+  { path: 'error-page', component: ErrorPageComponent },
+
+
 ];
 @NgModule({
   declarations: [
