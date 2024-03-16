@@ -12,6 +12,7 @@ import { LogoutComponent } from './views/logout/logout.component';
 import { CreateOfferComponent } from './views/create-offer/create-offer.component';
 import { OffersComponent } from './views/offers/offers.component';
 import { ErrorPageComponent } from './views/error-page/error-page.component';
+import { RouterLink } from '@angular/router';
 
 const routes: Routes = [
 
@@ -40,12 +41,15 @@ const routes: Routes = [
     OffersComponent,
     ErrorPageComponent,
 
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavbarModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    RouterLink
   ],
 
   exports: [RouterModule],
