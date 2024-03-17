@@ -1,0 +1,64 @@
+.navConteiner {
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+}
+
+
+
+
+.navbar-logo {
+    height: 100px;
+    width: 100px;
+    float: flex;
+    padding: 20px;
+    margin: 0;
+    margin-left: 45%;
+    margin-right: auto;
+    margin-bottom: -5px;
+
+
+
+
+}
+
+.logo-div {
+    background-color: rgb(19, 220, 227);
+
+}
+
+.navbar-links {
+    flex-flow: column wrap;
+
+    padding: 0;
+
+    background-color: rgb(19, 220, 227);
+    float: flex;
+
+
+}
+
+.navAncors {
+    margin-left: 30%;
+    padding-bottom: 25px;
+    display: inline-block;
+
+}
+
+.navbar-links a {
+    font-weight: 600;
+    padding: 20px;
+    margin-bottom: 50px;
+    font-size: 130%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+
+    flex-flow: column wrap;
+}
+
+.navbar-links a:hover {
+
+
+    font-size: 140%;
+    cursor: pointer;
+}
