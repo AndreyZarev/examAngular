@@ -1,45 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './views/app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarModule } from './navbar/navbar.module';
-import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './views/home/home.component';
-import { RegisterComponent } from './views/register/register.component';
-import { LoginComponent } from './views/login/login.component';
-import { LogoutComponent } from './views/logout/logout.component';
-import { CreateOfferComponent } from './views/create-offer/create-offer.component';
-import { OffersComponent } from './views/offers/offers.component';
-import { ErrorPageComponent } from './views/error-page/error-page.component';
+import { ViewsModel } from './views/views.module'
+
 import { RouterLink } from '@angular/router';
-
-const routes: Routes = [
-
-  { path: 'home', component: HomeComponent },
-
-  { path: 'register', component: RegisterComponent },
-  { path: 'create-offer', component: CreateOfferComponent },
-  { path: 'login', component: LoginComponent },
-
-  { path: 'logout', component: LogoutComponent },
-
-  { path: 'offers', component: OffersComponent },
-
-  { path: 'error-page', component: ErrorPageComponent },
+import { NavbarModule } from './navbar/navbar.module';
 
 
-];
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    RegisterComponent,
-    LoginComponent,
-    LogoutComponent,
-    CreateOfferComponent,
-    OffersComponent,
-    ErrorPageComponent,
+
 
 
 
@@ -47,12 +21,13 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NavbarModule,
-    RouterModule.forRoot(routes),
+    ViewsModel,
+
+
     RouterLink
   ],
 
-  exports: [RouterModule],
+  exports: [],
 
   providers: [],
 
