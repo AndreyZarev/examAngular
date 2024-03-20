@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ViewsModel } from './views/views.module'
 
 import { RouterLink } from '@angular/router';
-import { NavbarModule } from './navbar/navbar.module';
+// import { NavbarModule } from './navbar/navbar.module';
 
 
 
