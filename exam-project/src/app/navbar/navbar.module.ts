@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbarComppnent/navbar.component';
 import { RouterLink } from '@angular/router';
 
-import { HomeComponent } from '../views/home/home.component'; '';
+import { HomeComponent } from '../views/home/home.component';
 import { RegisterComponent } from '../views/register/register.component';
 import { LoginComponent } from '../views/login/login.component';
 import { LogoutComponent } from '../views/logout/logout.component';
@@ -14,7 +14,7 @@ import { ErrorPageComponent } from '../views/error-page/error-page.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
+  // { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
 
   { path: 'register', component: RegisterComponent },
