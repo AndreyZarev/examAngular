@@ -1,6 +1,4 @@
-/*login register forms  */
-
-form.login,
+/* login register forms form.login,
 form.register {
     width: 40%;
     margin: 2em auto 0;
@@ -83,7 +81,7 @@ form.register {
 }
 
 /* errors  */
-
+/* 
 p.error {
     text-align: left;
     border-radius: 0.3em;
@@ -93,4 +91,7 @@ p.error {
 
 .input-error {
     border-left-color: red;
-}
+} */
+
+
+/*  .login {} */
