@@ -9,10 +9,10 @@
 }
 
 .welcome h3 {
-    background-color: #4ebced;
+    background-color: #32d6c8;
     border-radius: 0.3em;
     width: 100%;
-    padding: 0.3em 1em;
+    padding: 40px 0px;
     font-size: 2rem;
 
 
@@ -27,15 +27,7 @@
     font-size: 2rem;
 }
 
-.welcome a {
-    color: white;
-    text-decoration: none;
-    background-color: #4ebced;
-    border: none;
-    border-radius: 0.3em;
-    padding: 0.5em 5.2em;
-    margin: 1em;
-}
+
 
 .welcome a:hover {
     cursor: pointer;
@@ -56,6 +48,11 @@
 
 .welcome ul {
     padding: 5%;
+    background-color: white;
+    width: 40%;
+    /* text-align: center; */
+    text-justify: auto;
+    margin-left: 25%;
 
 }
 
@@ -67,4 +64,45 @@
     text-align: center;
     font-size: 50px;
     padding: 50px;
+    background-position: center;
+
+
+
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    padding: 50px;
+    background-color: #32d6c8;
+    border-radius: 0.3em;
+
+}
+
+.servises .register {
+    width: max-content;
+
+}
+
+.buttons {
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #4ebced;
+    border: solid 1px;
+    border-radius: 0.3em;
+    padding: 20px;
+    margin: 1em;
+
+}
+
+.header-container {
+    /* background-color: white; */
+    padding: 50px;
+}
+
+.container {
+    width: 100%;
 }
