@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'create-offer', component: CreateOfferComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'logout', component: LogoutComponent },
+  { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
   { path: 'offers', component: OffersComponent },
 
