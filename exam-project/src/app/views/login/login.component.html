@@ -7,7 +7,8 @@
 
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input class="input-error" type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                <input #inputEmail class="input-error" type="email" name="email" id="email"
+                    placeholder="john.doe@gmail.com">
             </p>
             <p class="error">
                 Email is required!
@@ -18,7 +19,7 @@
 
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="password" id="password" placeholder="******">
+                <input #password type="password" name="password" id="password" placeholder="******">
             </p>
             <!-- <p class="error">
                 Password is required!
@@ -27,7 +28,7 @@
                 Password must be at least 4 characters!
             </p> -->
 
-            <button disabled>Login</button>
+            <button class="login" (click)="login($event, inputEmail.value, password.value)">Login</button>
 
             <p class="text-center">
                 Have an account?
