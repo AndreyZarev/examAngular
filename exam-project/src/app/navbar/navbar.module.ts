@@ -12,18 +12,19 @@ import { OffersComponent } from '../views/offers/offers.component';
 import { ErrorPageComponent } from '../views/error-page/error-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { AuthActivate } from '../guards/auth.guard';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', redirectTo: "home", pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
 
   { path: 'register', component: RegisterComponent },
-  { path: 'create-offer', component: CreateOfferComponent },
+  { path: 'create-offer', component: CreateOfferComponent, canActivate: [AuthActivate] },
   { path: 'login', component: LoginComponent },
 
   { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
-  { path: 'offers', component: OffersComponent },
+  { path: 'offers', component: OffersComponent, canActivate: [AuthActivate] },
 
   { path: '**', component: ErrorPageComponent },
 ];
