@@ -11,11 +11,12 @@
             <a routerLink='home'>Home</a>
             <a routerLink="offers">Offers</a>
 
-            <a routerLink="login">Login</a>
-            <a routerLink='logout' (click)="logout()">Logout</a>
-            <a routerLink='create-offer'>Create Offer</a>
+            <a *ngIf="isLoggedIn" routerLink='create-offer'>Create Offer</a>
+            <a *ngIf="!isLoggedIn" routerLink="login">Login</a>
+            <a *ngIf="isLoggedIn" routerLink='logout' (click)="logout()">Logout</a>
 
-            <a routerLink="register">Register</a>
+
+            <a *ngIf="!isLoggedIn" routerLink="register">Register</a>
 
 
 
