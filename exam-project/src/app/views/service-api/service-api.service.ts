@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Offer } from 'src/interface/offer';
 // import { environment } from 'src/environments/environment.development';
 // import { Themes } from 'src/app/interface/themes'
 // import { Posts } from 'src/app/interface/posts'
@@ -15,13 +16,11 @@ export class ApiService {
         return this.http.get<any>(`${apiUrl}/catalog`)
     }
 
-    getPosts(limit?: number) {
-        let apiUrl = 'http://localhost:3030/data'
-        let url = `${apiUrl}/orders`
-        if (limit) {
-            url = url + `?limit=${limit}`
 
-        }
-        return this.http.get<any>(url)
+
+
+    newOffer(names: string, phone: string, hand: string, weight: string, place: string, bet: number) {
+        debugger
+        return this.http.post<Offer>("http://localhost:3030/data/orders", { names, phone, hand, weight, place, bet })
     }
 }
