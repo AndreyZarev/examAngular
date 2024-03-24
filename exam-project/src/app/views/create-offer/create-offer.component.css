@@ -1,4 +1,4 @@
-/* new-theme */
+/* new-theme
 
 .new-theme-border {
     border: 1px solid;
@@ -30,8 +30,7 @@
     border-radius: 0.3em;
 }
 
-.title,
-.new-theme-content {
+.title, .new-theme-content {
     display: flex;
     flex-direction: column;
 }
@@ -83,4 +82,4 @@ p.error {
 
 .input-error {
     border-left-color: red;
-}
+} */
