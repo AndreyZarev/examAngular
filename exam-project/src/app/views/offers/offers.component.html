@@ -1,18 +1,18 @@
 <!-- homepage -->
-<div class="container">
+<div *ngFor="let offer of catalog" class="container">
     <div class="profile"><img src="./profile.png" alt="default user">
-        <h3>User Info:</h3>
+        <h3>Offer Info:</h3>
         <div class="flex">
-            <p>Username: </p>
-            <p>Johny</p>
+            <p>Names: </p>
+            <p>{{offer.model}}</p>
         </div>
         <div class="flex">
             <p>Email: </p>
-            <p>john.doe@gmail.com</p>
+            <p>{{offer.make}}</p>
         </div>
         <div class="flex">
             <p>Phone: </p>
-            <p>+359 885 888 888</p>
+            <p>{{offer.year}}</p>
         </div>
         <button class="edit-button">Edit</button>
     </div>
