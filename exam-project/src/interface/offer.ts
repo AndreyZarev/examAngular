@@ -1,7 +1,9 @@
-export interface User {
-    name: string;
-    email: string;
-    password: string;
-    rePassword: string;
+export interface Offer {
+    names: string;
+    phone: string;
+    hand: string;
+    weight: string;
+    place: string;
+    bet: number
 
 }
