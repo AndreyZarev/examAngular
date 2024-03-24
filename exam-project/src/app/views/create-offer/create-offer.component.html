@@ -1,35 +1,85 @@
 <!-- homepage -->
 <div class="container">
-    <div class="new-theme-border">
-        <div class="header-background">
-            <span>New Theme</span>
-        </div>
-        <form>
-            <div class="new-theme-title">
-                <label for="themeName">Title <span class="red">*</span></label>
-                <input type="text" name="themeName" id="themeName">
-                <p class="error">
-                    Theme name is required.
-                </p>
-                <p class="error">
-                    Theme name must be at least 5 characters long.
-                </p>
-            </div>
-            <div class="new-theme-content">
-                <label for="postText">Post <span class="red">*</span></label>
-                <textarea type="text" name="postText" id="postText" rows="8" class="height"></textarea>
-                <p class="error">
-                    The field with your post is required.
-                </p>
-                <p class="error">
-                    Post must be at least 10 characters long.
-                </p>
-            </div>
-            <div class="new-theme-buttons">
-                <button class="cancel">Cancel</button>
-                <button class="public">Post</button>
-            </div>
 
-        </form>
+    <div class="header-background">
+        <span>New Offer</span>
     </div>
+    <form>
+        <div class="offer-details">
+            <label for="names">Names: <span class="red">*</span></label>
+            <input type="text" #names name="names" id="names">
+
+            <p class="error">
+                Theme name must be at least 5 characters long.
+            </p>
+        </div>
+        <div class="new-theme-content">
+            <label for="phone">Phone: <span class="red">*</span></label>
+            <textarea type="text" name="phone" #phone id="phone" rows="1"></textarea>
+            <p class="error">
+                The field with your phone number is required.
+            </p>
+            <p class="error">
+                Post must be at least 10 characters long.
+            </p>
+        </div>
+
+
+        <div class="new-theme-content">
+            <label for="hand">Hand: <span class="red">*</span></label>
+            <select id="hand" #hand name="hand">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="both">Both</option>
+
+            </select>
+
+
+        </div>
+
+
+        <div class="new-theme-content">
+            <label for="weight">Weight: <span class="red">*</span></label>
+            <select id="weight" #weight name="weight">
+                <option value="60kg">Bellow 60 kilograms</option>
+                <option value="70kg">Bellow 70 kilograms</option>
+                <option value="80kg">Bellow 80 kilograms</option>
+                <option value="90kg">Bellow 90 kilograms</option>
+                <option value="100kg">Bellow 100 kilograms</option>
+                <option value="110kg">Bellow 110 kilograms</option>
+                <option value="above 110kg">Above 110 kilograms</option>
+
+
+            </select>
+
+
+        </div>
+
+        <div class="new-theme-content">
+            <label for="place">Place <span class="red">*</span></label>
+            <textarea type="text" name="place" #place id="place" rows="1" class="height"></textarea>
+            <p class="error">
+                The field with your place is required.
+            </p>
+
+        </div>
+
+        <div class="new-theme-content">
+            <label for="bet">Bet price in USD: <span class="red">*</span></label>
+            <textarea type="number" name="bet" id="bet" #bet rows="1" class="height"></textarea>
+            <p class="error">
+                The field with your bet is required.
+            </p>
+
+        </div>
+
+
+        <div class="new-theme-buttons">
+            <button class="cancel">Cancel</button>
+            <button class="create-btn"
+                (click)="createOffer( names.value, phone.value, hand.value, weight.value, place.value, bet.value)">Create
+                Offer</button>
+        </div>
+
+    </form>
 </div>
