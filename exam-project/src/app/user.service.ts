@@ -22,7 +22,7 @@ export class UserService {
         }
     }
     login() {
-        debugger
+
         this.user = {
             firstName: "Pesho",
             email: "pesho@gmail.com",
@@ -36,5 +36,6 @@ export class UserService {
 
         this.user = undefined;
         localStorage.removeItem(this.USER_KEY)
+
     }
 }
