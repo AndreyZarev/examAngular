@@ -13,6 +13,7 @@ import { ErrorPageComponent } from '../views/error-page/error-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
+import { NavbarComponentDirective } from './navbar-component.directive';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: 'full' },
@@ -39,6 +40,7 @@ const routes: Routes = [
     CreateOfferComponent,
     OffersComponent,
     ErrorPageComponent,
+    NavbarComponentDirective,
   ],
   imports: [
     CommonModule,
