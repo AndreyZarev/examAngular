@@ -9,7 +9,7 @@ export class LogoutComponent {
   constructor(private userService: UserService) { }
 
   logout() {
-    debugger
+
     this.userService.logout
 
 
