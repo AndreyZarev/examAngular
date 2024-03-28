@@ -19,11 +19,11 @@ export class LoginComponent {
 
     try {
       this.userService.login()
-      this.router.navigate(['/home'])
+
       debugger
     } catch (err) {
       console.log(err);
     }
-
+    this.router.navigate(['/home'])
   }
 }
