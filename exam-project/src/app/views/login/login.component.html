@@ -1,6 +1,6 @@
 <!-- homepage -->
 <div class="container">
-    <form class="login" action="" method="post">
+    <form class="login" #form="ngForm" (ngSubmit)="login(form)">
 
         <fieldset>
             <h2>Login Form</h2>
@@ -28,7 +28,7 @@
                 Password must be at least 4 characters!
             </p> -->
 
-            <button class="login" (click)="login($event, inputEmail.value, password.value)">Login</button>
+            <button class="login">Login</button>
 
             <p class="text-center">
                 Have an account?
