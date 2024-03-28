@@ -18,6 +18,7 @@ export class NavbarComponentDirective implements OnInit {
   ngOnInit(): void {
     if (this.isLoggedIn == true) {
       this.renderer.addClass(this.elRef.nativeElement, "navAncors")
+
     } else {
       this.renderer.removeClass(this.elRef.nativeElement, "navAncors")
       this.renderer.addClass(this.elRef.nativeElement, "navAncors2")
