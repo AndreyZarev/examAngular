@@ -21,7 +21,7 @@ form.login {
     padding-top: 1.5rem;
 }
 
-
+/* 
 .emailInput {
     flex: 0 1 100%;
     border: 1px solid;
@@ -29,7 +29,7 @@ form.login {
     border-left: 0.3em solid green;
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
-}
+} */
 
 .login select {
     border-color: black;
