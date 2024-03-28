@@ -14,6 +14,7 @@ import { ErrorPageComponent } from '../views/error-page/error-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
 import { NavbarComponentDirective } from './navbar-component.directive';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: 'full' },
@@ -41,11 +42,12 @@ const routes: Routes = [
     OffersComponent,
     ErrorPageComponent,
     NavbarComponentDirective,
+
   ],
   imports: [
     CommonModule,
     RouterLink,
-
+    FormsModule,
 
 
     RouterModule.forChild(routes),
