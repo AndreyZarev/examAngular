@@ -22,8 +22,8 @@ form.login {
 }
 
 /* 
-.emailInput {
-    flex: 0 1 100%;
+.emailPassword {
+  
     border: 1px solid;
     padding: 0.3em;
     border-left: 0.3em solid green;
