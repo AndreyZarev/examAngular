@@ -34,9 +34,20 @@ export class NavbarComponentDirective implements OnInit {
 
 
   }
+  classPick = "navAncors"
   checkLogin() {
-    class = "navAncors"
+    if (this.isLoggedIn) {
+      this.classPick = "navAncors"
+    }
+    this.classPick
   }
+
+
+
+
+
+
+
   mouseHoverEventHandler() {
 
 
