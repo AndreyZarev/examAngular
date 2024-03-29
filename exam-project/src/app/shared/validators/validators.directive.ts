@@ -11,6 +11,11 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
 })
 export class ValidatorsDirective implements Validator {
   @Input() appValidators: string = ""
+
+  constructor() { }
+
+  validator: ValidatorFn = () => null
+
   reGex = "/\w+@\w{2,}\.(bg|com)/gm"
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
 
@@ -26,6 +31,5 @@ export class ValidatorsDirective implements Validator {
 
     }
   }
-  constructor() { }
 
 }
