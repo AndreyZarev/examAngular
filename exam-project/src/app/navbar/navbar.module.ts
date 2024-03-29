@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbarComppnent/navbar.component';
 import { RouterLink } from '@angular/router';
-
+import { ValidatorsDirective } from "../shared/validators/validators.directive"
 import { HomeComponent } from '../views/home/home.component';
 import { RegisterComponent } from '../views/register/register.component';
 import { LoginComponent } from '../views/login/login.component';
@@ -42,6 +42,7 @@ const routes: Routes = [
     OffersComponent,
     ErrorPageComponent,
     NavbarComponentDirective,
+    ValidatorsDirective
 
   ],
   imports: [
