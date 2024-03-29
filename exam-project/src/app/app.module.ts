@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 // import { ViewsModel } from './views/views.module'
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
-import { ValidatorsDirective } from './shared/validators/validators.directive';
 // import { NavbarModule } from './navbar/navbar.module';
 
 
@@ -14,7 +13,7 @@ import { ValidatorsDirective } from './shared/validators/validators.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    ValidatorsDirective,
+
 
 
 
@@ -28,7 +27,7 @@ import { ValidatorsDirective } from './shared/validators/validators.directive';
     RouterLink
   ],
 
-  exports: [ValidatorsDirective],
+  exports: [],
 
   providers: [],
 
