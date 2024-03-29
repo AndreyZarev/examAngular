@@ -92,5 +92,7 @@ p.error {
 
 
 .passwordInput {
+
     width: 500px;
+    height: 100px;
 }
