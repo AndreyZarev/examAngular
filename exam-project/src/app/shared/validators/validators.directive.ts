@@ -1,5 +1,5 @@
 import { Directive } from '@angular/core';
-import { NG_VALIDATORS } from '@angular/forms';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
 
 @Directive({
   selector: '[appValidators]',
@@ -9,8 +9,10 @@ import { NG_VALIDATORS } from '@angular/forms';
     multi: true
   }]
 })
-export class ValidatorsDirective {
-
+export class ValidatorsDirective implements Validator {
+  validate(control: AbstractControl<any, any>): ValidationErrors | null {
+    return null
+  }
   constructor() { }
 
 }
