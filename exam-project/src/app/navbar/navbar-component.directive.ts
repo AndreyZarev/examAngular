@@ -1,9 +1,9 @@
-import { Directive, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 import { UserService } from '../user.service';
 @Directive({
   selector: '[appNavbarComponent]'
 })
-export class NavbarComponentDirective implements OnInit, OnChanges {
+export class NavbarComponentDirective implements OnInit, AfterViewInit {
 
   constructor(private elRef: ElementRef, private renderer: Renderer2, private userService: UserService) { }
 
@@ -34,7 +34,7 @@ export class NavbarComponentDirective implements OnInit, OnChanges {
 
 
   }
-  ngOnChanges(changes: SimpleChanges): void {
+  ngAfterViewInit(): void {
     if (this.isLoggedIn == true) {
       this.renderer.addClass(this.elRef.nativeElement, "navAncors")
       this.renderer.removeClass(this.elRef.nativeElement, "navAncors2")
