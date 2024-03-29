@@ -3,7 +3,7 @@ import { UserService } from '../user.service';
 @Directive({
   selector: '[appNavbarComponent]'
 })
-export class NavbarComponentDirective implements OnInit, AfterViewInit {
+export class NavbarComponentDirective implements OnInit {
 
   constructor(private elRef: ElementRef, private renderer: Renderer2, private userService: UserService) { }
 
@@ -34,15 +34,8 @@ export class NavbarComponentDirective implements OnInit, AfterViewInit {
 
 
   }
-  ngAfterViewInit(): void {
-    if (this.isLoggedIn == true) {
-      this.renderer.addClass(this.elRef.nativeElement, "navAncors")
-      this.renderer.removeClass(this.elRef.nativeElement, "navAncors2")
-
-    } else {
-      this.renderer.removeClass(this.elRef.nativeElement, "navAncors")
-      this.renderer.addClass(this.elRef.nativeElement, "navAncors2")
-    }
+  checkLogin() {
+    class = "navAncors"
   }
   mouseHoverEventHandler() {
 
