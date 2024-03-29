@@ -39,7 +39,10 @@ export class NavbarComponentDirective implements OnInit {
     if (this.isLoggedIn) {
       this.classPick = "navAncors"
     }
-    this.classPick
+    if (this.isLoggedIn) {
+      this.classPick = "nav2Ancors"
+    }
+
   }
 
 
