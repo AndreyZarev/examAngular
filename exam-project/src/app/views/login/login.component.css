@@ -23,12 +23,14 @@ form.login {
 
 
 .emailPassword {
-
-    border: 1px solid;
+    padding: 40px;
+    height: 50px;
+    /* border: 1px solid;
     padding: 0.3em;
     border-left: 0.3em solid green;
     border-top-right-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
+ */
 }
 
 .login select {
@@ -69,6 +71,8 @@ form.login {
     padding-bottom: 0;
 }
 
+
+
 /* errors  */
 /* 
 p.error {
@@ -84,3 +88,9 @@ p.error {
 
 
 /*  .login {} */
+
+
+
+.passwordInput {
+    width: 500px;
+}
