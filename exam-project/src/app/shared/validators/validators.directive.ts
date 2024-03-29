@@ -10,7 +10,7 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
   }]
 })
 export class ValidatorsDirective implements Validator {
-  @Input() appValidators: string = ""
+  @Input() appValidators: string[] = []
 
   constructor() { }
 
