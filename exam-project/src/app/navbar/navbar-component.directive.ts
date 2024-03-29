@@ -1,9 +1,9 @@
-import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';
 import { UserService } from '../user.service';
 @Directive({
   selector: '[appNavbarComponent]'
 })
-export class NavbarComponentDirective implements OnInit {
+export class NavbarComponentDirective implements OnInit, OnChanges {
 
   constructor(private elRef: ElementRef, private renderer: Renderer2, private userService: UserService) { }
 
@@ -16,13 +16,17 @@ export class NavbarComponentDirective implements OnInit {
 
   }
   ngOnInit(): void {
+    debugger
     if (this.isLoggedIn == true) {
       this.renderer.addClass(this.elRef.nativeElement, "navAncors")
+      this.renderer.removeClass(this.elRef.nativeElement, "navAncors2")
 
     } else {
       this.renderer.removeClass(this.elRef.nativeElement, "navAncors")
       this.renderer.addClass(this.elRef.nativeElement, "navAncors2")
     }
+
+
 
     // this.renderer.listen(this.elRef.nativeElement, "mouseover", this.mouseHoverEventHandler.bind(this));
 
@@ -30,7 +34,16 @@ export class NavbarComponentDirective implements OnInit {
 
 
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.isLoggedIn == true) {
+      this.renderer.addClass(this.elRef.nativeElement, "navAncors")
+      this.renderer.removeClass(this.elRef.nativeElement, "navAncors2")
 
+    } else {
+      this.renderer.removeClass(this.elRef.nativeElement, "navAncors")
+      this.renderer.addClass(this.elRef.nativeElement, "navAncors2")
+    }
+  }
   mouseHoverEventHandler() {
 
 
