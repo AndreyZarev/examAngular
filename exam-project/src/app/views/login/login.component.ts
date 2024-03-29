@@ -9,10 +9,17 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  constructor(private userService: UserService, private router: Router,) { }
 
-  constructor(private userService: UserService, private router: Router) { }
+  clicked: boolean = true;
+  loginButton() {
+
+    this.clicked = !this.clicked
+    return this.clicked;
+  }
   login(form: NgForm): void {
     console.log(form.value);
+
     if (form.invalid) {
       return;
     }
