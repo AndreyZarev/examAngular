@@ -6,9 +6,9 @@
             <h2>Login Form</h2>
 
             <p class="emailPassword">
-                <label for="email"><span><i class="emailLabel"></i></span></label>
+
                 <input #inputEmail="ngModel" ngModel required class="emailInput" type="email" name="email" id="email"
-                    placeholder="john.doe@gmail.com">
+                    placeholder="simeon.bogdanov@gmail.com">
             </p>
             <ng-container *ngIf="inputEmail.touched">
                 <p class="errorRequired" *ngIf="inputEmail.errors?.['required']">
@@ -19,7 +19,7 @@
             </p> -->
             </ng-container>
             <p class="emailPassword">
-                <label for="password"><span><i class="labelPassword"></i></span></label>
+
                 <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
                     placeholder="password">
             </p>
@@ -30,7 +30,7 @@
                 Password must be at least 4 characters!
             </p> -->
 
-            <button class="login">Login</button>
+            <button class="login button">Login</button>
 
             <p class="text-center">
                 Have an account?
