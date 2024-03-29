@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './views/app-routing.module';
 import { AppComponent } from './app.component';
-import { ViewsModel } from './views/views.module'
+// import { ViewsModel } from './views/views.module'
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
-import { ValidatorsDirective } from './shared/validators.directive';
+import { ValidatorsDirective } from './shared/validators/validators.directive';
 // import { NavbarModule } from './navbar/navbar.module';
 
 
@@ -23,13 +23,12 @@ import { ValidatorsDirective } from './shared/validators.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ViewsModel,
     HttpClientModule,
 
     RouterLink
   ],
 
-  exports: [],
+  exports: [ValidatorsDirective],
 
   providers: [],
 
