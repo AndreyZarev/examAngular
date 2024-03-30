@@ -21,7 +21,7 @@ export class ValidatorsDirective implements Validator, OnChanges {
 
     console.log("control", control);
 
-    return null
+    return this.validator(control)
   }
   //
 
