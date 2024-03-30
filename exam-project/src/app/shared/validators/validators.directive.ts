@@ -1,4 +1,4 @@
-import { Directive, Input, SimpleChanges } from '@angular/core';
+import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { validateEmail } from '../utils/email-validator'
 @Directive({
@@ -9,7 +9,7 @@ import { validateEmail } from '../utils/email-validator'
     multi: true
   }]
 })
-export class ValidatorsDirective implements Validator {
+export class ValidatorsDirective implements Validator, OnChanges {
   @Input() appValidators: string[] = []
 
   constructor() { }
