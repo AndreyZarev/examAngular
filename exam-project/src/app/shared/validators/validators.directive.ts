@@ -1,6 +1,6 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, SimpleChanges } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
-
+import { validateEmail } from '../utils/email-validator'
 @Directive({
   selector: '[appValidators]',
   providers: [{
@@ -16,19 +16,21 @@ export class ValidatorsDirective implements Validator {
 
   validator: ValidatorFn = () => null
 
-  reGex = "/\w+@\w{2,}\.(bg|com)/gm"
+
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
 
     console.log("control", control);
 
     return null
   }
-  validateEmail(domains: string[]): ValidatorFn | null {
-    return (control) => {
-      console.log("Control value: " + control.value);
+  //
 
-      return null
 
+  ngOnChanges(changes: SimpleChanges): void {
+    const { currentValue } = changes['appValidators']
+
+    if (currentValue?.length) {
+      this.validator = validateEmail(currentValue)
     }
   }
 
