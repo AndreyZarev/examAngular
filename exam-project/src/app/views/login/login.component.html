@@ -29,7 +29,7 @@
 
 
             <ng-container *ngIf="inputEmail.touched">
-                <p *ngIf="" class="error">
+                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
                     Password is required!
                 </p>
                 <p class="error">
