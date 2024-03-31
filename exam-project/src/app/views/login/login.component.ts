@@ -17,11 +17,14 @@ export class LoginComponent {
     this.clicked = !this.clicked
     return this.clicked;
   }
+
+
   login(form: NgForm): void {
     debugger
     console.log(form.value);
 
     if (form.invalid) {
+
       return;
     }
 
