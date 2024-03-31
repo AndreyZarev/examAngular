@@ -33,6 +33,7 @@ export class ValidatorsDirective implements Validator, OnChanges {
     console.log({ currentValue });
 
     if (currentValue?.length) {
+      debugger
       this.validator = validateEmail(currentValue)
     }
 
