@@ -20,15 +20,15 @@
             </ng-container>
 
 
+            <p class="emailPassword">
+
+                <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
+                    placeholder="password">
+            </p>
+
 
 
             <ng-container *ngIf="inputEmail.touched">
-
-                <p class="emailPassword">
-
-                    <input #password="ngModel" class="passwordInput" ngModel type="password" name="password"
-                        id="password" placeholder="password">
-                </p>
                 <p class="error">
                     Password is required!
                 </p>
