@@ -18,17 +18,25 @@
                     Email is not valid!
                 </p>
             </ng-container>
-            <p class="emailPassword">
 
-                <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
-                    placeholder="password">
-            </p>
-            <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
+
+
+
+            <ng-container *ngIf="inputEmail.touched">
+
+                <p class="emailPassword">
+
+                    <input #password="ngModel" class="passwordInput" ngModel type="password" name="password"
+                        id="password" placeholder="password">
+                </p>
+                <p class="error">
+                    Password is required!
+                </p>
+                <p class="error">
+                    Password must be at least 4 characters!
+                </p>
+            </ng-container>
+
 
             <button class="login button">Login</button>
 
