@@ -23,13 +23,13 @@
             <p class="emailPassword">
 
                 <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
-                    placeholder="password">
+                    placeholder="password" required>
             </p>
 
 
 
             <ng-container *ngIf="inputEmail.touched">
-                <p class="error">
+                <p *ngIf="" class="error">
                     Password is required!
                 </p>
                 <p class="error">
