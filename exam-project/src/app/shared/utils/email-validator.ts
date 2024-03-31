@@ -8,7 +8,7 @@ export function validateEmail(domains: string[]): ValidatorFn {
         const isInvalid = control.value === '' || reGex.test(control.value);
         console.log("Test Regex: ", isInvalid, "control value", control.value);
 
-        return null
+        return isInvalid ? null : { validateEmail: true }
 
     }
 }
