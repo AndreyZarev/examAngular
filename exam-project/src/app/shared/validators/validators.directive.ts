@@ -3,11 +3,13 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
 import { validateEmail } from '../utils/email-validator'
 @Directive({
   selector: '[appValidators]',
-  providers: [{
-    provide: NG_VALIDATORS,
-    useExisting: ValidatorsDirective,
-    multi: true
-  }]
+  providers: [
+    {
+      provide: NG_VALIDATORS,
+      useExisting: ValidatorsDirective,
+      multi: true
+    }
+  ]
 })
 export class ValidatorsDirective implements Validator, OnChanges {
   @Input() appValidators: string[] = []
@@ -31,7 +33,7 @@ export class ValidatorsDirective implements Validator, OnChanges {
     console.log({ currentValue });
 
     if (currentValue?.length) {
-      this.validator = validateEmail(currentValue)
+      // this.validator = validateEmail(currentValue)
     }
 
   }
