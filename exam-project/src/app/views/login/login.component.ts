@@ -18,6 +18,7 @@ export class LoginComponent {
     return this.clicked;
   }
   login(form: NgForm): void {
+    debugger
     console.log(form.value);
 
     if (form.invalid) {
