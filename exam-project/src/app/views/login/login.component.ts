@@ -27,7 +27,7 @@ export class LoginComponent {
     try {
       this.userService.login()
 
-      debugger
+
     } catch (err) {
       console.log(err);
     }
