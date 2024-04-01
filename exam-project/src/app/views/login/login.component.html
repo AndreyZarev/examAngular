@@ -29,10 +29,10 @@
 
 
             <ng-container *ngIf="inputEmail.touched">
-                <p class="error">
+                <p class="error" *ngIf="form.value == null">
                     Password is required!
                 </p>
-                <p class="error" *ngIf="inputEmail.errors?.['min']">
+                <p class="error" *ngIf="inputEmail.errors?.['minlength']">
                     Password must be at least 4 characters!
                 </p>
             </ng-container>
