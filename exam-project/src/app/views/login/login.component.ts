@@ -20,8 +20,8 @@ export class LoginComponent {
 
 
   login(form: NgForm): void {
-    debugger
-    console.log(form.value);
+
+    // console.log(form.value);
 
     if (form.invalid) {
 
