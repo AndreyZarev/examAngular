@@ -23,7 +23,7 @@
             <p class="emailPassword">
 
                 <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
-                    placeholder="password" required>
+                    placeholder="password" required minlength="4">
             </p>
 
 
@@ -32,7 +32,7 @@
                 <p class="error">
                     Password is required!
                 </p>
-                <p class="error" *ngIf="inputEmail.errors?.['validateEmail']">
+                <p class="error" *ngIf="inputEmail.errors?.['min']">
                     Password must be at least 4 characters!
                 </p>
             </ng-container>
