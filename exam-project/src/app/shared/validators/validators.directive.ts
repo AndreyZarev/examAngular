@@ -29,14 +29,17 @@ export class ValidatorsDirective implements Validator, OnChanges {
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    const { currentValue } = changes['appValidators']
-    debugger
-    console.log({ currentValue });
+    // const { currentValue } = changes['appValidators']
+    // debugger
+    // console.log({ currentValue });
 
-    if (currentValue?.length) {
+    // if (currentValue?.length) {
 
-      this.validator = validateEmail(currentValue)
-    }
+    //   this.validator = validateEmail(currentValue)
+    // }
+
+
+
 
   }
 }
