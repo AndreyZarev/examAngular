@@ -4,7 +4,7 @@ export function validateEmail(domains: string[]): ValidatorFn {
     const domainStrings = domains.join("|")
     const reGex = new RegExp(/\w*.?\w*@\w{2,}\.(${domainStrings})/g)
 
-
+    //still returns false
 
     return (control) => {
         const isInvalid = control.value === "" || reGex.test(control.value);
