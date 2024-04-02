@@ -24,7 +24,7 @@ export class LoginComponent {
     // console.log(form.value);
 
     if (form.invalid) {
-
+      alert('Your form is invalid, please follow the text below the fields.')
       return;
     }
 
