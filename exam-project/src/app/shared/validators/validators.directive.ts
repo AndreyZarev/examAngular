@@ -20,10 +20,10 @@ export class ValidatorsDirective implements Validator, OnChanges {
 
 
   validate(control: AbstractControl<any, any>): ValidationErrors | null {
-
     console.log("control", control);
+    const validatorFn = validateEmail(this.appValidators);
+    return validatorFn(control);
 
-    return this.validator(control)
   }
   //
 
