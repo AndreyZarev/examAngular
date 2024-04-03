@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { User } from "src/interface/user";
-
+import { HttpClient } from "@angular/common/http";
 @Injectable({
     providedIn: 'root',
 })
@@ -38,4 +38,6 @@ export class UserService {
         localStorage.removeItem(this.USER_KEY)
 
     }
+
+
 }
