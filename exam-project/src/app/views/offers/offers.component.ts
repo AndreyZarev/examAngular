@@ -26,7 +26,7 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  profileDetails: Profile = {
+  furnitureDetails: Profile = {
     make: 'Richard',
     model: 'john@gmail.com',
     year: '33333333',
@@ -58,18 +58,18 @@ export class OffersComponent implements OnInit {
   }
 
 
-  saveProfileHandle(): void {
+  save(): void {
     debugger
     if (this.form.invalid) {
       alert("form is invalid")
       return;
     }
 
-    this.profileDetails = this.form.value as Profile;
+    this.furnitureDetails = this.form.value as Profile;
     this.editable = !this.editable;
   }
 
-  onCancel(e: Event) {
+  cancel(e: Event) {
     e.preventDefault();
     this.editable = !this.editable;
   }
