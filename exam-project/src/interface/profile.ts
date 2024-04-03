@@ -1,6 +1,6 @@
 export interface Profile {
-    name: string;
-    email: string;
-    tel: string;
+    make: string;
+    model: string;
+    year: string;
 
 }
