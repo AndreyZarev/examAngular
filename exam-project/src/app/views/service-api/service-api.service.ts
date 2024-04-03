@@ -18,7 +18,12 @@ export class ApiService {
     }
 
 
+    getOffer(id: string) {
+        let apiUrl = 'http://localhost:3030/data'
 
+        let result = this.http.get<any>(`${apiUrl}/catalog` + `/${id}`)
+        return result
+    }
 
     newOffer(form: NgForm) {
         debugger
