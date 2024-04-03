@@ -14,7 +14,7 @@
                 <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
                     Email is required!
                 </p>
-                <p *ngIf="inputEmail.errors?.['validateEmail']" class="errorInvalid">
+                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
                     Email is not valid!
                 </p>
             </ng-container>
