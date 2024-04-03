@@ -8,24 +8,29 @@
             <!-- username -->
             <p class="field field-icon">
                 <label for="name"><span><i class="fas fa-user"></i></span></label>
-                <input class="input-error" ngModel required type="text" name="name" id="name" placeholder="Johny">
+                <input class="input-error" #inputName="ngModel" ngModel required type="text" name="name" id="name"
+                    placeholder="Johny">
             </p>
-            <p class="error">
-                Name is required!
-            </p>
+            <ng-container *ngIf="inputName.touched">
+                <p class="error" *ngIf="inputName.errors?.['required'] ">
+                    Name is required!
+                </p>
+            </ng-container>
 
             <!-- email -->
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input type="email" name="email" ngModel required id="email" placeholder="john.doe@gmail.com">
+                <input type="email" #inputEmail="ngModel" name="email" ngModel required id="email"
+                    placeholder="john.doe@gmail.com">
             </p>
-            <!-- <p class="error">
-                Email is required!
-            </p>
-            <p class="error">
-                Email is not valid!
-            </p> -->
-
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
+                    Email is required!
+                </p>
+                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
 
 
             <!-- password -->
@@ -47,7 +52,7 @@
             </p>
             <!-- <p class="error">Repeat Password does not match password!</p> -->
 
-            <button disabled>Create Account</button>
+            <button>Create Account</button>
 
             <p class="text-center">
                 Have an account?
