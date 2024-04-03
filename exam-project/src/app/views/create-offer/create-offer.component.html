@@ -14,8 +14,8 @@
             </p>
         </div>
         <div class="new-theme-content">
-            <label for="phone">Phone: <span class="red">*</span></label>
-            <textarea type="text" name="phone" #phone id="phone" rows="1"></textarea>
+            <label for="email">Email: <span class="red">*</span></label>
+            <textarea type="text" name="email" #email id="email" rows="1"></textarea>
             <p class="error">
                 The field with your phone number is required.
             </p>
@@ -77,7 +77,7 @@
         <div class="new-theme-buttons">
             <button class="cancel">Cancel</button>
             <button class="create-btn"
-                (click)="createOffer( names.value, phone.value, hand.value, weight.value, place.value, bet.value)">Create
+                (click)="createOffer( names.value, email.value, hand.value, weight.value, place.value, bet.value)">Create
                 Offer</button>
         </div>
 
