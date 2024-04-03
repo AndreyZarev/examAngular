@@ -5,15 +5,20 @@
         <span>New Offer</span>
     </div>
     <form #form="ngForm" (ngSubmit)="createOffer(form)">
+
+
         <div class="offer-details">
             <label for="names">Names: <span class="red">*</span></label>
             <input type="text" #names="ngModel" required ngModel name="names" id="names">
 
-            <p class="error">
-                Theme name must be at least 4 characters long.
-            </p>
+            <ng-container *ngIf="names.touched">
+                <p class="error" *ngIf="names.errors?.['required'] ">
+                    Name is required!
+                </p>
+            </ng-container>
+
         </div>
-        <div class="new-theme-content">
+        <div class="offer-details">
             <label for="email">Email: <span class="red">*</span></label>
             <textarea type="text" name="email" [appValidators]="['bg', 'com']" required ngModel #inputEmail="ngModel"
                 id="email" rows="1"></textarea>
@@ -29,7 +34,7 @@
         </div>
 
 
-        <div class="new-theme-content">
+        <div class="offer-details">
             <label for="hand">Hand: <span class="red">*</span></label>
             <select id="hand" #hand="ngModel" required ngModel name="hand">
                 <option value="right">Right</option>
@@ -42,7 +47,7 @@
         </div>
 
 
-        <div class="new-theme-content">
+        <div class="offer-details">
             <label for="weight">Weight: <span class="red">*</span></label>
             <select id="weight" #weight="ngModel" required ngModel name="weight">
                 <option value="60kg">Bellow 60 kilograms</option>
@@ -59,7 +64,7 @@
 
         </div>
 
-        <div class="new-theme-content">
+        <div class="offer-details">
             <label for="place">Place <span class="red">*</span></label>
             <textarea type="text" name="place" #place="ngModel" required ngModel id="place" rows="1"
                 class="height"></textarea>
@@ -69,7 +74,7 @@
 
         </div>
 
-        <div class="new-theme-content">
+        <div class="offer-details">
             <label for="bet">Bet price in USD: <span class="red">*</span></label>
             <textarea type="number" name="bet" id="bet" required ngModel #bet="ngModel" rows="1"
                 class="height"></textarea>
@@ -80,7 +85,7 @@
         </div>
 
 
-        <div class="new-theme-buttons">
+        <div class="offer-details">
             <button class="cancel">Cancel</button>
             <button class="create-btn">Create Offer</button>
         </div>
