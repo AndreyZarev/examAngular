@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Offer } from 'src/interface/offer';
 // import { environment } from 'src/environments/environment.development';
 // import { Themes } from 'src/app/interface/themes'
@@ -19,8 +20,10 @@ export class ApiService {
 
 
 
-    newOffer(names: string, email: string, hand: string, weight: string, place: string, bet: number) {
+    newOffer(form: NgForm) {
         debugger
-        return this.http.post<Offer>("http://localhost:3030/data/orders", { names, email, hand, weight, place, bet })
+        console.log(form);
+
+        return this.http.post<Offer>("http://localhost:3030/data/orders", { form })
     }
 }
