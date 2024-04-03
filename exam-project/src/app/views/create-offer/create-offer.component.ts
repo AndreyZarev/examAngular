@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-offer',
@@ -8,14 +9,14 @@ import { ApiService } from '../service-api/service-api.service';
 })
 export class CreateOfferComponent {
   constructor(private apiService: ApiService) { }
-  createOffer(names: string, email: string, hand: string, weight: string, place: string, bet: number | string) {
+  createOffer(form: NgForm) {
     debugger
     // ev.preventDefault();
 
     try {
 
 
-      this.apiService.newOffer(names, email, hand, weight, place, Number(bet)).subscribe((offer) => {
+      this.apiService.newOffer(form.value).subscribe((offer) => {
         console.log(offer);
       })
 
