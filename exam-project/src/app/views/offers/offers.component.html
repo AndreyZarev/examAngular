@@ -69,8 +69,8 @@
                             <input type="text" name="tel" id="tel" value="{{catalog.year}}">
                         </div>
                     </div>
-                    <button class="red-button">Cancel</button>
-                    <button class="green-button">Save</button>
+                    <button class="red-button" (click)="onCancel($event)">Cancel</button>
+                    <button class="green-button" (click)="saveProfileHandle()">Save</button>
                 </form>
             </div>
         </form>
