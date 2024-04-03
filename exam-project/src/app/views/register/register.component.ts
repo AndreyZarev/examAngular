@@ -28,6 +28,10 @@ export class RegisterComponent {
       alert('Your form is invalid, please follow the text below the fields.')
       return;
     }
+    if (form.value.password !== form.value.rePassword) {
+      alert('Your passwords do not match, please try again.')
+      return;
+    }
 
     try {
       this.userService.login()
