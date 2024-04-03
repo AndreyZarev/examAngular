@@ -22,7 +22,7 @@ export class CreateOfferComponent {
 
       this.apiService.newOffer(form.value).subscribe((offer) => {
         console.log(offer);
-        debugger
+
 
       })
       form.value.clear();
@@ -31,7 +31,7 @@ export class CreateOfferComponent {
       console.log(err);
 
     }
-    debugger
+
     this.router.navigate(['/offers'])
   }
 }
