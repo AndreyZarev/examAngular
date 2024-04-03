@@ -21,10 +21,10 @@
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
                 <input type="email" #inputEmail="ngModel" name="email" ngModel required id="email"
-                    placeholder="john.doe@gmail.com">
+                    placeholder="john.doe@gmail.com" [appValidators]="['bg', 'com']">
             </p>
             <ng-container *ngIf="inputEmail.touched">
-                <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
+                <p class="error" *ngIf="inputEmail.errors?.['required'] ">
                     Email is required!
                 </p>
                 <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
@@ -36,23 +36,26 @@
             <!-- password -->
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="password" ngModel required id="password" placeholder="******">
+                <input type="password" name="password" #password="ngModel" ngModel required id="password"
+                    placeholder="******" minlength="4">
             </p>
-            <!-- <p class="error">
-                Password is required!
-            </p>
-            <p class="error">
-                Password must be at least 4 characters!
-            </p> -->
-
+            <ng-container *ngIf="password.touched">
+                <p class="error" *ngIf="password.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="password.errors?.['minlength']">
+                    Password must be at least 4 characters!
+                </p>
+            </ng-container>
             <!-- rePassword -->
             <p class="field field-icon">
                 <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="rePassword" ngModel required id="rePassword" placeholder="******">
+                <input type="password" name="rePassword" #rePassword="ngModel" ngModel required id="rePassword"
+                    minlength="4" placeholder="******">
             </p>
             <!-- <p class="error">Repeat Password does not match password!</p> -->
 
-            <button>Create Account</button>
+            <button class="button">Create Account</button>
 
             <p class="text-center">
                 Have an account?
