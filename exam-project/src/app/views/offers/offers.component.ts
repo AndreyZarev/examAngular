@@ -39,7 +39,6 @@ export class OffersComponent implements OnInit {
 
   editable: boolean = false
   edit(id: string): void {
-    debugger
 
 
     console.log(id);
@@ -50,7 +49,7 @@ export class OffersComponent implements OnInit {
       console.log(data);
       this.catalog = data
       this.editable = true
-      debugger
+
     })
 
     this.router.navigate(['/offers/edit']);
@@ -59,7 +58,7 @@ export class OffersComponent implements OnInit {
 
 
   save(): void {
-    debugger
+
     if (this.form.invalid) {
       alert("form is invalid")
       return;
