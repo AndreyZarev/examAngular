@@ -42,8 +42,11 @@
                 <option value="both">Both</option>
 
             </select>
-
-
+            <ng-container *ngIf="hand.touched">
+                <p class="error" *ngIf="hand.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
         </div>
 
 
@@ -61,16 +64,24 @@
 
             </select>
 
-
+            <ng-container *ngIf="weight.touched">
+                <p class="error" *ngIf="weight.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
         </div>
 
         <div class="offer-details">
             <label for="place">Place <span class="red">*</span></label>
             <textarea type="text" class="input" name="place" #place="ngModel" required ngModel id="place"
                 rows="1"></textarea>
-            <p class="error">
-                The field with your place is required.
-            </p>
+
+            <ng-container *ngIf="place.touched">
+                <p class="error" *ngIf="place.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
+
 
         </div>
 
@@ -78,15 +89,19 @@
             <label for="bet">Bet price in USD: <span class="red">*</span></label>
             <textarea type="number" class="input" name="bet" id="bet" required ngModel #bet="ngModel"
                 rows="1"></textarea>
-            <p class="error">
-                The field with your bet is required.
-            </p>
+
+
+            <ng-container *ngIf="bet.touched">
+                <p class="error" *ngIf="bet.errors?.['required'] ">
+                    The field is required.
+                </p>
+            </ng-container>
 
         </div>
 
 
         <div class="offer-details">
-            <button class="cancel">Cancel</button>
+
             <button class="create-btn">Create Offer</button>
         </div>
 
