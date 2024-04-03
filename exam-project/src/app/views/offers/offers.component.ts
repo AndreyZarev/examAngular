@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { validateEmail } from "../../shared/utils/email-validator";
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -9,7 +10,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktivRoute: ActivatedRoute, private router: Router, fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktivRoute: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.acktivRoute.params.subscribe((data) => {
@@ -23,6 +24,17 @@ export class OffersComponent implements OnInit {
       })
     })
   }
+  profileDetails: object = {
+    username: 'Richard',
+    tel: '33333333',
+    email: 'john@gmail.com',
+  };
+  form = this.fb.group({
+    username: ['', [Validators.required, Validators.minLength(5)]],
+    tel: [''],
+    email: ['', [Validators.required, validateEmail(["bg|com]"])]],
+  });
+
   editable: boolean = false
   edit(id: string): void {
     debugger
@@ -42,19 +54,20 @@ export class OffersComponent implements OnInit {
 
   }
 
-  // saveProfileHandle(): void {
-  //   if (this.form.invalid) {
-  //     return;
-  //   }
 
-  //   this.profileDetails = this.form.value as ProfileDetails;
-  //   this.onToggle();
-  // }
+  saveProfileHandle(): void {
+    if (this.form.invalid) {
+      return;
+    }
 
-  // onCancel(e: Event) {
-  //   e.preventDefault();
-  //   this.onToggle();
-  // }
+    this.profileDetails = this.form.value;
+    this.editable = !this.editable;
+  }
+
+  onCancel(e: Event) {
+    e.preventDefault();
+    this.editable = !this.editable;
+  }
 
 
 
