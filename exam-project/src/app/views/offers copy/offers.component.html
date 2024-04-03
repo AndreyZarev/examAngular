@@ -1,0 +1,42 @@
+<!-- homepage -->
+<ng-container *ngIf="catalog.length > 1">
+    <div *ngFor="let offer of catalog" class="container">
+        <div class="profile"><img src="./profile.png" alt="default user">
+            <h3>Offer Info:</h3>
+            <div class="flex">
+                <p>Names: </p>
+                <p>{{offer.model}}</p>
+            </div>
+            <div class="flex">
+                <p>Email: </p>
+                <p>{{offer.make}}</p>
+            </div>
+            <div class="flex">
+                <p>Phone: </p>
+                <p>{{offer.year}}</p>
+            </div>
+            <button (click)="edit(offer._id)" class="edit-button">Edit</button>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="catalog.length == 1">
+    <div class="container">
+        <div class="profile"><img src="./profile.png" alt="default user">
+            <h3>Offer Info:</h3>
+            <div class="flex">
+                <p>Names: </p>
+                <p>{{catalog.model}}</p>
+            </div>
+            <div class="flex">
+                <p>Email: </p>
+                <p>{{catalog.make}}</p>
+            </div>
+            <div class="flex">
+                <p>Phone: </p>
+                <p>{{catalog.year}}</p>
+            </div>
+            <!-- // <button (click)="edit(offer._id)" class="edit-button">Edit</button> -->
+        </div>
+    </div>
+</ng-container>
