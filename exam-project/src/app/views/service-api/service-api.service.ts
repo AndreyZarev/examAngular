@@ -19,8 +19,8 @@ export class ApiService {
 
 
 
-    newOffer(names: string, phone: string, hand: string, weight: string, place: string, bet: number) {
+    newOffer(names: string, email: string, hand: string, weight: string, place: string, bet: number) {
         debugger
-        return this.http.post<Offer>("http://localhost:3030/data/orders", { names, phone, hand, weight, place, bet })
+        return this.http.post<Offer>("http://localhost:3030/data/orders", { names, email, hand, weight, place, bet })
     }
 }
