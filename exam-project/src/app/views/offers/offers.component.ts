@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator";
 import { Profile } from "../../../interface/profile"
+import { ReactiveFormsModule } from '@angular/forms'
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
