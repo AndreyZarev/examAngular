@@ -1,5 +1,5 @@
 <!-- homepage -->
-<ng-container *ngIf="catalog.length > 1">
+<ng-container *ngIf="!editable">
     <div *ngFor="let offer of catalog" class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
@@ -20,7 +20,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="catalog.length == 1">
+<ng-container *ngIf="editable">
     <div class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
@@ -36,7 +36,7 @@
                 <p>Phone: </p>
                 <p>{{catalog.year}}</p>
             </div>
-            <!-- // <button (click)="edit(offer._id)" class="edit-button">Edit</button> -->
+            <button (click)="edit(catalog._id)" class="edit-button">Edit</button>
         </div>
     </div>
 </ng-container>
