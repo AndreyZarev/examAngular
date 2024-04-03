@@ -7,9 +7,7 @@
     padding: 1em;
 }
 
-.new-theme-border .input {
-    margin-bottom: 1em;
-}
+
 
 
 
@@ -28,30 +26,32 @@
 
 .offer-details {
     min-height: 100%;
-    width: 40%;
-    padding: 0;
-    margin: 0;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
 
 }
 
-.new-theme-content textarea {
+/* textarea {
     width: 100%;
     padding: 0.5em;
     margin: 0;
-}
+} */
 
 .new-theme-content label {
     margin-bottom: 0.3em;
 }
 
-.new-theme-title input {
-    width: 55%;
+.input {
+    width: 70%;
     border-radius: 0.3em;
     padding: 0.35em;
 }
 
-button+button {
+button {
+    font-size: 20px;
     margin-left: 1rem;
+    padding: 20px;
 }
 
 .new-theme-buttons {
@@ -72,13 +72,12 @@ button+button {
 }
 
 .header-background {
-    background-color: #4ebced;
-    border: 1px solid #4ebced;
+    background-color: #32d6c8;
+    border: 1px solid #32d6c8;
     padding: 1.5em;
     padding-bottom: 0;
     margin-bottom: 1em;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
+
 }
 
 p.error {
@@ -89,5 +88,18 @@ p.error {
 }
 
 .container {
-    width: 40%;
+    margin-top: 200px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 450px;
+    width: 35%;
+    height: auto;
+    background: #ffffffae;
+    font-size: 25px;
+
+
+}
+
+.form {
+    text-align: center;
 }
