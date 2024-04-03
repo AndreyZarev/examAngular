@@ -4,30 +4,34 @@
     <div class="header-background">
         <span>New Offer</span>
     </div>
-    <form>
+    <form #form="ngForm" (ngSubmit)="createOffer(form)">
         <div class="offer-details">
             <label for="names">Names: <span class="red">*</span></label>
-            <input type="text" #names name="names" id="names">
+            <input type="text" #names="ngModel" required ngModel name="names" id="names">
 
             <p class="error">
-                Theme name must be at least 5 characters long.
+                Theme name must be at least 4 characters long.
             </p>
         </div>
         <div class="new-theme-content">
             <label for="email">Email: <span class="red">*</span></label>
-            <textarea type="text" name="email" #email id="email" rows="1"></textarea>
-            <p class="error">
-                The field with your phone number is required.
-            </p>
-            <p class="error">
-                Post must be at least 10 characters long.
-            </p>
+            <textarea type="text" name="email" [appValidators]="['bg', 'com']" required ngModel #inputEmail="ngModel"
+                id="email" rows="1"></textarea>
+
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
+                    Email is required!
+                </p>
+                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
         </div>
 
 
         <div class="new-theme-content">
             <label for="hand">Hand: <span class="red">*</span></label>
-            <select id="hand" #hand name="hand">
+            <select id="hand" #hand="ngModel" required ngModel name="hand">
                 <option value="right">Right</option>
                 <option value="left">Left</option>
                 <option value="both">Both</option>
@@ -40,7 +44,7 @@
 
         <div class="new-theme-content">
             <label for="weight">Weight: <span class="red">*</span></label>
-            <select id="weight" #weight name="weight">
+            <select id="weight" #weight="ngModel" required ngModel name="weight">
                 <option value="60kg">Bellow 60 kilograms</option>
                 <option value="70kg">Bellow 70 kilograms</option>
                 <option value="80kg">Bellow 80 kilograms</option>
@@ -57,7 +61,8 @@
 
         <div class="new-theme-content">
             <label for="place">Place <span class="red">*</span></label>
-            <textarea type="text" name="place" #place id="place" rows="1" class="height"></textarea>
+            <textarea type="text" name="place" #place="ngModel" required ngModel id="place" rows="1"
+                class="height"></textarea>
             <p class="error">
                 The field with your place is required.
             </p>
@@ -66,7 +71,8 @@
 
         <div class="new-theme-content">
             <label for="bet">Bet price in USD: <span class="red">*</span></label>
-            <textarea type="number" name="bet" id="bet" #bet rows="1" class="height"></textarea>
+            <textarea type="number" name="bet" id="bet" required ngModel #bet="ngModel" rows="1"
+                class="height"></textarea>
             <p class="error">
                 The field with your bet is required.
             </p>
@@ -76,9 +82,7 @@
 
         <div class="new-theme-buttons">
             <button class="cancel">Cancel</button>
-            <button class="create-btn"
-                (click)="createOffer( names.value, email.value, hand.value, weight.value, place.value, bet.value)">Create
-                Offer</button>
+            <button class="create-btn">Create Offer</button>
         </div>
 
     </form>
