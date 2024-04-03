@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator";
 import { Profile } from "../../../interface/profile"
-import { ReactiveFormsModule } from '@angular/forms'
+
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -27,9 +27,9 @@ export class OffersComponent implements OnInit {
     })
   }
   profileDetails: Profile = {
-    name: 'Richard',
-    email: 'john@gmail.com',
-    tel: '33333333',
+    make: 'Richard',
+    model: 'john@gmail.com',
+    year: '33333333',
   };
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -46,10 +46,11 @@ export class OffersComponent implements OnInit {
 
     this.apiService.getOffer(id).subscribe((data) => {
 
-      debugger
+
       console.log(data);
       this.catalog = data
       this.editable = true
+      debugger
     })
 
     this.router.navigate(['/offers/edit']);
