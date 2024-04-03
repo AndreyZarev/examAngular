@@ -14,7 +14,7 @@ import { ErrorPageComponent } from '../views/error-page/error-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
 import { NavbarComponentDirective } from './navbar-component.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: 'full' },
@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
   { path: 'offers', component: OffersComponent, canActivate: [AuthActivate] },
+
   { path: 'offers/edit', component: OffersComponent, canActivate: [AuthActivate] },
 
 
@@ -53,7 +54,7 @@ const routes: Routes = [
     RouterLink,
     FormsModule,
 
-
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
 
   ],
