@@ -3,6 +3,7 @@ import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator";
+import { Profile } from "../../../interface/profile"
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
@@ -24,15 +25,15 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  profileDetails: object = {
-    username: 'Richard',
-    tel: '33333333',
+  profileDetails: Profile = {
+    name: 'Richard',
     email: 'john@gmail.com',
+    tel: '33333333',
   };
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(5)]],
-    tel: [''],
+    name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, validateEmail(["bg|com]"])]],
+    tel: [''],
   });
 
   editable: boolean = false
@@ -60,7 +61,7 @@ export class OffersComponent implements OnInit {
       return;
     }
 
-    this.profileDetails = this.form.value;
+    this.profileDetails = this.form.value as Profile;
     this.editable = !this.editable;
   }
 
