@@ -8,20 +8,20 @@ import { ApiService } from '../service-api/service-api.service';
 })
 export class CreateOfferComponent {
   constructor(private apiService: ApiService) { }
-  createOffer(names: string, phone: string, hand: string, weight: string, place: string, bet: number | string) {
+  createOffer(names: string, email: string, hand: string, weight: string, place: string, bet: number | string) {
     debugger
     // ev.preventDefault();
-    console.log(names, phone, hand, weight, place, bet);
-    // try {
+
+    try {
 
 
-    //   this.apiService.newOffer(names, phone, hand, weight, place, Number(bet)).subscribe((offer) => {
-    //     console.log(offer);
-    //   })
+      this.apiService.newOffer(names, email, hand, weight, place, Number(bet)).subscribe((offer) => {
+        console.log(offer);
+      })
 
-    // } catch (err) {
-    //   console.log(err);
+    } catch (err) {
+      console.log(err);
 
-    // }
+    }
   }
 }
