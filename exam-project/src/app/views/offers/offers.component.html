@@ -1,4 +1,4 @@
-<!-- homepage -->
+<!-- homepage-->
 <ng-container *ngIf="!editable">
     <div *ngFor="let offer of catalog" class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
@@ -20,13 +20,14 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="editable">
+<!-- <ng-container *ngIf="editable">
     <div class="container2">
+        <form [formGroup]="form" (ngSubmit)="saveProfileHandle()">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
             <div class="flex">
                 <p>Names: </p>
-                <p>{{catalog.model}}</p>
+               <input type="text" [value]="{{form.name}}">
             </div>
             <div class="flex">
                 <p>Email: </p>
@@ -38,5 +39,40 @@
             </div>
             <button (click)="edit(catalog._id)" class="edit-button">Edit</button>
         </div>
+    </form>
+    </div>
+</ng-container>  -->
+
+
+<ng-container *ngIf="editable">
+
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="saveProfileHandle()">
+            <div class="profile">
+                <img src="./profile.png" alt="default user">
+                <h3>User Info:</h3>
+                <form action="">
+                    <div class="flex">
+                        <p>Name: </p>
+                        <input type="text" name="name" id="name" value="{{catalog.name}}">
+                    </div>
+                    <div class="flex">
+                        <p>Email: </p>
+                        <input type="email" name="email" id="email" value="{{catalog.email}}">
+                    </div>
+                    <div class="flex">
+                        <p>Phone: </p>
+                        <div>
+                            <select name="select-tel" id="select-tel" class="tel">
+                                <option value="00359">+359</option>
+                            </select>
+                            <input type="text" name="tel" id="tel" value="{{catalog.tel}}">
+                        </div>
+                    </div>
+                    <button class="red-button">Cancel</button>
+                    <button class="green-button">Save</button>
+                </form>
+            </div>
+        </form>
     </div>
 </ng-container>
