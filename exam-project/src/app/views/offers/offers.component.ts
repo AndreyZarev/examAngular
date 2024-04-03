@@ -59,7 +59,9 @@ export class OffersComponent implements OnInit {
 
 
   saveProfileHandle(): void {
+    debugger
     if (this.form.invalid) {
+      alert("form is invalid")
       return;
     }
 
