@@ -12,7 +12,7 @@
                 <p>{{offer.make}}</p>
             </div>
             <div class="flex">
-                <p>Phone: </p>
+                <p>Year: </p>
                 <p>{{offer.year}}</p>
             </div>
             <button (click)="edit(offer._id)" class="edit-button">Edit</button>
@@ -20,28 +20,32 @@
     </div>
 </ng-container>
 
-<!-- <ng-container *ngIf="editable">
-    <div class="container2">
-        <form [formGroup]="form" (ngSubmit)="saveProfileHandle()">
+
+
+<!-- second part  -->
+
+
+<ng-container *ngIf="editable">
+    <div *ngFor="let offer of catalog" class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
             <div class="flex">
                 <p>Names: </p>
-               <input type="text" [value]="{{form.name}}">
+                <p>{{furnitureDetails.make}}</p>
             </div>
             <div class="flex">
                 <p>Email: </p>
-                <p>{{catalog.make}}</p>
+                <p>{{offer.make}}</p>
             </div>
             <div class="flex">
-                <p>Phone: </p>
-                <p>{{catalog.year}}</p>
+                <p>Year: </p>
+                <p>{{offer.year}}</p>
             </div>
-            <button (click)="edit(catalog._id)" class="edit-button">Edit</button>
+            <button (click)="edit(offer._id)" class="edit-button">Edit</button>
         </div>
-    </form>
     </div>
-</ng-container>  -->
+</ng-container>
+
 
 
 <ng-container *ngIf="editable">
@@ -51,27 +55,27 @@
             <div class="profile">
                 <img src="./profile.png" alt="default user">
                 <h3>User Info:</h3>
-                <form action="">
-                    <div class="flex">
-                        <p>Name: </p>
-                        <input type="text" name="name" id="name" value="{{catalog.make}}">
-                    </div>
-                    <div class="flex">
-                        <p>Email: </p>
-                        <input type="email" name="email" id="email" value="{{catalog.model}}">
-                    </div>
-                    <div class="flex">
-                        <p>Phone: </p>
-                        <div>
-                            <select name="select-tel" id="select-tel" class="tel">
 
-                            </select>
-                            <input type="text" name="number" id="tel" value="{{catalog.year}}">
-                        </div>
+                <div class="flex">
+                    <p>Name: </p>
+                    <input type="text" formControlName="name" name="name" id="name" [value]="furnitureDetails.make">
+                </div>
+                <div class="flex">
+                    <p>Email: </p>
+                    <input type="text" formControlName="email" name="email" id="email" [value]="furnitureDetails.model">
+                </div>
+                <div class="flex">
+                    <p>Year: </p>
+                    <div>
+
+
+
+                        <input type="text" formControlName="year" name="year" id="year" [value]="furnitureDetails.year">
                     </div>
-                    <button class="red-button" (click)="cancel($event)">Cancel</button>
-                    <button class="green-button" (click)="save()">Save</button>
-                </form>
+                </div>
+                <button class="red-button" (click)="cancel($event)">Cancel</button>
+                <button class="green-button" (click)="save()">Save</button>
+
             </div>
         </form>
     </div>
