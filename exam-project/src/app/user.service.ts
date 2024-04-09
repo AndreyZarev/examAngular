@@ -12,7 +12,7 @@ export class UserService {
     get isLogged(): boolean {
         return !!this.user;
     }
-    constructor() {
+    constructor(private http: HttpClient) {
         try {
             const lsUser = localStorage.getItem(this.USER_KEY) || "";
             this.user = JSON.parse(lsUser)
@@ -23,13 +23,13 @@ export class UserService {
     }
     login() {
 
-        this.user = {
-            firstName: "Pesho",
-            email: "pesho@gmail.com",
-            password: "pass1",
-            rePassword: "pass1",
-        }
-        localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
+        // this.user = {
+        //     firstName: "Pesho",
+        //     email: "pesho@gmail.com",
+        //     password: "pass1",
+        //     rePassword: "pass1",
+        // }
+        // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
     }
 
     logout() {
@@ -37,6 +37,21 @@ export class UserService {
         this.user = undefined;
         localStorage.removeItem(this.USER_KEY)
 
+    }
+
+    register(name: string,
+        email: string,
+        password: string,
+        rePassword: string
+    ) {
+        return this.http
+            .post<User>('/api/register', {
+                name,
+                email,
+                password,
+                rePassword,
+            })
+            .pipe(tap((user) => this.user$$.next(user)));
     }
 
 
