@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { validateEmail } from "../../shared/utils/email-validator";
+import { validateEmail } from "../../shared/utils/email-validator"
 import { Profile } from "../../../interface/profile"
 
 @Component({
@@ -33,8 +33,10 @@ export class OffersComponent implements OnInit {
   };
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, validateEmail(["bg|com]"])]],
-    tel: [''],
+    email: ['',
+      [Validators.required, validateEmail(["bg", "com"])]
+    ],
+    year: ['', [Validators.required, Validators.minLength(2)]],
   });
 
   editable: boolean = false
@@ -44,11 +46,12 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-
+      this.furnitureDetails = this.form.value as Profile;
 
       console.log(data);
       this.catalog = data
       this.editable = true
+      debugger
 
     })
 
@@ -58,6 +61,8 @@ export class OffersComponent implements OnInit {
 
 
   save(): void {
+    debugger
+    console.log(this.form.value);
 
     if (this.form.invalid) {
       alert("form is invalid")
@@ -65,7 +70,10 @@ export class OffersComponent implements OnInit {
     }
 
     this.furnitureDetails = this.form.value as Profile;
-    this.editable = !this.editable;
+
+    console.log(this.editable);
+
+    this.router.navigate(['/offers']);
   }
 
   cancel(e: Event) {
