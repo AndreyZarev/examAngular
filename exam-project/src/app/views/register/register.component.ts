@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-
+import { validateEmail } from 'src/app/shared/utils/email-validator';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class RegisterComponent {
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
+    email: ['', [Validators.required, 
+    ]],
     tel: [''],
     passGroup: this.fb.group(
       {
@@ -20,7 +21,7 @@ export class RegisterComponent {
         rePassword: ['', [Validators.required]],
       },
       {
-        validators: [matchPasswordsValidator('password', 'rePassword')],
+        // validators: [matchPasswordsValidator('password', 'rePassword')],
       }
     ),
   });
