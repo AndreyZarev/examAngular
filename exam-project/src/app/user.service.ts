@@ -7,52 +7,52 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 })
 
 export class UserService {
-    user: User | undefined
-    USER_KEY = '[user]'
+    private user$$ = new BehaviorSubject<User | undefined>(undefined);
+    private user$ = this.user$$.asObservable();
+
+    user: User | undefined;
+    USER_KEY = '[user]';
+
+    userSubscription: Subscription;
 
     get isLogged(): boolean {
         return !!this.user;
     }
+
     constructor(private http: HttpClient) {
-        try {
-            const lsUser = localStorage.getItem(this.USER_KEY) || "";
-            this.user = JSON.parse(lsUser)
-        } catch (err) {
-            console.log(err);
-
-        }
-    }
-    login() {
-
-        // this.user = {
-        //     firstName: "Pesho",
-        //     email: "pesho@gmail.com",
-        //     password: "pass1",
-        //     rePassword: "pass1",
-        // }
-        // localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
+        this.userSubscription = this.user$.subscribe((user) => {
+            this.user = user;
+        });
     }
 
-    logout() {
-
-        this.user = undefined;
-        localStorage.removeItem(this.USER_KEY)
-
+    login(email: string, password: string) {
+        return this.http
+            .post<User>('/api/login', { email, password })
+            .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    register(name: string,
+    register(
+        username: string,
         email: string,
+        tel: string,
         password: string,
         rePassword: string
     ) {
         return this.http
             .post<User>('/api/register', {
-                name,
+                username,
                 email,
+                tel,
                 password,
                 rePassword,
             })
             .pipe(tap((user) => this.user$$.next(user)));
+    }
+
+    logout() {
+        return this.http
+            .post('/api/logout', {})
+            .pipe(tap(() => this.user$$.next(undefined)));
     }
 
 
