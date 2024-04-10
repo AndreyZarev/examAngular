@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',
@@ -10,41 +10,72 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  form = this.fb.group({
+    username: ['', [Validators.required, Validators.minLength(5)]],
+    email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
+    tel: [''],
+    passGroup: this.fb.group(
+      {
+        password: ['', [Validators.required]],
+        rePassword: ['', [Validators.required]],
+      },
+      {
+        validators: [matchPasswordsValidator('password', 'rePassword')],
+      }
+    ),
+  });
 
-  constructor(private userService: UserService, private router: Router) { }
-
-
-  clicked: boolean = true;
-  registerButton() {
-
-    this.clicked = !this.clicked
-    return this.clicked;
+  get passGroup() {
+    return this.form.get('passGroup');
   }
 
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {}
 
-  register(name: string,
-    email: string,
-    password: string,
-    rePassword: string): void {
-    // console.log(form.value);
-    // debugger
-    // if (form.invalid) {
-    //   alert('Your form is invalid, please follow the text below the fields.')
-    //   return;
-    // }
-    // if (form.value.password !== form.value.rePassword) {
-    //   alert('Your passwords do not match, please try again.')
-    //   return;
-    // }
-    return this.http.post(this.)
-    try {
-      this.userService.login()
-
-
-    } catch (err) {
-      console.log(err);
+  register(): void {
+    if (this.form.invalid) {
+      return;
     }
-    this.router.navigate(['/home'])
 
+    const {
+      username,
+      email,
+      tel,
+      passGroup: { password, rePassword } = {},
+    } = this.form.value;
+
+    this.userService
+      .register(username!, email!, tel!, password!, rePassword!)
+      .subscribe(() => {
+        this.router.navigate(['/themes']);
+      });
   }
 }
+//   constructor(private userService: UserService, private router: Router) { }
+
+
+//   clicked: boolean = true;
+//   registerButton() {
+
+//     this.clicked = !this.clicked
+//     return this.clicked;
+//   }
+
+
+//   register(): void {
+   
+//     try {
+//       this.userService.register()
+//       this.userService.login()
+
+
+//     } catch (err) {
+//       console.log(err);
+//     }
+//     this.router.navigate(['/home'])
+
+//   }
+// }
