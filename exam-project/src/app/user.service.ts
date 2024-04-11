@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { User } from "src/interface/user";
+import { UserLogin } from "src/interface/user-login";
+
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Subscription, tap } from 'rxjs';
 @Injectable({
@@ -7,10 +9,10 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 })
 
 export class UserService {
-    private user$$ = new BehaviorSubject<User | undefined>(undefined);
+    private user$$ = new BehaviorSubject<UserLogin | undefined>(undefined);
     private user$ = this.user$$.asObservable();
 
-    user: User | undefined;
+    user: UserLogin | undefined;
     USER_KEY = '[user]';
 
     userSubscription: Subscription;
@@ -27,7 +29,7 @@ export class UserService {
 
     login(email: string, password: string) {
         return this.http
-            .post<User>('/api/users/login', { email, password })
+            .post<UserLogin>('/api/users/login', { email, password })
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
