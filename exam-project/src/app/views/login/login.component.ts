@@ -30,13 +30,16 @@ export class LoginComponent {
 
     try {
       const { email, password } = form.value
-      this.userService.login(email, password)
+      debugger
+      this.userService.login(email, password).subscribe(() => {
+        this.router.navigate(['/home']);
+      });
 
 
     } catch (err) {
       console.log(err);
     }
-    this.router.navigate(['/home'])
+
   }
 }
 // login(form: NgForm) {
@@ -46,7 +49,5 @@ export class LoginComponent {
 
 //   const { email, password } = form.value;
 
-//   this.userService.login(email, password).subscribe(() => {
-//     this.router.navigate(['/themes']);
-//   });
+//   
 // }
