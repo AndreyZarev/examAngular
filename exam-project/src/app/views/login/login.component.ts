@@ -29,7 +29,8 @@ export class LoginComponent {
     }
 
     try {
-      this.userService.login()
+      const { email, password } = form.value
+      this.userService.login(email, password)
 
 
     } catch (err) {
@@ -38,3 +39,14 @@ export class LoginComponent {
     this.router.navigate(['/home'])
   }
 }
+// login(form: NgForm) {
+//   if (form.invalid) {
+//     return;
+//   }
+
+//   const { email, password } = form.value;
+
+//   this.userService.login(email, password).subscribe(() => {
+//     this.router.navigate(['/themes']);
+//   });
+// }
