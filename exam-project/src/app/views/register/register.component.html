@@ -1,6 +1,6 @@
 <!-- homepage -->
 <div class="container">
-    <form class="register" #form="ngForm" (ngSubmit)="register(form)">
+    <form class="register" [formGroup]="form" (ngSubmit)="register()">
 
         <fieldset>
             <h2>Registration Form</h2>
