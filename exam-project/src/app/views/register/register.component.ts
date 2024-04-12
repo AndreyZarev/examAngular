@@ -51,7 +51,7 @@ export class RegisterComponent {
     this.userService
       .register(username!, email!, tel!, password!, rePassword!)
       .subscribe(() => {
-        this.router.navigate(['/themes']);
+        this.router.navigate(['/home']);
       });
   }
 }
