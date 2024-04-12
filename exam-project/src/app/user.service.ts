@@ -28,7 +28,7 @@ export class UserService {
     }
 
     login(email: string, password: string) {
-        const api3030 = 'http://localhost:3030/data/teams'
+        const api3030 = 'http://localhost:3030/data/'
         return this.http
             .post<UserLogin>(api3030, { email, password })
             .pipe(tap((user) => this.user$$.next(user)));
