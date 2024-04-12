@@ -8,11 +8,11 @@
             <!-- username -->
             <p class="field field-icon">
                 <label for="name"><span><i class="fas fa-user"></i></span></label>
-                <input class="input-error" #inputName="ngModel" ngModel required type="text" name="name" id="name"
+                <input class="input-error" formControlName="name" required type="text" name="name" id="name"
                     placeholder="Johny">
             </p>
-            <ng-container *ngIf="inputName.touched">
-                <p class="error" *ngIf="inputName.errors?.['required'] ">
+            <ng-container *ngIf="form.get('name')?.touched">
+                <p class="error" *ngIf="form.get('name')?.errors?.['required']">
                     Name is required!
                 </p>
             </ng-container>
@@ -20,14 +20,14 @@
             <!-- email -->
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input type="email" #inputEmail="ngModel" name="email" ngModel required id="email"
+                <input type="email" formControlName="email" name="email" required id="email"
                     placeholder="john.doe@gmail.com" [appValidators]="['bg', 'com']">
             </p>
-            <ng-container *ngIf="inputEmail.touched">
-                <p class="error" *ngIf="inputEmail.errors?.['required'] ">
+            <ng-container *ngIf="form.get('name')?.touched">
+                <p class="error" *ngIf="form.get('name')?.errors?.['required']">
                     Email is required!
                 </p>
-                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
+                <p *ngIf="form.get('email')?.errors?.['validateEmail']" class="error">
                     Email is not valid!
                 </p>
             </ng-container>
@@ -36,23 +36,31 @@
             <!-- password -->
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="password" #password="ngModel" ngModel required id="password"
+                <input type="password" name="password" formControlName="password" required id="password"
                     placeholder="******" minlength="4">
             </p>
-            <ng-container *ngIf="password.touched">
-                <p class="error" *ngIf="password.errors?.['required']">
+            <ng-container *ngIf="form.get('password')?.touched">
+                <p class="error" *ngIf="form.get('password')?.errors?.['required']">
                     Password is required!
                 </p>
-                <p class="error" *ngIf="password.errors?.['minlength']">
+                <p class="error" *ngIf="form.get('password')?.errors?.['minlength']">
                     Password must be at least 4 characters!
                 </p>
             </ng-container>
             <!-- rePassword -->
             <p class="field field-icon">
                 <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="rePassword" #rePassword="ngModel" ngModel required id="rePassword"
+                <input type="password" name="rePassword" formControlName="rePassword" required id="rePassword"
                     minlength="4" placeholder="******">
             </p>
+            <ng-container *ngIf="form.get('rePassword')?.touched">
+                <p class="error" *ngIf="form.get('rePassword')?.errors?.['required']">
+                    Email is required!
+                </p>
+                <p *ngIf="form.get('rePassword')?.errors?.['minlength']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
             <!-- <p class="error">Repeat Password does not match password!</p> -->
 
             <button class="button">Create Account</button>
