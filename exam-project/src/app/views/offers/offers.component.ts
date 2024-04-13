@@ -47,7 +47,7 @@ export class OffersComponent implements OnInit {
 
     this.apiService.getOffer(id).subscribe((data) => {
       this.furnitureDetails = this.form.value as Profile;
-
+      debugger
       console.log(data);
       this.catalog = data
       this.editable = true
@@ -61,7 +61,7 @@ export class OffersComponent implements OnInit {
 
 
   save(): void {
-    debugger
+
     console.log(this.form.value);
 
     if (this.form.invalid) {
