@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Offer } from 'src/interface/offer';
+import { Theme } from 'src/interface/themes';
 // import { environment } from 'src/environments/environment.development';
 // import { Themes } from 'src/app/interface/themes'
 // import { Posts } from 'src/app/interface/posts'
@@ -13,22 +14,23 @@ export class ApiService {
     constructor(private http: HttpClient) { }
 
     getCatalog() {
-        let apiUrl = 'http://localhost:3030/data'
-        return this.http.get<any>(`${apiUrl}/catalog`)
+        debugger
+        let apiUrl = 'https://localhost:3000'
+        return this.http.get<Theme[]>(`${apiUrl}/api/themes`)
     }
 
 
     getOffer(id: string) {
-        let apiUrl = 'http://localhost:3030/data'
+        let apiUrl = 'https://localhost:3000'
 
-        let result = this.http.get<any>(`${apiUrl}/catalog` + `/${id}`)
+        let result = this.http.get<any>(`${apiUrl}/api/themes` + `/${id}`)
         return result
     }
 
     newOffer(form: NgForm) {
-        debugger
-        console.log(form);
 
-        return this.http.post<Offer>("http://localhost:3030/data/orders", { form })
+        console.log(form);
+        let apiUrl = 'https://localhost:3000'
+        return this.http.post<Offer>(`${apiUrl}/api/themes`, { form })
     }
 }
