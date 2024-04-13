@@ -8,8 +8,8 @@
             <!-- username -->
             <p class="field field-icon">
                 <label for="name"><span><i class="fas fa-user"></i></span></label>
-                <input class="input-error" formControlName="name" required type="text" name="name" id="name"
-                    placeholder="Johny">
+
+                <input class="input-error" formControlName="name" type="text" name="name" id="name" placeholder="Johny">
             </p>
             <ng-container *ngIf="form.get('name')?.touched">
                 <p class="error" *ngIf="form.get('name')?.errors?.['required']">
@@ -20,8 +20,7 @@
             <!-- email -->
             <p class="field field-icon">
                 <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input type="email" formControlName="email" name="email" required id="email"
-                    placeholder="john.doe@gmail.com" [appValidators]="['bg', 'com']">
+                <input type="email" formControlName="email" name="email" id="email" placeholder="john.doe@gmail.com">
             </p>
             <ng-container *ngIf="form.get('name')?.touched">
                 <p class="error" *ngIf="form.get('name')?.errors?.['required']">
@@ -36,8 +35,7 @@
             <!-- password -->
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="password" formControlName="password" required id="password"
-                    placeholder="******" minlength="4">
+                <input type="password" name="password" id="password" placeholder="******" formControlName="password" />
             </p>
             <ng-container *ngIf="form.get('password')?.touched">
                 <p class="error" *ngIf="form.get('password')?.errors?.['required']">
@@ -50,8 +48,8 @@
             <!-- rePassword -->
             <p class="field field-icon">
                 <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
-                <input type="password" name="rePassword" formControlName="rePassword" required id="rePassword"
-                    minlength="4" placeholder="******">
+                <input type="password" name="rePassword" formControlName="rePassword" id="rePassword"
+                    placeholder="******">
             </p>
             <ng-container *ngIf="form.get('rePassword')?.touched">
                 <p class="error" *ngIf="form.get('rePassword')?.errors?.['required']">
