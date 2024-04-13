@@ -3,7 +3,7 @@ import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateEmail } from 'src/app/shared/utils/email-validator';
-
+import {passMatch} from 'src/app/shared/utils/pass-match'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,24 +11,26 @@ import { validateEmail } from 'src/app/shared/utils/email-validator';
 })
 export class RegisterComponent {
   form = this.fb.group({
-    username: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, 
-    ]],
-    tel: [''],
-    passGroup: this.fb.group(
+    name: ['', [Validators.required, Validators.minLength(5)]],
+    email: ['', [Validators.required,  ]],
+  
+   
+     passGroup: this.fb.group(
       {
         password: ['', [Validators.required]],
         rePassword: ['', [Validators.required]],
       },
       {
-        // validators: [matchPasswordsValidator('password', 'rePassword')],
+        validators: [passMatch('password', 'rePassword')],
       }
     ),
   });
 
   get passGroup() {
+    debugger
     return this.form.get('passGroup');
   }
+
 
   constructor(
     private fb: FormBuilder,
@@ -42,17 +44,18 @@ export class RegisterComponent {
     }
 
     const {
-      username,
+      name,
       email,
-      tel,
       passGroup: { password, rePassword } = {},
     } = this.form.value;
 
-    this.userService
-      .register(username!, email!, tel!, password!, rePassword!)
-      .subscribe(() => {
+console.log(password);
+
+    // this.userService
+    //   .register(name!, email!, password!, rePassword!)
+    //   .subscribe(() => {
         this.router.navigate(['/home']);
-      });
+      // });
   }
 }
 //   constructor(private userService: UserService, private router: Router) { }
