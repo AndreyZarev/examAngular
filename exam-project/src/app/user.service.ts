@@ -37,7 +37,7 @@ export class UserService {
     register(
         name: string,
         email: string,
-
+        tel: string,
         password: string,
         rePassword: string
     ) {
