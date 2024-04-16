@@ -16,7 +16,7 @@ export class ApiService {
     getCatalog() {
         debugger
         let apiUrl = 'https://localhost:3000'
-        return this.http.get<Theme[]>(`${apiUrl}/api/themes`)
+        return this.http.get<any>(`${apiUrl}/api/themes`)
     }
 
 
