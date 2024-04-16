@@ -14,7 +14,7 @@ export class RegisterComponent {
     name: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required,  ]],
   
-   
+   tel: ['', [Validators.required, Validators.minLength(7)]],
      passGroup: this.fb.group(
       {
         password: ['', [Validators.required]],
@@ -46,16 +46,17 @@ export class RegisterComponent {
     const {
       name,
       email,
+      tel,
       passGroup: { password, rePassword } = {},
     } = this.form.value;
 
 console.log(password);
 
-    // this.userService
-    //   .register(name!, email!, password!, rePassword!)
-    //   .subscribe(() => {
+    this.userService
+      .register(name!, email!, tel!, password!, rePassword!)
+      .subscribe(() => {
         this.router.navigate(['/home']);
-      // });
+      });
   }
 }
 //   constructor(private userService: UserService, private router: Router) { }
