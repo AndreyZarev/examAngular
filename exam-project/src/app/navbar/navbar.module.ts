@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
 import { NavbarComponentDirective } from './navbar-component.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ThemesComponent } from '../views/themes-list/themes-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: 'full' },
@@ -26,7 +27,7 @@ const routes: Routes = [
 
   { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
-  { path: 'offers', component: OffersComponent, canActivate: [AuthActivate] },
+  { path: 'offers', component: ThemesComponent, canActivate: [AuthActivate] },
 
   { path: 'offers/edit', component: OffersComponent, canActivate: [AuthActivate] },
 
