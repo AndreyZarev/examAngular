@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
 import { NavbarModule } from './navbar/navbar.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { RouterModule } from '@angular/router';
 
 
 
@@ -24,7 +27,11 @@ import { NavbarModule } from './navbar/navbar.module';
     AppRoutingModule,
     HttpClientModule,
     NavbarModule,
-    RouterLink
+    RouterLink,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+
   ],
 
   exports: [],
