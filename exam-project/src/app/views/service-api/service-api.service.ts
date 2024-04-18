@@ -14,14 +14,14 @@ export class ApiService {
     constructor(private http: HttpClient) { }
 
     getCatalog() {
-        debugger
-        let apiUrl = 'https://localhost:3000'
-        return this.http.get<any>(`${apiUrl}/api/themes`)
+
+        let apiUrl = 'http://localhost:3000'
+        return this.http.get<Theme[]>(`${apiUrl}/api/themes`)
     }
 
 
     getOffer(id: string) {
-        let apiUrl = 'https://localhost:3000'
+        let apiUrl = 'http://localhost:3000'
 
         let result = this.http.get<any>(`${apiUrl}/api/themes` + `/${id}`)
         return result
@@ -30,7 +30,7 @@ export class ApiService {
     newOffer(form: NgForm) {
 
         console.log(form);
-        let apiUrl = 'https://localhost:3000'
+        let apiUrl = 'http://localhost:3000'
         return this.http.post<Offer>(`${apiUrl}/api/themes`, { form })
     }
 }
