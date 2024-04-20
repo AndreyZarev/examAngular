@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator"
 import { Profile } from "../../../interface/profile"
 
@@ -12,10 +13,10 @@ import { Profile } from "../../../interface/profile"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktivRoute: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.acktivRoute.params.subscribe((data) => {
+    this.acktiveRoute.params.subscribe((data) => {
       const id = data["id"]
 
 
@@ -26,11 +27,7 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  furnitureDetails: Profile = {
-    make: 'Richard',
-    model: 'john@gmail.com',
-    year: '33333333',
-  };
+
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['',
@@ -83,4 +80,29 @@ export class OffersComponent implements OnInit {
 
 
 
+}
+
+get isLoggedIn(): boolean {
+  return this.userService.isLogged;
+}
+
+get userId(): string {
+  return this.userService.user?.id || '';
+}
+
+ngOnInit(): void {
+  this.api.getThemes().subscribe((themes) => {
+    // TODO: not recommended to do it on front end!
+    const sortDatesCB = (
+      a: { created_at: string },
+      b: { created_at: string }
+    ) => (new Date(b.created_at) as any) - (new Date(a.created_at) as any);
+    const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
+
+    this.themes = tempThemes;
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000);
+  });
 }
