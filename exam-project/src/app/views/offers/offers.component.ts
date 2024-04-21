@@ -27,7 +27,7 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  //
+
   furnitureDetails = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['',
