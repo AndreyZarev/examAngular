@@ -27,56 +27,56 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  /
-furnitureDetails = this.fb.group({
-  name: ['', [Validators.required, Validators.minLength(2)]],
-  email: ['',
-    [Validators.required, validateEmail(["bg", "com"])]
-  ],
-  year: ['', [Validators.required, Validators.minLength(2)]],
-});
+  //
+  furnitureDetails = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    email: ['',
+      [Validators.required, validateEmail(["bg", "com"])]
+    ],
+    year: ['', [Validators.required, Validators.minLength(2)]],
+  });
 
-editable: boolean = false
-edit(id: string): void {
+  editable: boolean = false
+  edit(id: string): void {
 
 
-  console.log(id);
+    console.log(id);
 
-  this.apiService.getOffer(id).subscribe((data) => {
-    this.furnitureDetails = this.form.value as Profile;
-    debugger
-    console.log(data);
-    this.catalog = data
-    this.editable = true
-    debugger
+    this.apiService.getOffer(id).subscribe((data) => {
+      this.furnitureDetails = this.form.value as Profile;
+      debugger
+      console.log(data);
+      this.catalog = data
+      this.editable = true
+      debugger
 
-  })
+    })
 
     this.router.navigate(['/offers/edit']);
 
-}
-
-
-save(): void {
-
-  console.log(this.form.value);
-
-  if(this.form.invalid) {
-  alert("form is invalid")
-  return;
-}
-
-this.furnitureDetails = this.form.value as Profile;
-
-console.log(this.editable);
-
-this.router.navigate(['/offers']);
   }
 
-cancel(e: Event) {
-  e.preventDefault();
-  this.editable = !this.editable;
-}
+
+  save(): void {
+
+    console.log(this.form.value);
+
+    if (this.form.invalid) {
+      alert("form is invalid")
+      return;
+    }
+
+    this.furnitureDetails = this.form.value as Profile;
+
+    console.log(this.editable);
+
+    this.router.navigate(['/offers']);
+  }
+
+  cancel(e: Event) {
+    e.preventDefault();
+    this.editable = !this.editable;
+  }
 
 
 
