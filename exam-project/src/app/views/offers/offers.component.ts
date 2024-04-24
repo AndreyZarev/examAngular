@@ -100,7 +100,7 @@ ngOnInit(): void {
     const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
 
     this.themes = tempThemes;
-
+    //
     setTimeout(() => {
       this.isLoading = false;
     }, 1000);
