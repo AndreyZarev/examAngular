@@ -28,7 +28,7 @@ export class OffersComponent implements OnInit {
     })
   }
   //
-  furnitureDetails = this.fb.group({
+  userDetails = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['',
       [Validators.required, validateEmail(["bg", "com"])]
