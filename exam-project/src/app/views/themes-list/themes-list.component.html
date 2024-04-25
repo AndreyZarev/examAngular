@@ -1,7 +1,7 @@
 <main>
-  <app-welcom-msg *ngIf="!isLoggedIn" [isLoggedIn]="isLoggedIn" />
+
   <div *ngIf="isLoading">
-    <app-loader />
+
   </div>
 
   <div *ngIf="!isLoading" class="theme-title">
@@ -9,8 +9,8 @@
     <div *ngFor="let theme of themes" class="theme-container">
       <div class="theme-name-wrapper">
         <div class="theme-name">
-          <a [routerLink]="theme._id" class="normal">
-            <h2>{{ theme.themeName | slice : 25 }}</h2>
+          <a class="normal">
+            <h2>{{ theme.themeName }}</h2>
           </a>
           <div class="columns">
             <div>
@@ -24,16 +24,10 @@
               </div>
             </div>
             <div class="subscribers">
-              <button
-                *ngIf="isLoggedIn && !isSubscribed(theme)"
-                class="subscribe"
-              >
+              <button *ngIf="isLoggedIn && !isSubscribed(theme)" class="subscribe">
                 Subscribe
               </button>
-              <button
-                *ngIf="isLoggedIn && isSubscribed(theme)"
-                class="unsubscribe"
-              >
+              <button *ngIf="isLoggedIn && isSubscribed(theme)" class="unsubscribe">
                 Unsubscribe
               </button>
               <p>
