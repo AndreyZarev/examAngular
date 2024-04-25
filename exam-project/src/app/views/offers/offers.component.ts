@@ -43,7 +43,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.userDetails = this.form.value as Profile;
+      // this.userDetails = this.fb.value as Profile;
       debugger
       console.log(data);
       this.catalog = data
@@ -57,52 +57,52 @@ export class OffersComponent implements OnInit {
   }
 
 
-  save(): void {
+  //   save(): void {
 
-    console.log(this.form.value);
+  //     console.log(this.form.value);
 
-    if (this.form.invalid) {
-      alert("form is invalid")
-      return;
-    }
+  //     if (this.form.invalid) {
+  //       alert("form is invalid")
+  //       return;
+  //     }
 
-    this.userDetails = this.form.value as Profile;
+  //     this.userDetails = this.form.value as Profile;
 
-    console.log(this.editable);
+  //     console.log(this.editable);
 
-    this.router.navigate(['/offers']);
-  }
+  //     this.router.navigate(['/offers']);
+  //   }
 
-  cancel(e: Event) {
-    e.preventDefault();
-    this.editable = !this.editable;
-  }
+  //   cancel(e: Event) {
+  //     e.preventDefault();
+  //     this.editable = !this.editable;
+  //   }
 
 
 
-}
+  // }
 
-get isLoggedIn(): boolean {
-  return this.userService.isLogged;
-}
+  // get isLoggedIn(): boolean {
+  //   return this.userService.isLogged;
+  // }
 
-get userId(): string {
-  return this.userService.user?.id || '';
-}
+  // get userId(): string {
+  //   return this.userService.user?.id || '';
+  // }
 
-ngOnInit(): void {
-  this.api.getThemes().subscribe((themes) => {
-    // TODO: not recommended to do it on front end!
-    const sortDatesCB = (
-      a: { created_at: string },
-      b: { created_at: string }
-    ) => (new Date(b.created_at) as any) - (new Date(a.created_at) as any);
-    const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
+  // ngOnInit(): void {
+  //   this.api.getThemes().subscribe((themes) => {
+  //     // TODO: not recommended to do it on front end!
+  //     const sortDatesCB = (
+  //       a: { created_at: string },
+  //       b: { created_at: string }
+  //     ) => (new Date(b.created_at) as any) - (new Date(a.created_at) as any);
+  //     const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
 
-    this.themes = tempThemes;
+  //     this.themes = tempThemes;
 
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
-  });
+  //     setTimeout(() => {
+  //       this.isLoading = false;
+  //     }, 1000);
+  //   });
 }
