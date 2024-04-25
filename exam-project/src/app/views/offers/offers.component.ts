@@ -43,7 +43,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.furnitureDetails = this.form.value as Profile;
+      this.userDetails = this.form.value as Profile;
       debugger
       console.log(data);
       this.catalog = data
@@ -66,7 +66,7 @@ export class OffersComponent implements OnInit {
       return;
     }
 
-    this.furnitureDetails = this.form.value as Profile;
+    this.userDetails = this.form.value as Profile;
 
     console.log(this.editable);
 
