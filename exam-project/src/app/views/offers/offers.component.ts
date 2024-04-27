@@ -13,11 +13,12 @@ import { Profile } from "../../../interface/profile"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormBuilder) { }
 
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
       const id = data["id"]
+      console.log(this.form);
 
 
       this.apiService.getCatalog().subscribe((data) => {
@@ -28,7 +29,7 @@ export class OffersComponent implements OnInit {
     })
   }
   //
-  userDetails = this.fb.group({
+  userDetails = this.form.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['',
       [Validators.required, validateEmail(["bg", "com"])]
@@ -59,14 +60,14 @@ export class OffersComponent implements OnInit {
 
   save(): void {
 
-    console.log(this.form.value);
+    console.log(this.form);
 
-    if (this.form.invalid) {
+    if (this.form) {
       alert("form is invalid")
       return;
     }
 
-    this.userDetails = this.form.value as Profile;
+    // this.userDetails = this.form.value as Profile;
 
     console.log(this.editable);
 
@@ -82,27 +83,27 @@ export class OffersComponent implements OnInit {
 
 }
 
-  get isLoggedIn(): boolean {
-  return this.userService.isLogged;
-}
+//   get isLoggedIn(): boolean {
+//   return this.userService.isLogged;
+// }
 
-  get userId(): string {
-  return this.userService.user?.id || '';
-}
+//   get userId(): string {
+//   return this.userService.user?.id || '';
+// }
 
-ngOnInit(): void {
-  this.api.getThemes().subscribe((themes) => {
-    // TODO: not recommended to do it on front end!
-    const sortDatesCB = (
-      a: { created_at: string },
-      b: { created_at: string }
-    ) => (new Date(b.created_at) as any) - (new Date(a.created_at) as any);
-    const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
+// ngOnInit(): void {
+//   this.api.getThemes().subscribe((themes) => {
+//     // TODO: not recommended to do it on front end!
+//     const sortDatesCB = (
+//       a: { created_at: string },
+//       b: { created_at: string }
+//     ) => (new Date(b.created_at) as any) - (new Date(a.created_at) as any);
+//     const tempThemes = themes.sort(sortDatesCB as any).slice(0, 5);
 
-    this.themes = tempThemes;
+//     this.themes = tempThemes;
 
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
-  });
-}
+//     setTimeout(() => {
+//       this.isLoading = false;
+//     }, 1000);
+//   });
+
