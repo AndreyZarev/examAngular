@@ -13,7 +13,9 @@ import { Profile } from "../../../interface/profile"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private fb: FormBuilder, private form: FormGroup) { }
+
+
 
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
@@ -29,7 +31,7 @@ export class OffersComponent implements OnInit {
     })
   }
   //
-  userDetails = this.form.group({
+  userDetails = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['',
       [Validators.required, validateEmail(["bg", "com"])]
