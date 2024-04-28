@@ -30,7 +30,7 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  temesDetails: Theme[] | undefined
+  temesDetails: Theme[] | null = []
 
   // userDetails = this.fb.group({
   //   name: ['', [Validators.required, Validators.minLength(2)]],
@@ -47,7 +47,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.temesDetails = this.form.value as Theme;
+      this.temesDetails = this.form.value as Theme[];
       debugger
       console.log(data);
       this.catalog = data
