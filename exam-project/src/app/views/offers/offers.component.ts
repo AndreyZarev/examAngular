@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator"
-import { Profile } from "../../../interface/profile"
+import { Theme } from "../../../interface/themes"
 
 @Component({
   selector: 'app-offers',
@@ -46,7 +46,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      // this.userDetails = this.fb.value as Profile;
+      this.userDetails = this.fb.value as Theme;
       debugger
       console.log(data);
       this.catalog = data
