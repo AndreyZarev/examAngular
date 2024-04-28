@@ -27,7 +27,7 @@ const routes: Routes = [
 
   { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
-  { path: 'offers', component: OffersComponent, canActivate: [AuthActivate] },
+  { path: 'offers', component: OffersComponent },
 
   { path: 'offers/edit', component: OffersComponent, canActivate: [AuthActivate] },
 
