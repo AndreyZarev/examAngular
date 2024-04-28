@@ -30,14 +30,15 @@ export class OffersComponent implements OnInit {
       })
     })
   }
-  //
-  userDetails = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['',
-      [Validators.required, validateEmail(["bg", "com"])]
-    ],
-    year: ['', [Validators.required, Validators.minLength(2)]],
-  });
+  temesDetails: Theme[] | undefined
+
+  // userDetails = this.fb.group({
+  //   name: ['', [Validators.required, Validators.minLength(2)]],
+  //   email: ['',
+  //     [Validators.required, validateEmail(["bg", "com"])]
+  //   ],
+  //   year: ['', [Validators.required, Validators.minLength(2)]],
+  // });
 
   editable: boolean = false
   edit(id: string): void {
@@ -46,7 +47,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.userDetails = this.form.value as Theme;
+      this.temesDetails = this.form.value as Theme;
       debugger
       console.log(data);
       this.catalog = data
