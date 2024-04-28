@@ -46,7 +46,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.userDetails = this.fb.value as Theme;
+      this.userDetails = this.form.value as Theme;
       debugger
       console.log(data);
       this.catalog = data
