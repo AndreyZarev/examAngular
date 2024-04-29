@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { UserService } from 'src/app/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator"
 import { Theme } from "../../../interface/themes"
@@ -13,14 +13,14 @@ import { Theme } from "../../../interface/themes"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormGroup) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormGroup, private userServise: UserService) { }
 
 
 
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
       const id = data["id"]
-      console.log(this.form);
+      console.log(this.form.value);
 
 
       this.apiService.getCatalog().subscribe((data) => {
@@ -84,12 +84,12 @@ export class OffersComponent implements OnInit {
 
 
 
+
+
+  get editable(): boolean {
+    return this.userService.isLogged;
+  }
 }
-
-//   get isLoggedIn(): boolean {
-//   return this.userService.isLogged;
-// }
-
 //   get userId(): string {
 //   return this.userService.user?.id || '';
 // }
