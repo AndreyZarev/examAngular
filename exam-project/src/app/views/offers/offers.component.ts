@@ -86,9 +86,7 @@ export class OffersComponent implements OnInit {
 
 
 
-  get editable(): boolean {
-    return this.userServise.isLogged;
-  }
+
 }
 //   get userId(): string {
 //   return this.userService.user?.id || '';
