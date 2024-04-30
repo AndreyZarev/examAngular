@@ -86,11 +86,13 @@ export class OffersComponent implements OnInit {
 
 
 
+  get userId(): string {
+    console.log(this.userServise.user)
 
+    return this.userServise.user
+  }
 }
-//   get userId(): string {
-//   return this.userService.user?.id || '';
-// }
+
 
 // ngOnInit(): void {
 //   this.api.getThemes().subscribe((themes) => {
