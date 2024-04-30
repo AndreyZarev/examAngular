@@ -45,6 +45,7 @@ export class UserService {
             .post<User>('/api/register', {
                 name,
                 email,
+                tel,
                 password,
                 rePassword,
             })
