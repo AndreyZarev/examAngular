@@ -86,10 +86,10 @@ export class OffersComponent implements OnInit {
 
 
 
-  get userId(): string {
+  get userId(): string | undefined {
     console.log(this.userServise.user)
 
-    return this.userServise.user
+    return this.userServise.user?.email
   }
 }
 
