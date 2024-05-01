@@ -13,15 +13,17 @@ import { Theme } from "../../../interface/themes"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormGroup, private userServise: UserService) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private form: FormGroup, private userServise: UserService, private fb: FormBuilder) { }
 
-
+  myForm: FormGroup = {} as FormGroup;
 
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
       const id = data["id"]
       console.log(this.form.value);
-
+      this.myForm = this.fb.group({
+        // Define form controls here
+      });
 
       this.apiService.getCatalog().subscribe((data) => {
         console.log(data);
