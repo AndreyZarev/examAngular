@@ -22,7 +22,11 @@ export class OffersComponent implements OnInit {
       const id = data["id"]
       console.log(this.form.value);
       this.myForm = this.fb.group({
-        // Define form controls here
+        name: ['', [Validators.required, Validators.minLength(2)]],
+        email: ['',
+          [Validators.required, validateEmail(["bg", "com"])]
+        ],
+        year: ['', [Validators.required, Validators.minLength(2)]],
       });
 
       this.apiService.getCatalog().subscribe((data) => {
@@ -35,11 +39,7 @@ export class OffersComponent implements OnInit {
   temesDetails: Theme[] | null = []
 
   // userDetails = this.fb.group({
-  //   name: ['', [Validators.required, Validators.minLength(2)]],
-  //   email: ['',
-  //     [Validators.required, validateEmail(["bg", "com"])]
-  //   ],
-  //   year: ['', [Validators.required, Validators.minLength(2)]],
+
   // });
 
   editable: boolean = false
