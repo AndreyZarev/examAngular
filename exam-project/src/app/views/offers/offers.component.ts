@@ -26,7 +26,9 @@ export class OffersComponent implements OnInit {
         email: ['',
           [Validators.required, validateEmail(["bg", "com"])]
         ],
-        year: ['', [Validators.required, Validators.minLength(2)]],
+        tel: ['', [Validators.required, Validators.minLength(2)]],
+        password: ['', [Validators.required, Validators.minLength(2)]],
+        rePassword: ['', [Validators.required, Validators.minLength(2)]],
       });
 
       this.apiService.getCatalog().subscribe((data) => {
