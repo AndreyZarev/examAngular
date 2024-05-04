@@ -69,7 +69,7 @@ export class OffersComponent implements OnInit {
 
     console.log(this.myForm.value);
 
-    if (this.form) {
+    if (this.myForm.invalid) {
       alert("form is invalid")
       return;
     }
