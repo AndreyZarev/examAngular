@@ -67,7 +67,7 @@ export class OffersComponent implements OnInit {
 
   save(): void {
 
-    console.log(this.form);
+    console.log(this.myForm.value);
 
     if (this.form) {
       alert("form is invalid")
