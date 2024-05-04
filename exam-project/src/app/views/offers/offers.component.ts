@@ -51,7 +51,7 @@ export class OffersComponent implements OnInit {
     console.log(id);
 
     this.apiService.getOffer(id).subscribe((data) => {
-      this.temesDetails = this.form.value as Theme[];
+      this.temesDetails = this.myForm.value as Theme[];
       debugger
       console.log(data);
       this.catalog = data
