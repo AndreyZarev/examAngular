@@ -1,15 +1,15 @@
 <!-- homepage-->
 <ng-container *ngIf="!editable">
-    <div *ngFor="let offer of catalog" class="container">
+    <div *ngFor="let one of catalog" class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
             <div class="flex">
                 <p>Names: </p>
-                <p>{{catalog._id}}</p>
+                <p>{{one._id}}</p>
             </div>
             <div class="flex">
                 <p>Email: </p>
-                <p>{{catalog}}</p>
+                <p>{{one._id}}</p>
             </div>
             <div class="flex">
                 <p>Year: </p>
