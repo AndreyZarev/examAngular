@@ -51,7 +51,7 @@
 <ng-container *ngIf="editable">
 
     <div class="container">
-        <form [formGroup]="form" (ngSubmit)="save()">
+        <form [formGroup]="myForm" (ngSubmit)="save()">
             <div class="profile">
                 <img src="./profile.png" alt="default user">
                 <h3>User Info:</h3>
