@@ -32,6 +32,8 @@ export class OffersComponent implements OnInit {
       });
 
       this.apiService.getCatalog().subscribe((data) => {
+        console.log("this is the catalog");
+
         console.log(data);
         this.catalog = data
 
