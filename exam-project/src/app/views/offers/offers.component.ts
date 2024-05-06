@@ -40,9 +40,9 @@ export class OffersComponent implements OnInit {
   }
   temesDetails: Theme[] | null = []
 
-  // userDetails = this.fb.group({
+  userDetails = this.fb.group({
 
-  // });
+  });
 
   editable: boolean = false
   edit(id: string): void {
