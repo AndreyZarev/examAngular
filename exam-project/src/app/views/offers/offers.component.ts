@@ -15,7 +15,7 @@ export class OffersComponent implements OnInit {
   catalog: any = {}
   constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
 
-
+  myForm: FormGroup = {} as FormGroup;
 
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
