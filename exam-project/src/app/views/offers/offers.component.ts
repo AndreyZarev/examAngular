@@ -13,7 +13,7 @@ import { Theme } from "../../../interface/themes"
 })
 export class OffersComponent implements OnInit {
   catalog: any = {}
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private myForm: FormGroup, private userServise: UserService, private fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
 
 
 
