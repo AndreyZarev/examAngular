@@ -9,7 +9,7 @@
             </div>
             <div class="flex">
                 <p>Email: </p>
-                <p>{{one}}</p>
+                <p>{{one.userId.email}}</p>
             </div>
             <div class="flex">
                 <p>Tel: </p>
@@ -21,7 +21,7 @@
             </div>
             <div class="flex">
                 <p>Year: </p>
-                <p>{{one}}</p>
+                <p>{{one.created_at }}</p>
             </div>
             <button (click)="edit(catalog._id)" class="edit-button">Edit</button>
         </div>
