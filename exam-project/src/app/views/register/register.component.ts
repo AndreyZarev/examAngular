@@ -38,10 +38,10 @@ ngOnInit(): void {
 
  
 
-  // get passGroup() {
-  //   debugger
-  //   return this.form.get('passGroup');
-  // }
+  get passGroup() {
+    debugger
+    return this.form.get('passGroup');
+  }
 
 
  
