@@ -37,7 +37,7 @@ export class OffersComponent implements OnInit {
         this.catalog = data.slice()
         console.log(this.catalog);
 
-        debugger
+
       })
     })
   }
