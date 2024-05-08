@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -9,7 +9,7 @@ import {passMatch} from 'src/app/shared/utils/pass-match'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
@@ -18,8 +18,8 @@ export class RegisterComponent {
 
   ) {}
   form: FormGroup = {} as FormGroup;
-
- this.form = this.fb.group({
+ngOnInit(): void {
+  this.form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required,  ]],
   
@@ -34,6 +34,9 @@ export class RegisterComponent {
       }
     ),
   });
+}
+
+ 
 
   // get passGroup() {
   //   debugger
