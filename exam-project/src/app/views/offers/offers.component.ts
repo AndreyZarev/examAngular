@@ -59,7 +59,7 @@ export class OffersComponent implements OnInit {
       console.log(data);
       this.catalog = data
       this.editable = true
-      debugger
+
 
     })
 
