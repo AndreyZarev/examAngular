@@ -18,7 +18,8 @@ export class RegisterComponent {
 
   ) {}
   form: FormGroup = {} as FormGroup;
-   this.fb.group({
+
+ this.form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required,  ]],
   
@@ -34,10 +35,10 @@ export class RegisterComponent {
     ),
   });
 
-  get passGroup() {
-    debugger
-    return this.form.get('passGroup');
-  }
+  // get passGroup() {
+  //   debugger
+  //   return this.form.get('passGroup');
+  // }
 
 
  
@@ -63,6 +64,7 @@ console.log(password);
       });
   }
 }
+
 //   constructor(private userService: UserService, private router: Router) { }
 
 
