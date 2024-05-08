@@ -10,7 +10,15 @@ import {passMatch} from 'src/app/shared/utils/pass-match'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  form = this.fb.group({
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router,
+   
+
+  ) {}
+  form: FormGroup = {} as FormGroup;
+   this.fb.group({
     name: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required,  ]],
   
@@ -32,11 +40,7 @@ export class RegisterComponent {
   }
 
 
-  constructor(
-    private fb: FormBuilder,
-    private userService: UserService,
-    private router: Router
-  ) {}
+ 
 
   register(): void {
     if (this.form.invalid) {
