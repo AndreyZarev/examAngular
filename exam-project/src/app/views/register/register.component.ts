@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { validateEmail } from 'src/app/shared/utils/email-validator';
 import {passMatch} from 'src/app/shared/utils/pass-match'
 @Component({
