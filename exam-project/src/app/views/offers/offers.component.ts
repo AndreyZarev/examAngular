@@ -55,7 +55,7 @@ export class OffersComponent implements OnInit {
 
     this.apiService.getOffer(id).subscribe((data) => {
       this.temesDetails = this.myForm.value as Theme[];
-      debugger
+
       console.log(data);
       this.catalog = data
       this.editable = true
