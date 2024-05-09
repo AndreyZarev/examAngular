@@ -62,7 +62,8 @@
                         formControlName="rePassword" />
                 </p>
                 <ng-container *ngIf="passGroup?.get('rePassword')?.touched">
-                    <p class="error" *ngIf="passGroup?.errors?.['matchPasswordsValidator'] || 
+
+                    <p class="error" *ngIf="passGroup?.errors?.['passMatch'] || 
             passGroup?.get('rePassword')?.errors?.['required']">
                         Repeat Password does not match password!
                     </p>
