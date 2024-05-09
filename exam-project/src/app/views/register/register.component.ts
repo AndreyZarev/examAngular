@@ -55,7 +55,8 @@ ngOnInit(): void {
       name,
       email,
       tel,
-      passGroup: { password, rePassword } = {},
+       password, 
+       rePassword ,
     } = this.form.value;
 
 console.log(password);
