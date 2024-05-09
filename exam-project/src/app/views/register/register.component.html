@@ -40,6 +40,12 @@
                 </select>
                 <input type="text" name="tel" id="tel" placeholder="885 888 888" formControlName="tel" />
             </p>
+            <p class="error" *ngIf="form.get('tel')?.errors?.['required']">
+                Tell is required!
+            </p>
+            <!-- <p class="error">
+                Password must be at least 5 characters!
+            </p> -->
 
             <ng-container formGroupName="passGroup">
                 <!-- password -->
