@@ -12,7 +12,7 @@
                 <input class="input-error" formControlName="name" type="text" name="name" id="name" placeholder="Johny">
             </p>
             <ng-container *ngIf="form.get('name')?.touched">
-                <p class="error" *ngIf="form.get('name')?.errors?.'required'">
+                <p class="error" *ngIf="form.get('name')?.errors?.['required']">
                     Name is required!
                 </p>
             </ng-container>
