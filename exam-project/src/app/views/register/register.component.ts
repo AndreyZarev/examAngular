@@ -25,7 +25,7 @@ ngOnInit(): void {
     email: ['', [Validators.required,  ]],
   
    tel: ['', [Validators.required, Validators.minLength(7)]],
-     passGroup: this.fb.control(
+     passGroup: this.fb.nonNullable(
       {
         password: ['', [Validators.required]],
         rePassword: ['', [Validators.required]],
