@@ -49,7 +49,7 @@ ngOnInit(): void {
 
   register(): void {
     if (this.form.invalid) {
-      return;
+      return alert('Invalid form');
     }
 
     const {
