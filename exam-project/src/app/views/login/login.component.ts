@@ -42,12 +42,4 @@ export class LoginComponent {
 
   }
 }
-// login(form: NgForm) {
-//   if (form.invalid) {
-//     return;
-//   }
-
-//   const { email, password } = form.value;
-
-//   
-// }
+//peter@abv.bg : 123456
