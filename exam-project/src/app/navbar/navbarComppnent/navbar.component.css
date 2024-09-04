@@ -28,10 +28,10 @@
 .navbar-links {
     flex-flow: column wrap;
 
-    padding: 0;
+    padding: 1em;
 
     background-color: #32d6c8;
-    float: flex;
+    display: flex;
 
 
 }
