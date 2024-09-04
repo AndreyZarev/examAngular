@@ -37,23 +37,23 @@
 }
 
 .navAncors {
-    margin-left: 34%;
+    margin: 0 auto;
     padding-bottom: 25px;
-    display: inline-block;
+    display: block;
 
 }
 
 .navAncors2 {
-    margin-left: 40%;
+    margin: 0 auto;
     padding-bottom: 25px;
-    display: inline-block;
+    display: block;
 }
 
 .navbar-links a {
     font-weight: 600;
     padding: 20px;
 
-    font-size: 180%;
+    font-size: 1.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     text-align: center;
@@ -63,6 +63,7 @@
 .navbar-links a:hover {
 
 
-    font-size: 170%;
+    font-size: 1.55em;
+    color: rgb(111, 111, 235);
     cursor: pointer;
 }
