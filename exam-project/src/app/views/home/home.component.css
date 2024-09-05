@@ -45,7 +45,7 @@
     padding: 0;
     margin-bottom: 1em;
     text-align: center;
-
+    font-weight: 600;
 
     font-size: 1.5em;
     text-align: left;
@@ -54,7 +54,7 @@
 
 .welcome ul {
     padding: 5%;
-    background-color: rgba(255, 255, 255, 0.635);
+    background-color: rgba(255, 255, 255, 0.815);
 
     width: 40%;
     /* text-align: center; */
@@ -93,7 +93,6 @@ h1 {
 }
 
 .buttons {
-    height: 3em;
     width: 5em;
     text-align: center;
     color: white;
@@ -101,7 +100,7 @@ h1 {
     background-color: #4ebced;
     border: solid 1px;
     border-radius: 0.3em;
-    padding: 2em;
+    padding: 1.5em;
     margin: 1em;
 
 }
