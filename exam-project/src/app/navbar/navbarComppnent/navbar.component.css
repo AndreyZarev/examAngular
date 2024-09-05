@@ -9,11 +9,10 @@
 
 
 .navbar-logo {
-    height: 100px;
-    width: 100px;
-    float: flex;
+    height: 5em;
+    width: 5em;
     margin: 0 auto;
-    padding: 40px;
+    padding: 1em;
     display: block;
 
 
@@ -63,8 +62,9 @@
 .navbar-links a:hover {
 
 
-    font-size: 1.6em;
-    padding: 10px;
+    font-size: 1.51em;
+    /* padding: 10px; */
+    margin-bottom: 0;
     color: rgb(111, 111, 235);
     cursor: pointer;
 }
