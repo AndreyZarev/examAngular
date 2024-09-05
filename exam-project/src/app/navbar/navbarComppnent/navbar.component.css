@@ -51,7 +51,7 @@
 
 .navbar-links a {
     font-weight: 600;
-    padding: 20px;
+    padding: 1.2em;
 
     font-size: 1.5em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -63,7 +63,8 @@
 .navbar-links a:hover {
 
 
-    font-size: 1.55em;
+    font-size: 1.6em;
+    padding: 10px;
     color: rgb(111, 111, 235);
     cursor: pointer;
 }
