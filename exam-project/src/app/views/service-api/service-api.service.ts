@@ -23,7 +23,7 @@ export class ApiService {
     getOffer(id: string) {
         let apiUrl = 'http://localhost:3030'
 
-        let result = this.http.get<any>(`${apiUrl}/jsonstore/phonebook` + `/${id}`)
+        let result = this.http.get<Theme[]>(`${apiUrl}/jsonstore/phonebook` + `/${id}`)
         return result
     }
 
@@ -31,6 +31,6 @@ export class ApiService {
 
         console.log(form);
         let apiUrl = 'http://localhost:3030'
-        return this.http.post<Offer>(`${apiUrl}/jsonstore/phonebook`, { form })
+        return this.http.post<Theme[]>(`${apiUrl}/jsonstore/phonebook`, { form })
     }
 }
