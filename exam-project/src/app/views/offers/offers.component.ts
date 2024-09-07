@@ -5,6 +5,7 @@ import { UserService } from 'src/app/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validateEmail } from "../../shared/utils/email-validator"
 import { Theme } from "../../../interface/themes"
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-offers',
@@ -36,9 +37,7 @@ export class OffersComponent implements OnInit {
 
         // this.catalog = data.slice()
         console.log(data);
-        data.forEach(element => {
-
-        });
+        <div></div> NgFor
 
 
       })
