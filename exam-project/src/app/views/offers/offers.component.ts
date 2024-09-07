@@ -37,7 +37,6 @@ export class OffersComponent implements OnInit {
 
         // this.catalog = data.slice()
         console.log(data);
-        <div></div> NgFor
 
 
       })
