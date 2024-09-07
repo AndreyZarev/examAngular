@@ -34,8 +34,11 @@ export class OffersComponent implements OnInit {
       this.apiService.getCatalog().subscribe((data) => {
         console.log("this is the catalog");
 
-        this.catalog = data.slice()
-        console.log(this.catalog);
+        // this.catalog = data.slice()
+        console.log(data);
+        data.forEach(element => {
+
+        });
 
 
       })
@@ -68,26 +71,26 @@ export class OffersComponent implements OnInit {
   }
 
 
-  save(): void {
+  // save(): void {
 
-    console.log(this.myForm.value);
+  //   console.log(this.myForm.value);
 
-    if (this.myForm.invalid) {
-      alert("form is invalid")
-      return;
-    }
+  //   if (this.myForm.invalid) {
+  //     alert("form is invalid")
+  //     return;
+  //   }
 
-    // this.userDetails = this.form.value as Profile;
+  //   // this.userDetails = this.form.value as Profile;
 
-    console.log(this.editable);
+  //   console.log(this.editable);
 
-    this.router.navigate(['/offers']);
-  }
+  //   this.router.navigate(['/offers']);
+  // }
 
-  cancel(e: Event) {
-    e.preventDefault();
-    this.editable = !this.editable;
-  }
+  // cancel(e: Event) {
+  //   e.preventDefault();
+  //   this.editable = !this.editable;
+  // }
 
 
 
