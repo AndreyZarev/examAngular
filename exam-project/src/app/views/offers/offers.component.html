@@ -56,7 +56,7 @@
 <ng-container *ngIf="editable">
 
     <div class="container">
-        <form [formGroup]="myForm" (ngSubmit)="save()">
+        <form [formGroup]="myForm">
             <div class="profile">
                 <img src="./profile.png" alt="default user">
                 <h3>User Info:</h3>
@@ -78,8 +78,8 @@
                         <input type="text" formControlName="year" name="year" id="year" [value]="">
                     </div>
                 </div>
-                <button class="red-button" (click)="cancel($event)">Cancel</button>
-                <button class="green-button" (click)="save()">Save</button>
+                <!-- <button class="red-button" (click)="cancel($event)">Cancel</button>
+                <button class="green-button" (click)="save()">Save</button> -->
 
             </div>
         </form>
