@@ -1,29 +1,3 @@
-<!-- second part  -->
-
-
-<ng-container *ngIf="editable">
-    <div *ngFor="let one of catalog" class="container">
-        <div class="profile"><img src="./profile.png" alt="default user">
-            <h3>Offer Info:</h3>
-            <div class="flex">
-                <p>Names: {{one.userId.username}}</p>
-                <p></p>
-            </div>
-            <div class="flex">
-                <p>Email: {{one.userId.email}}</p>
-                <p></p>
-            </div>
-            <div class="flex">
-                <p>Tel: </p>
-                <p>{{one.userId.username}}</p>
-            </div>
-            <button (click)="edit(one._id)" class="edit-button">Edit</button>
-        </div>
-    </div>
-</ng-container>
-
-
-
 <ng-container *ngIf="editable">
 
     <div class="container">
