@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class OfferComponent {
 
+
+  edit(id: string): void {
+
+
+    console.log(id);
+
+    this.apiService.getOffer(id).subscribe((data) => {
+      this.temesDetails = this.myForm.value as Theme[];
+
+      console.log(data);
+      this.catalog = data
+      this.editable = true
+
+
+    })
+
+    this.router.navigate(['/offers/edit']);
+
+  }
 }
