@@ -10,7 +10,7 @@ import { NavbarModule } from './navbar/navbar.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
-import { OfferComponent } from './offer/offer.component';
+import { OfferComponent } from './views/offer/offer.component';
 
 
 
