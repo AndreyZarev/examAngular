@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
-
+import { OnInit } from '@angular/core';
+import { ApiService } from '../service-api/service-api.service';
+impo
 @Component({
   selector: 'app-offer',
   templateUrl: './offer.component.html',
   styleUrls: ['./offer.component.css']
 })
-export class OfferComponent {
+export class OfferComponent implements OnInit {
+  catalog: any = {}
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
 
+  myForm: FormGroup = {} as FormGroup;
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
       const id = data["id"]
