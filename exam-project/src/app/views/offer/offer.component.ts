@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/user.service';
 @Component({
   selector: 'app-offer',
   templateUrl: './offer.component.html',
