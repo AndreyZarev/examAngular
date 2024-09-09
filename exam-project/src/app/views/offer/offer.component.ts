@@ -4,6 +4,10 @@ import { ApiService } from '../service-api/service-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import { FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { Theme } from 'src/interface/themes';
+import { validateEmail } from 'src/app/shared/utils/email-validator';
 @Component({
   selector: 'app-offer',
   templateUrl: './offer.component.html',
