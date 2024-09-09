@@ -17,6 +17,7 @@ export class OfferComponent implements OnInit {
   catalog: any = {}
   constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
 
+  editable: boolean = false
   myForm: FormGroup = {} as FormGroup;
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
