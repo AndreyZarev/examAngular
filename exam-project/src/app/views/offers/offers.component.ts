@@ -48,7 +48,6 @@ export class OffersComponent implements OnInit {
 
   // });
 
-  editable: boolean = false
 
 
 
