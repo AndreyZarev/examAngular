@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Theme } from 'src/interface/themes';
 import { validateEmail } from 'src/app/shared/utils/email-validator';
+import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-offer',
   templateUrl: './offer.component.html',
