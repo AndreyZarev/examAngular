@@ -7,7 +7,7 @@
 
             <p class="emailPassword">
 
-                <input #inputEmail="ngModel" ngModel required class="emailInput" type="email" name="email" id="email"
+                <input #inputEmail ngModel required class="emailInput" type="email" name="email" id="email"
                     placeholder="simeon.bogdanov@gmail.com" [appValidators]="['bg', 'com']">
             </p>
             <ng-container *ngIf="inputEmail.touched">
