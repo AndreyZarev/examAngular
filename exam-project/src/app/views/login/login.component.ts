@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
+import { ValidatorsDirective } from 'src/app/shared/validators/validators.directive';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
