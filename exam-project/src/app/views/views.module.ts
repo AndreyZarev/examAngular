@@ -13,20 +13,20 @@ import { ErrorPageComponent } from '../views/error-page/error-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
 
-// const routes: Routes = [
+const routes: Routes = [
 
-//     { path: 'home', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
 
-//     { path: 'register', component: RegisterComponent },
-//     { path: 'create-offer', component: CreateOfferComponent },
-//     { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'create-offer', component: CreateOfferComponent },
+    { path: 'login', component: LoginComponent },
 
-//     { path: 'logout', component: LogoutComponent },
+    { path: 'logout', component: LogoutComponent },
 
-//     { path: 'offers', component: OffersComponent },
+    { path: 'offers', component: OffersComponent },
 
-//     { path: '**', component: ErrorPageComponent },
-// ];
+    { path: '**', component: ErrorPageComponent },
+];
 
 @NgModule({
     declarations: [
