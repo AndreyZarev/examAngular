@@ -8,7 +8,7 @@ import { RegisterComponent } from '../views/register/register.component';
 import { LoginComponent } from '../views/login/login.component';
 import { LogoutComponent } from '../views/logout/logout.component';
 import { CreateOfferComponent } from '../views/create-offer/create-offer.component';
-import { OffersComponent } from '../views/offers/offers.component';
+import { OfferComponent } from '../views/offer/offer.component';
 import { ErrorPageComponent } from '../views/error-page/error-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
@@ -27,9 +27,9 @@ const routes: Routes = [
 
   { path: 'logout', redirectTo: "home", pathMatch: 'full' },
 
-  { path: 'offers', component: OffersComponent },
+  { path: 'offers', component: OfferComponent },
 
-  { path: 'offers/edit', component: OffersComponent, canActivate: [AuthActivate] },
+  { path: 'offers/edit', component: OfferComponent, canActivate: [AuthActivate] },
 
 
 
@@ -44,7 +44,7 @@ const routes: Routes = [
     LoginComponent,
     LogoutComponent,
     CreateOfferComponent,
-    OffersComponent,
+    OfferComponent,
     ErrorPageComponent,
     NavbarComponentDirective,
     ValidatorsDirective
