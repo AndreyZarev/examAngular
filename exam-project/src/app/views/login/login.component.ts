@@ -3,6 +3,8 @@ import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { ValidatorsDirective } from 'src/app/shared/validators/validators.directive';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
