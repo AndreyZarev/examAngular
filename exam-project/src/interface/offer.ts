@@ -3,7 +3,8 @@ export interface Offer {
     phone: string;
     hand: string;
     weight: string;
-    place: string;
-    bet: number
+    city: string;
+    bet: string;
+    _id: string;
 
 }
