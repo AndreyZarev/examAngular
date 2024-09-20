@@ -1,7 +1,11 @@
 {
     "2d5ae478-87c7-45fa-acf9-f04aa4724421": {
-        "person": "Maya",
+        "names": "Dimitar Stefanov",
         "phone": "+1-555-7653",
+        "hand": "Right",
+        "weight": "85 kg",
+        "city": "Burgas",
+        "bet": "100 lv",
         "_id": "2d5ae478-87c7-45fa-acf9-f04aa4724421"
     },
     "6012c542-38e1-4660-ba40-1b109c40cb2f": {
