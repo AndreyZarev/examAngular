@@ -1,26 +1,39 @@
 <!-- homepage-->
 <ng-container>
-    <div *ngFor="let one of catalog" class="container">
+    <div *ngFor="let offer of catalog" class="container">
         <div class="profile"><img src="./profile.png" alt="default user">
             <h3>Offer Info:</h3>
             <div class="flex">
                 <p>Names: </p>
-                <p>{{one.userId.username}}</p>
+                <p>{{offer.names}}</p>
             </div>
             <div class="flex">
-                <p>Email: </p>
-                <p>{{one.userId.email}}</p>
+                <p>Phone: </p>
+                <p>{{offer.phone}}</p>
             </div>
+            phone: string;
+            hand: string;
+            weight: string;
+            city: string;
+            bet: string;
             <div class="flex">
-                <p>Tel: </p>
-                <p>{{one.userId.tel}}</p>
+                <p>Hand: </p>
+                <p>{{offer.hand}}</p>
             </div>
 
             <div class="flex">
-                <p>Year: </p>
-                <p>{{one.created_at }}</p>
+                <p>Weight: </p>
+                <p>{{offer.weight }}</p>
             </div>
-            <button (click)="edit(one._id)" class="edit-button">Edit</button>
+            <div class="flex">
+                <p>City: </p>
+                <p>{{offer.city }}</p>
+            </div>
+            <div class="flex">
+                <p>Bet: </p>
+                <p>{{offer.bet }}</p>
+            </div>
+            <button (click)="edit(offer._id)" class="edit-button">Edit</button>
         </div>
     </div>
 </ng-container>
