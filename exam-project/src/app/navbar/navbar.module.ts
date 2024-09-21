@@ -15,7 +15,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
 import { NavbarComponentDirective } from './navbar-component.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThemesComponent } from '../views/themes-list/themes-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: "home", pathMatch: 'full' },
