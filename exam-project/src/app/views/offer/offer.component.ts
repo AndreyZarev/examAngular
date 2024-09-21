@@ -16,8 +16,8 @@ import { Offer } from 'src/interface/offer';
   styleUrls: ['./offer.component.css']
 })
 export class OfferComponent implements OnInit {
-  catalog: any = {}
   constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
+  catalog: Offer[] = []
 
   editable: boolean = false
   myForm: FormGroup = {} as FormGroup;
@@ -37,31 +37,31 @@ export class OfferComponent implements OnInit {
 
       this.apiService.getCatalog().subscribe((data) => {
         console.log("this is the catalog");
+        console.log(Array.from(data));
 
         this.catalog = data
-        console.log(data);
 
 
       })
     })
   }
-  temesDetails: Theme[] | null = []
-  edit(id: string): void {
+  // temesDetails: Theme[] | null = []
+  // edit(id: string): void {
 
 
-    console.log(id);
+  //   console.log(id);
 
-    this.apiService.getOffer(id).subscribe((data) => {
-      this.temesDetails = this.myForm.value as Theme[];
+  //   this.apiService.getOffer(id).subscribe((data) => {
+  //     this.temesDetails = this.myForm.value as Theme[];
 
-      console.log(data);
-      this.catalog = data
-      this.editable = true
+  //     console.log(data);
+  //     this.catalog = data
+  //     this.editable = true
 
 
-    })
+  //   })
 
-    this.router.navigate(['/offers/edit']);
+  //   this.router.navigate(['/offers/edit']);
 
-  }
+  // }
 }
