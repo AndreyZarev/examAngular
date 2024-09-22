@@ -1,35 +1,34 @@
 <!-- homepage-->
 <ng-container>
-    <div *ngFor="let offer of catalog" class="container">
-        <div class="profile"><img src="./profile.png" alt="default user">
-            <h3>Offer Info:</h3>
-            <div class="flex">
-                <p>Names: </p>
-                <p>{{offer.names}}</p>
-            </div>
-            <div class="flex">
-                <p>Phone: </p>
-                <p>{{offer.phone}}</p>
-            </div>
-
-            <div class="flex">
-                <p>Hand: </p>
-                <p>{{offer.hand}}</p>
-            </div>
-
-            <div class="flex">
-                <p>Weight: </p>
-                <p>{{offer.weight }}</p>
-            </div>
-            <div class="flex">
-                <p>City: </p>
-                <p>{{offer.city }}</p>
-            </div>
-            <div class="flex">
-                <p>Bet: </p>
-                <p>{{offer.bet }}</p>
-            </div>
-            <!-- <button (click)="edit(offer._id)" class="edit-button">Edit</button> -->
+    <section *ngFor="let offer of catalog" class="container">
+        <img src={{offer.img}} alt="default user">
+        <h3>Offer Info:</h3>
+        <div class="flex">
+            <p>Names: </p>
+            <p>{{offer.names}}</p>
         </div>
-    </div>
+        <div class="flex">
+            <p>Phone: </p>
+            <p>{{offer.phone}}</p>
+        </div>
+
+        <div class="flex">
+            <p>Hand: </p>
+            <p>{{offer.hand}}</p>
+        </div>
+
+        <div class="flex">
+            <p>Weight: </p>
+            <p>{{offer.weight }}</p>
+        </div>
+        <div class="flex">
+            <p>City: </p>
+            <p>{{offer.city }}</p>
+        </div>
+        <div class="flex">
+            <p>Bet: </p>
+            <p>{{offer.bet }}</p>
+        </div>
+        <!-- <button (click)="edit(offer._id)" class="edit-button">Edit</button> -->
+    </section>
 </ng-container>
