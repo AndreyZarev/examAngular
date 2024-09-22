@@ -16,14 +16,14 @@ export class ApiService {
     getCatalog() {
 
         let apiUrl = 'http://localhost:3030'
-        return this.http.get<Offer[]>(`${apiUrl}/jsonstore/phonebook`)
+        return this.http.get<Offer[]>(`${apiUrl}/jsonstore/offers`)
     }
 
 
     getOffer(id: string) {
         let apiUrl = 'http://localhost:3030'
 
-        let result = this.http.get<Offer[]>(`${apiUrl}/jsonstore/phonebook` + `/${id}`)
+        let result = this.http.get<Offer[]>(`${apiUrl}/jsonstore/offers` + `/${id}`)
         return result
     }
 
@@ -31,6 +31,6 @@ export class ApiService {
 
         console.log(form);
         let apiUrl = 'http://localhost:3030'
-        return this.http.post<Offer[]>(`${apiUrl}/jsonstore/phonebook`, { form })
+        return this.http.post<Offer[]>(`${apiUrl}/jsonstore/offers`, { form })
     }
 }
