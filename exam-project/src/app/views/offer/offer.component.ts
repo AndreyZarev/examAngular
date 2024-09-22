@@ -39,7 +39,7 @@ export class OfferComponent implements OnInit {
         console.log("this is the catalog");
 
 
-        this.catalog = data
+        this.catalog = Object.values(data)
 
 
       })
