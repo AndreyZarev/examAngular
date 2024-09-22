@@ -1,4 +1,5 @@
 export interface Offer {
+    img: string;
     names: string;
     phone: string;
     hand: string;
