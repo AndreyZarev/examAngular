@@ -3,33 +3,27 @@
 
     <ng-container *ngFor="let offer of catalog">
         <article class="article-offer">
-            <img src={{offer.img}} alt="default user">
-            <h3>Offer Info:</h3>
+            <img src={{offer.img}} class="img" alt="default user">
+            <h3 class="offer-info">Offer Info:</h3>
             <div class="flex">
-                <p>Names: </p>
-                <p>{{offer.names}}</p>
+                <p>Names: {{offer.names}}</p>
             </div>
             <div class="flex">
-                <p>Phone: </p>
-                <p>{{offer.phone}}</p>
+                <p>Phone: {{offer.phone}}</p>
             </div>
 
             <div class="flex">
-                <p>Hand: </p>
-                <p>{{offer.hand}}</p>
+                <p>Hand: {{offer.hand}}</p>
             </div>
 
             <div class="flex">
-                <p>Weight: </p>
-                <p>{{offer.weight }}</p>
+                <p>Weight: {{offer.weight }}</p>
             </div>
             <div class="flex">
-                <p>City: </p>
-                <p>{{offer.city }}</p>
+                <p>City: {{offer.city }}</p>
             </div>
             <div class="flex">
-                <p>Bet: </p>
-                <p>{{offer.bet }}</p>
+                <p>Bet: {{offer.bet }}</p>
             </div>
             <!-- <button (click)="edit(offer._id)" class="edit-button">Edit</button> -->
         </article>
