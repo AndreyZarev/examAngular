@@ -45,23 +45,23 @@ export class OfferComponent implements OnInit {
       })
     })
   }
-  // temesDetails: Theme[] | null = []
-  // edit(id: string): void {
+  offerDetails: Offer[] | null = []
+  edit(id: string): void {
 
 
-  //   console.log(id);
+    console.log(id);
 
-  //   this.apiService.getOffer(id).subscribe((data) => {
-  //     this.temesDetails = this.myForm.value as Theme[];
+    this.apiService.getOffer(id).subscribe((data) => {
+      this.offerDetails = this.myForm.value as Offer[];
 
-  //     console.log(data);
-  //     this.catalog = data
-  //     this.editable = true
+      console.log(data);
+      this.catalog = data
+      this.editable = true
 
 
-  //   })
+    })
 
-  //   this.router.navigate(['/offers/edit']);
+    this.router.navigate(['/offers/edit']);
 
-  // }
+  }
 }
