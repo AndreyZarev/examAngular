@@ -10,12 +10,14 @@ import { NavbarModule } from './navbar/navbar.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
+import { OfferEditComponent } from './offer-edit/offer-edit.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    OfferEditComponent,
 
 
 
