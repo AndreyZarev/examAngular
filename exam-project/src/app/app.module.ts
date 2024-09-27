@@ -10,7 +10,7 @@ import { NavbarModule } from './navbar/navbar.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
-import { OfferEditComponent } from './offer-edit/offer-edit.component';
+import { OfferEditComponent } from './views/offer-edit/offer-edit.component';
 
 
 
