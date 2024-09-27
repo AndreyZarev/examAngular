@@ -33,7 +33,7 @@ export class UserService {
             .post<UserLogin>(api3030, { email, password })
             .pipe(tap((user) => this.user$$.next(user)));
     }
-
+    2
     register(
         name: string,
         email: string,
