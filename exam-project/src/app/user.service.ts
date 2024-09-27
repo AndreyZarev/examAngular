@@ -32,6 +32,7 @@ export class UserService {
         return this.http
             .post<UserLogin>(api3030, { email, password })
             .pipe(tap((user) => this.user$$.next(user)));
+        1
     }
 
     register(
