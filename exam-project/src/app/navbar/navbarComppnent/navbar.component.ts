@@ -23,7 +23,7 @@ export class NavbarComponent implements OnChanges {
 
   }
   ngOnChanges(changes: SimpleChanges): void {
-
+    //to d
   }
 
 
