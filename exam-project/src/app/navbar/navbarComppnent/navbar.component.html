@@ -11,7 +11,7 @@
             <a routerLink='home'>Home</a>
             <a routerLink="offers">Offers</a>
 
-            <a *ngIf="isLoggedIn" routerLink='create-offer'>Create Offer</a>
+            <a *ngIf="isLoggedIn" routerLink='create-offer' class="create-offer">Create Offer</a>
             <a *ngIf="!isLoggedIn" routerLink="login">Login</a>
             <a *ngIf="isLoggedIn" routerLink='logout' (click)="logout()">Logout</a>
 
