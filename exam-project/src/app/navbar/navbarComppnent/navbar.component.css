@@ -48,7 +48,8 @@
     display: block;
 }
 
-.navbar-links a {
+.navbar-links a,
+.create-offer {
     font-weight: 600;
     padding: 1em;
 
