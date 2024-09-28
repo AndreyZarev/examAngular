@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 import { RouterModule } from '@angular/router';
@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnChanges {
   router: any;
   constructor(private UserService: UserService, router: RouterModule) { }
   logout(): void {
@@ -22,7 +22,9 @@ export class NavbarComponent {
 
 
   }
+  ngOnChanges(changes: SimpleChanges): void {
 
+  }
 
 
 }
