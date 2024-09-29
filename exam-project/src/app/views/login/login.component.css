@@ -111,9 +111,9 @@ p.error {
 
 .passwordInput,
 .emailInput {
-    width: 600px;
+    min-width: 12em;
     height: 50px;
     border: #32d6c8 10px solid;
     border-radius: 20%;
-    font-size: 30px;
+    font-size: 1.5em;
 }
