@@ -16,7 +16,7 @@ form.login {
     border-bottom: none;
 }
 
-.login p {
+.login p.error {
     padding-bottom: 0;
     padding-top: 1.5rem;
     color: red;
