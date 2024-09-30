@@ -58,6 +58,11 @@ form.login {
     margin: 0;
 }
 
+.email {
+    margin-bottom: -1.55em;
+    margin-top: -0.4em;
+}
+
 .pass {
     margin-top: -2em;
 }
