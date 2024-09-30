@@ -11,7 +11,7 @@
                     placeholder="simeon.bogdanov@gmail.com" [appValidators]="['bg', 'com']">
             </p>
             <ng-container *ngIf="inputEmail.touched">
-                <p class="errorRequired" #inputEmail="ngModel" ngModel *ngIf="inputEmail.errors?.['required'] ">
+                <p class="error" #inputEmail="ngModel" ngModel *ngIf="inputEmail.errors?.['required'] ">
                     Email is required!
                 </p>
                 <p *ngIf="inputEmail?.errors?.['validateEmail']" class="error">
