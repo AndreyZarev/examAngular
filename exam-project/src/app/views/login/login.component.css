@@ -56,7 +56,6 @@ form.login {
     text-align: center;
     color: red;
     padding: 0;
-    padding-top: 24px;
     margin: 0;
 }
 
@@ -104,7 +103,10 @@ form.login {
 
 }
 
-
+.passwordInput {
+    margin-top: -2.4em;
+    margin-bottom: -2.4em;
+}
 
 .passwordInput,
 .emailInput {
