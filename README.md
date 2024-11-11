@@ -1,4 +1,4 @@
-1. navigate to examPrep
+1. cd /examPrep
 
 2. npm start
 
