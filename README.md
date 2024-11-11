@@ -1,9 +1,9 @@
-navigate to examPrep
+1. navigate to examPrep
 
-npm start
+2. npm start
 
-navigate to server
+3. navigate to server
 
-node server.js
+4. node server.js
 
 
