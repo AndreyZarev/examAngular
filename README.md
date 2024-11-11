@@ -1,8 +1,8 @@
-1. cd /examPrep
+1. cd examPrep
 
 2. npm start
 
-3. navigate to server
+3. cd server
 
 4. node server.js
 
