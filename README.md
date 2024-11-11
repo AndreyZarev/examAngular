@@ -4,4 +4,6 @@ npm start
 
 navigate to server
 
+node server.js
+
 
