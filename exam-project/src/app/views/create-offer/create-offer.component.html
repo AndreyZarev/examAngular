@@ -6,7 +6,11 @@
     </div>
     <form #form="ngForm" class="form" (ngSubmit)="createOffer(form)">
 
+        <div class="offer-details">
+            <label for="img">Image Url: </label>
+            <input type="text" class="input" #img="ngModel" required ngModel name="img" id="img">
 
+        </div>
         <div class="offer-details">
             <label for="names">Names: <span class="red">*</span></label>
             <input type="text" class="input" #names="ngModel" required ngModel name="names" id="names">
