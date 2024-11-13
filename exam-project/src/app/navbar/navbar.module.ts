@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'create-offer', component: CreateOfferComponent, canActivate: [AuthActivate] },
   { path: 'login', component: LoginComponent },
 
-  { path: 'logout', redirectTo: "home", pathMatch: 'full' },
+  { path: 'logout', component: LogoutComponent, canActivate: [AuthActivate] },
 
   { path: 'offers', component: OfferComponent },
 
