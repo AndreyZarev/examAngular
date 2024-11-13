@@ -9,11 +9,8 @@ import { RouterModule } from '@angular/router';
 })
 export class NavbarComponent implements OnChanges {
   router: any;
-  constructor(private UserService: UserService, router: RouterModule) { }
-  logout(): void {
-    this.UserService.logout();
-    this.router.navigate(['/home']), { refeerence: this.router.navigation };
-  }
+  constructor(private UserService: UserService) { }
+
   get isLoggedIn(): boolean {
 
 
