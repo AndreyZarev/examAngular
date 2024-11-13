@@ -9,7 +9,7 @@ import { BehaviorSubject, Subscription, tap } from 'rxjs';
 })
 
 export class UserService {
-    private user$$ = new BehaviorSubject<UserLogin | undefined>(undefined);
+    public user$$ = new BehaviorSubject<UserLogin | undefined>(undefined);
     private user$ = this.user$$.asObservable();
 
     user: UserLogin | undefined;
@@ -53,9 +53,12 @@ export class UserService {
     }
 
     logout() {
+        console.log("we are in user service");
+
         return this.http
             .post('/api/logout', {})
             .pipe(tap(() => this.user$$.next(undefined)));
+
     }
 
 
