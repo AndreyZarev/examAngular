@@ -34,6 +34,7 @@ export class LoginComponent {
       const { email, password } = form.value
       debugger
       this.userService.login(email, password).subscribe(() => {
+        localStorage.setItem("user", email)
         this.router.navigate(['/home']);
       });
 
