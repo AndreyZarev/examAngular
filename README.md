@@ -1,4 +1,4 @@
-1. cd examPrep
+1. cd exam-project
 
 2. npm start
 
