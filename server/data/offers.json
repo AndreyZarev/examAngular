@@ -23,12 +23,13 @@
     },
     "d749a819-1e41-4c65-9ce2-7b429c4ebd0d": {
         "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-D9Na-iMvMaxq4Zuq4yuWJr2fyVMOk_9EA&s",
-        "names": "Todor Vesev",
+        "names": "Sasho Andreev",
         "phone": "+1-555-7775",
         "hand": "Right",
         "weight": "95 kg",
         "city": "Sofia",
         "bet": "250 lv",
-        "_id": "d749a819-1e41-4c65-9ce2-7b429c4ebd0d"
+        "_id": "d749a819-1e41-4c65-9ce2-7b429c4ebd0d",
+        "user": "sasho"
     }
 }
