@@ -28,6 +28,7 @@ export class ApiService {
     }
 
     newOffer(form: NgForm) {
+        console.log("this is being submitted---------------------");
 
         console.log(form);
         let apiUrl = 'http://localhost:3030'
