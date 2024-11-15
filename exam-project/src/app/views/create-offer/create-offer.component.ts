@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-offer',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-offer.component.css']
 })
 export class CreateOfferComponent {
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router, private http: HttpClient) { }
   createOffer(form: NgForm) {
 
     // ev.preventDefault();
@@ -20,11 +21,7 @@ export class CreateOfferComponent {
     try {
 
 
-      this.apiService.newOffer(form.value).subscribe((offer) => {
-        console.log(offer);
-
-
-      })
+      this.apiService.newOffer(form.value)
       form.value.clear();
 
     } catch (err) {
