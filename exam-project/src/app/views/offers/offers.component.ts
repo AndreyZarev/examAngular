@@ -20,6 +20,8 @@ export class OfferComponent implements OnInit {
   catalog: Offer[] = []
 
   editable: boolean = false
+  user: string | null = localStorage.getItem('user')
+
   myForm: FormGroup = {} as FormGroup;
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
@@ -40,6 +42,8 @@ export class OfferComponent implements OnInit {
 
 
         this.catalog = Object.values(data)
+
+        console.log(this.catalog);
 
 
       })
