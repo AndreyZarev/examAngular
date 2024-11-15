@@ -9,7 +9,7 @@
                 <p>Names: {{offer.names}}</p>
             </div>
             <div class="flex">
-                <p>Phone: {{offer.phone}}</p>
+                <p>Email: {{offer.email}}</p>
             </div>
 
             <div class="flex">
@@ -25,7 +25,7 @@
             <div class="flex">
                 <p>Bet: {{offer.bet }}</p>
             </div>
-            <ng-container *ngIf="false">
+            <ng-container *ngIf="editable">
 
                 <button (click)="edit(offer._id)" class="edit-button">Edit</button>
             </ng-container>
