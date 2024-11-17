@@ -35,17 +35,13 @@ export class UserService {
     }
 
     register(
-        name: string,
         email: string,
-        tel: string,
         password: string,
         rePassword: string
     ) {
         return this.http
             .post<User>('/api/register', {
-                name,
                 email,
-                tel,
                 password,
                 rePassword,
             })
