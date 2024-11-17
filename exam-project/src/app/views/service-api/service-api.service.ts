@@ -27,11 +27,11 @@ export class ApiService {
         return result
     }
 
-    newOffer(form: NgForm) {
+    newOffer(form: object) {
         console.log("this is being submitted---------------------");
 
-        console.log(form);
+        debugger
         let apiUrl = 'http://localhost:3030'
-        return this.http.post<Offer[]>(`${apiUrl}/jsonstore/offers`, { form })
+        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { form })
     }
 }
