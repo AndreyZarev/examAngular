@@ -37,13 +37,11 @@ export class UserService {
     register(
         email: string,
         password: string,
-        rePassword: string
     ) {
         return this.http
-            .post<User>('/api/register', {
+            .post<User>('http://localhost:3030/users/register', {
                 email,
                 password,
-                rePassword,
             })
             .pipe(tap((user) => this.user$$.next(user)));
     }
@@ -52,7 +50,7 @@ export class UserService {
         console.log("we are in user service");
 
         return this.http
-            .post('/api/logout', {})
+            .post('http://localhost:3030/users/logout', {})
             .pipe(tap(() => this.user$$.next(undefined)));
 
     }
