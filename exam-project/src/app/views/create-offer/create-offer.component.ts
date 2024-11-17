@@ -20,12 +20,9 @@ export class CreateOfferComponent {
     try {
 
 
-      console.log(`here------ form value: ${form.value}`);
+      debugger
+      this.apiService.newOffer(form.value)
 
-      this.apiService.newOffer(form.value).subscribe((offer) => {
-
-        this.apiService.newOffer(offer)
-      });
       form.value;
 
     } catch (err) {
