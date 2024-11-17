@@ -20,11 +20,11 @@ export class CreateOfferComponent {
     try {
 
 
+
       this.apiService.newOffer(form.value).subscribe((offer) => {
-        console.log(offer);
 
-
-      })
+        this.apiService.newOffer(offer)
+      });
       form.value;
 
     } catch (err) {
