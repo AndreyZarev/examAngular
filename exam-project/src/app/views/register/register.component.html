@@ -1,63 +1,58 @@
 <!-- homepage -->
 <div class="container">
-    <form class="register" (ngSubmit)="register()">
+    <form class="register" #form="ngForm" (ngSubmit)="register(form)">
 
         <fieldset>
             <h2>Registration Form</h2>
 
+            <p class="emailPassword">
 
-
-            <!-- email -->
-            <p class="field field-icon">
-                <label for="email"><span><i class="fas fa-envelope"></i></span></label>
-                <input type="email" formControlName="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                <input #inputEmail="ngModel" ngModel required class="emailInput" type="email" name="email" id="email"
+                    placeholder="simeon.bogdanov@gmail.com" [appValidators]="['bg', 'com']">
             </p>
-            <ng-container *ngIf="form.get('email')?.touched">
-                <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error email" #inputEmail="ngModel" ngModel *ngIf="inputEmail.errors?.['required'] ">
                     Email is required!
                 </p>
-            </ng-container>
-            <!-- 
-                <p *ngIf="form.get('email')?.errors?.['validateEmail']" class="error">
+                <p *ngIf="inputEmail?.errors?.['validateEmail']" class="error">
                     Email is not valid!
-                </p> -->
-
-
-
-
-
-            <ng-container formGroupName="passGroup">
-                <!-- password -->
-                <p class="field field-icon">
-                    <label for="password"><span><i class="fas fa-lock"></i></span></label>
-                    <input type="password" name="password" id="password" placeholder="******"
-                        formControlName="password" />
                 </p>
-                <ng-container *ngIf="form.get('password')?.touched">
-
-                    <p class="error">
-                        Password is required!
-                    </p>
-
-                </ng-container>
-
-
-                <!-- rePassword -->
-                <p class="field field-icon">
-                    <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
-                    <input type="password" name="rePassword" id="rePassword" placeholder="******"
-                        formControlName="rePassword" />
-                </p>
-                <ng-container *ngIf="passGroup?.get('rePassword')?.touched">
-
-                    <p class="error" *ngIf="passGroup?.errors?.['passMatch'] || 
-            passGroup?.get('rePassword')?.errors?.['required']">
-                        Repeat Password does not match password!
-                    </p>
-                </ng-container>
-
-
             </ng-container>
+
+
+            <p class="emailPassword">
+
+                <input #password="ngModel" class="passwordInput" ngModel type="password" name="password" id="password"
+                    placeholder="password" required minlength="4">
+            </p>
+
+
+
+            <ng-container *ngIf="password.touched">
+                <p class="error pass" *ngIf="password.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="password.errors?.['minlength']">
+                    Password must be at least 4 characters!
+                </p>
+            </ng-container>
+
+            <p class="emailPassword">
+
+                <input #repassword="ngModel" class="passwordInput" ngModel type="repassword" name="repassword"
+                    id="repassword" placeholder="repeat password" required>
+            </p>
+
+            <ng-container *ngIf="repassword.touched">
+                <p class="error pass" *ngIf="repassword.errors?.['required']">
+                    Password is required!
+                </p>
+                <p class="error" *ngIf="password !== repassword">
+                    Passwords must match!
+                </p>
+            </ng-container>
+
+
             <button type="submit">
                 Create Account
 
