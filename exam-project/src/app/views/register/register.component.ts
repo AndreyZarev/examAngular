@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, NgModel, NgForm } from '@angular/forms';
 import { validateEmail } from 'src/app/shared/utils/email-validator';
 import {passMatch} from 'src/app/shared/utils/pass-match'
 @Component({
@@ -9,67 +9,69 @@ import {passMatch} from 'src/app/shared/utils/pass-match'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent {
   constructor(
-    private fb: FormBuilder,
     private userService: UserService,
     private router: Router,
    
 
   ) {}
-  form: FormGroup = {} as FormGroup;
-ngOnInit(): void {
- 
-  this.form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required,  ]],
   
-   tel: ['', [Validators.required, Validators.minLength(7)]],
-     passGroup: this.fb.group(
-      {
-        password: ['', [Validators.required]],
-        rePassword: ['', [Validators.required]],
-      },
-      {
-        validators: [passMatch('password', 'rePassword')],
-      }
-    ),
-  });
-}
 
  
+  register(form: NgForm): void {
 
-  get passGroup() {
-    debugger
-    return this.form.get('passGroup');
-  }
+    // console.log(form.value);
 
-
- 
-
-  register(): void {
-    if (this.form.invalid) {
-      return alert('Invalid form');
+    if (form.invalid) {
+      alert('Your form is invalid, please follow the text below the fields.')
+      return;
     }
 
-    const {
-    
-      email,
-     
-       password, 
-       rePassword ,
-    } = this.form.value;
-
-
-    this.userService
-      .register( email!, password!)
-      .subscribe(() => {
+    try {
+      const { email, password,rePassword } = form.value
+      debugger
+      this.userService.register(email, password).subscribe(() => {
+        // localStorage.setItem("user", email)
         this.router.navigate(['/home']);
       });
+
+
+    } catch (err) {
+      console.log(err);
+    }
+
   }
+
 }
 
-//   constructor(private userService: UserService, private router: Router) { }
+ 
+
+
+
+ 
+
+//   register(): void {
+//     if (this.form.invalid) {
+//       return alert('Invalid form');
+//     }
+
+//     const {
+    
+//       email,
+     
+//        password, 
+//        rePassword ,
+//     } = this.form.value;
+
+
+//     this.userService
+//       .register( email!, password!)
+//       .subscribe(() => {
+//         this.router.navigate(['/home']);
+//       });
+//   }
+// }
 
 
 //   clicked: boolean = true;
