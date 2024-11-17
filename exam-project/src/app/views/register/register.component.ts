@@ -53,17 +53,16 @@ ngOnInit(): void {
     }
 
     const {
-      name,
+    
       email,
-      tel,
+     
        password, 
        rePassword ,
     } = this.form.value;
 
-console.log(password);
 
     this.userService
-      .register(name!, email!, tel!, password!, rePassword!)
+      .register( email!, password!)
       .subscribe(() => {
         this.router.navigate(['/home']);
       });
