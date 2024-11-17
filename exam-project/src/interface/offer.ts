@@ -1,7 +1,7 @@
 export interface Offer {
     img: string;
     names: string;
-    phone: string;
+    email: string;
     hand: string;
     weight: string;
     city: string;
