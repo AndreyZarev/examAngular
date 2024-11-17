@@ -25,22 +25,22 @@ export class OfferComponent implements OnInit {
   myForm: FormGroup = {} as FormGroup;
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
-      const id = data["id"]
-      console.log(this.myForm.value);
-      this.myForm = this.fb.group({
-        name: ['', [Validators.required, Validators.minLength(2)]],
-        email: ['',
-          [Validators.required, validateEmail(["bg", "com"])]
-        ],
-        tel: ['', [Validators.required, Validators.minLength(2)]],
-        password: ['', [Validators.required, Validators.minLength(2)]],
-        rePassword: ['', [Validators.required, Validators.minLength(2)]],
-      });
+      // const id = data["id"]
+      // console.log(this.myForm.value);
+      // this.myForm = this.fb.group({
+      //   name: ['', [Validators.required, Validators.minLength(2)]],
+      //   email: ['',
+      //     [Validators.required, validateEmail(["bg", "com"])]
+      //   ],
+      //   tel: ['', [Validators.required, Validators.minLength(2)]],
+      //   password: ['', [Validators.required, Validators.minLength(2)]],
+      //   rePassword: ['', [Validators.required, Validators.minLength(2)]],
+      // });
 
       this.apiService.getCatalog().subscribe((data) => {
 
 
-
+        console.log(data);
         this.catalog = Object.values(data)
 
         console.log(this.catalog);
@@ -53,7 +53,7 @@ export class OfferComponent implements OnInit {
   edit(id: string): void {
 
 
-    console.log(id);
+
 
     this.apiService.getOffer(id).subscribe((data) => {
       this.offerDetails = this.myForm.value as Offer[];
