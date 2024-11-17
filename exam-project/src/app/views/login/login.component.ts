@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private userService: UserService, private router: Router, fb: FormsModule) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   clicked: boolean = true;
   loginButton() {
