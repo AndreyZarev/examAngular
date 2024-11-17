@@ -20,6 +20,7 @@ export class CreateOfferComponent {
     try {
 
 
+      console.log(`here------ form value: ${form.value}`);
 
       this.apiService.newOffer(form.value).subscribe((offer) => {
 
