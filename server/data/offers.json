@@ -5,7 +5,7 @@
         "email": "denis.cyplenkov@gmail.com",
         "hand": "Right",
         "weight": "115 kg",
-        "city": "Burgas",
+        "place": "Burgas",
         "bet": "10000 $",
         "_id": "2d5ae478-87c7-45fa-acf9-f04aa4724421"
     },
@@ -15,7 +15,7 @@
         "email": "denis.cyplenkov@gmail.com",
         "hand": "Right",
         "weight": "130 kg",
-        "city": "Plovdiv",
+        "place": "Plovdiv",
         "bet": "5000 $",
         "_id": "6012c542-38e1-4660-ba40-1b109c40cb2f"
     },
@@ -25,7 +25,7 @@
         "email": "shasho@abv.bg",
         "hand": "Right",
         "weight": "95 kg",
-        "city": "Sofia",
+        "place": "Sofia",
         "bet": "250 lv",
         "_id": "d749a819-1e41-4c65-9ce2-7b429c4ebd0d"
     }
