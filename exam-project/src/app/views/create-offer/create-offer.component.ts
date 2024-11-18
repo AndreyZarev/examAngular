@@ -21,16 +21,8 @@ export class CreateOfferComponent {
 
 
       debugger
-      let { img, names, email, hand, weight, place, bet } = form.value
+      this.apiService.newOffer(form.value)
 
-      this.apiService.newOffer(img, names, email, hand, weight, place, bet)
-
-
-
-
-
-
-      form.value;
 
     } catch (err) {
       console.log(err);
