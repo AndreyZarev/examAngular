@@ -40,6 +40,8 @@ export class LoginComponent {
 
 
     } catch (err) {
+      debugger
+      alert("Incorrect email or password!")
       console.log(err);
     }
 
