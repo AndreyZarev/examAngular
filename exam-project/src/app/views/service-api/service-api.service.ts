@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Offer } from 'src/interface/offer';
 import { Theme } from 'src/interface/themes';
 // import { environment } from 'src/environments/environment.development';
@@ -26,12 +27,14 @@ export class ApiService {
         let result = this.http.get<Offer[]>(`${apiUrl}/jsonstore/offers` + `/${id}`)
         return result
     }
-
-    newOffer(form: object) {
+    getDetails(form: Observable<any>) {
+        return form
+    }
+    newOffer(img: string, names: string, email: string, hand: string, weight: string, place: string, bet: string): Observable<any> {
         console.log("this is being submitted---------------------");
-
+        // let { img, names, email, hand, weight, place, bet } = form
         debugger
         let apiUrl = 'http://localhost:3030'
-        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { form })
+        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { img, names, email, hand, weight, place, bet })
     }
 }
