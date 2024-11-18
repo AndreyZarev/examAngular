@@ -4,7 +4,7 @@ export interface Offer {
     email: string;
     hand: string;
     weight: string;
-    city: string;
+    place: string;
     bet: string;
     _id: string;
 
