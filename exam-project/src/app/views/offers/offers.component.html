@@ -25,9 +25,9 @@
             <div class="flex">
                 <p>Bet: {{offer.bet }}</p>
             </div>
-            <ng-container *ngIf="editable">
+            <ng-container *ngIf="offer.email == user">
 
-                <button (click)="edit(offer._id)" class="edit-button">Edit</button>
+                <button class="edit-button">Edit</button>
             </ng-container>
 
         </article>
