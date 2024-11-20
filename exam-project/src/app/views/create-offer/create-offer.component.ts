@@ -19,9 +19,15 @@ export class CreateOfferComponent {
     }
     try {
 
-
+      let { img, names, email, hand, weight, place, bet } = form.value
       debugger
-      this.apiService.newOffer(form.value)
+      this.apiService.newOffer(img, names, email, hand, weight, place, bet).subscribe({
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      }
+      )
+
+      this.router.navigate(['/offers'])
 
 
     } catch (err) {
@@ -29,6 +35,5 @@ export class CreateOfferComponent {
 
     }
 
-    this.router.navigate(['/offers'])
   }
 }
