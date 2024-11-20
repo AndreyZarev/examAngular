@@ -22,6 +22,7 @@ export class LogoutComponent implements OnInit {
   ngOnInit() {
 
     this.userService.logout()
+    localStorage.removeItem("user")
     this.router.navigate(['/home']);
 
   }
