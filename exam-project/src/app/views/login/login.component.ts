@@ -30,21 +30,26 @@ export class LoginComponent {
       return;
     }
 
-    try {
-      const { email, password } = form.value
-      debugger
-      this.userService.login(email, password).subscribe(() => {
-        localStorage.setItem("user", email)
-        this.router.navigate(['/home']);
-      });
 
-
-    } catch (err) {
-      debugger
-      alert("Incorrect email or password!")
-      console.log(err);
+    const { email, password } = form.value
+    debugger
+    this.userService.login(email, password).subscribe({
+      error: (e) => alert("Incorrect email or password!"),
+      complete: () => {
+        localStorage.setItem('user', email)
+        this.router.navigate(['/home'])
+      }
+      ,
     }
+    )
+
 
   }
+
+
+
+
+
+
 }
 //peter@abv.bg : 123456
