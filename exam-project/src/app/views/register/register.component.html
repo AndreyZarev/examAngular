@@ -47,7 +47,7 @@
                 <p class="error pass" *ngIf="repassword.errors?.['required']">
                     Password is required!
                 </p>
-                <p class="error" *ngIf="password !== repassword">
+                <p class="error" *ngIf="password.value !== repassword.value">
                     Passwords must match!
                 </p>
             </ng-container>
