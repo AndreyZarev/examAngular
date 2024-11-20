@@ -50,7 +50,7 @@ export class UserService {
         console.log("we are in user service");
 
         return this.http
-            .post('http://localhost:3030/users/logout', {})
+            .get('http://localhost:3030/users/logout', {})
             .pipe(tap(() => this.user$$.next(undefined)));
 
     }
