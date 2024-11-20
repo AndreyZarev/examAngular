@@ -19,23 +19,11 @@ export class OfferComponent implements OnInit {
   constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
   catalog: Offer[] = []
 
-  editable: boolean = false
   user: string | null = localStorage.getItem('user')
 
   myForm: FormGroup = {} as FormGroup;
   ngOnInit(): void {
     this.acktiveRoute.params.subscribe((data) => {
-      // const id = data["id"]
-      // console.log(this.myForm.value);
-      // this.myForm = this.fb.group({
-      //   name: ['', [Validators.required, Validators.minLength(2)]],
-      //   email: ['',
-      //     [Validators.required, validateEmail(["bg", "com"])]
-      //   ],
-      //   tel: ['', [Validators.required, Validators.minLength(2)]],
-      //   password: ['', [Validators.required, Validators.minLength(2)]],
-      //   rePassword: ['', [Validators.required, Validators.minLength(2)]],
-      // });
 
       this.apiService.getCatalog().subscribe((data) => {
 
@@ -60,7 +48,6 @@ export class OfferComponent implements OnInit {
 
       console.log(data);
       this.catalog = data
-      this.editable = true
 
 
     })
