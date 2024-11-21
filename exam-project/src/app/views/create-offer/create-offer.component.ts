@@ -18,7 +18,7 @@ export class CreateOfferComponent {
       return;
     }
     try {
-
+      sadsa
       let { img, names, email, hand, weight, place, bet } = form.value
       debugger
       this.apiService.newOffer(img, names, email, hand, weight, place, bet).subscribe({
