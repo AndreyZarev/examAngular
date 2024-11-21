@@ -30,12 +30,17 @@ export class ApiService {
     getDetails(form: Observable<any>) {
         return form
     }
-    newOffer(form: NgForm) {
-        console.log("this is being submitted---------------------");
-        // let { img, names, email, hand, weight, place, bet } = form
+    newOffer(img: string, names: string, email: string, hand: string, weight: string, place: string, bet: string): Observable<Offer> {
+
         debugger
 
         let apiUrl = 'http://localhost:3030'
-        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { form })
+
+        console.log(img, names, email, hand, weight, place, bet);
+
+        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { img, names, email, hand, weight, place, bet })
+
+
+
     }
 }
