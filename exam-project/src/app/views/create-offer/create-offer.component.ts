@@ -22,6 +22,7 @@ export class CreateOfferComponent {
       let { img, names, email, hand, weight, place, bet } = form.value
       debugger
       this.apiService.newOffer(img, names, email, hand, weight, place, bet).subscribe({
+        aX
         error: (e) => console.error(e),
         complete: () => console.info('complete')
       }
