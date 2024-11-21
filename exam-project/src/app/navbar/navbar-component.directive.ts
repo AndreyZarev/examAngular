@@ -17,7 +17,7 @@ export class NavbarComponentDirective implements OnInit {
   }
   ngOnInit(): void {
 
-    if (this.isLoggedIn == true) {
+    if (this.isLoggedIn == true && localStorage.getItem('user') !== undefined) {
       this.renderer.addClass(this.elRef.nativeElement, "navAncors")
       this.renderer.removeClass(this.elRef.nativeElement, "navAncors2")
 
@@ -27,10 +27,6 @@ export class NavbarComponentDirective implements OnInit {
     }
 
 
-
-    // this.renderer.listen(this.elRef.nativeElement, "mouseover", this.mouseHoverEventHandler.bind(this));
-
-    // this.renderer.listen(this.elRef.nativeElement, "mouseout", this.mouseOutEventHandler.bind(this));
 
 
   }
