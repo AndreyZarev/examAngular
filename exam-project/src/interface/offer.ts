@@ -6,6 +6,6 @@ export interface Offer {
     weight: string;
     place: string;
     bet: string;
-    _id: string;
+    // _id: string;
 
 }
