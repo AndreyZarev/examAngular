@@ -15,7 +15,7 @@ export class CreateOfferComponent {
     // ev.preventDefault();
     if (form.invalid) {
       alert('Your form is invalid, please follow the text below the fields.')
-      return;
+      return; da
     }
     try {
 
