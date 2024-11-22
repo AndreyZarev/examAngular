@@ -27,17 +27,22 @@ export class UserService {
         });
     }
 
-    login(email: string, password: string) {
-        const api3030 = 'http://localhost:3030/users/login'
-        return this.http
-            .post<UserLogin>(api3030, { email, password })
-            .pipe(tap((user) => this.user$$.next(user)));
-    }
+    login(email: string, password: string): Observable<{ accessToken: string; }> {
+        return this.http.post<{ accessToken: string; }>('http://localhost:3030/users/login', { email, password })pipe(tap((user) => this.user$$.next(user)));
+    };
+}
 
-    register(
-        email: string,
-        password: string,
-    ) {
+
+login(email: string, password: string) {
+    const api3030 = 'http://localhost:3030/users/login'
+    return this.http
+        .post<UserLogin>(api3030, { email, password })
+        .
+
+        register(
+            email: string,
+            password: string,
+        ) {
         return this.http
             .post<User>('http://localhost:3030/users/register', {
                 email,
@@ -46,7 +51,7 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout(): Observable<void> {
+    logout(): Observable < void> {
         console.log('Logging out...');
         return this.http.get<void>('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
             tap(() => {
