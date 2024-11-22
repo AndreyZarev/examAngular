@@ -3,7 +3,7 @@ import { User } from "src/interface/user";
 import { UserLogin } from "src/interface/user-login";
 
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, Subscription, tap } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
 @Injectable({
     providedIn: 'root',
 })
@@ -46,14 +46,20 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout() {
-        console.log("we are in user service");
+    logout(): Observable<void> {
+        console.log("Logging out...");
 
-        return this.http
-            .get('http://localhost:3030/users/logout', {})
-            .pipe(tap(() => this.user$$.next(undefined)));
-
+        return this.http.get<void>('http://localhost:3030/users/logout').pipe(
+            tap({
+                next: () => {
+                    console.log('User logged out, clearing state');
+                    this.user$$.next(undefined);
+                },
+                error: (err) => {
+                    console.error('Error during logout:', err);
+                }
+            })
+        );
     }
-
 
 }
