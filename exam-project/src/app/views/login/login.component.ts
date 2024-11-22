@@ -36,7 +36,7 @@ export class LoginComponent {
     this.userService.login(email, password).subscribe({
       error: (e) => alert("Incorrect email or password!"),
       complete: () => {
-        localStorage.setItem('user', email)
+        localStorage.setItem(email,)
         this.router.navigate(['/home'])
       }
       ,
