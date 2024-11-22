@@ -13,7 +13,7 @@ export class UserService {
     private user$ = this.user$$.asObservable();
 
     user: UserLogin | undefined;
-    USER_KEY = '[user]';
+    USER_KEY = this.user$$;
 
     userSubscription: Subscription;
 
@@ -47,18 +47,18 @@ export class UserService {
     }
 
     logout(): Observable<void> {
-
-        return this.http.get<void>('http://localhost:3030/users/logout').pipe(
-            tap({
-                next: () => {
-                    console.log('User logged out, clearing state');
-                    this.user$$.next(undefined);
-                },
-                error: (err) => {
-                    console.error('Error during logout:', err);
-                }
+        console.log('Logging out...');
+        return this.http.get<void>('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
+            tap(() => {
+                console.log('User logged out, updating state');
+                this.user$$.next(undefined);
             })
         );
+    }
+
+    setUser(user: User): void {
+        this.user$$.next(user);
+
     }
 
 }
