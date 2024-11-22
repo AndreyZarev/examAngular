@@ -47,7 +47,6 @@ export class UserService {
     }
 
     logout(): Observable<void> {
-        console.log("Logging out...");
 
         return this.http.get<void>('http://localhost:3030/users/logout').pipe(
             tap({
