@@ -40,9 +40,10 @@ export class UserService {
         password: string,
     ) {
         return this.http
-            .post<User>('http://localhost:3030/users/register', {
+            .post<UserLogin>('http://localhost:3030/users/register', {
                 email,
                 password,
+                accessToken: '',
             })
             .pipe(tap((user) => this.user$$.next(user)));
     }
@@ -57,7 +58,7 @@ export class UserService {
         );
     }
 
-    setUser(user: User): void {
+    setUser(user: UserLogin): void {
         this.user$$.next(user);
 
     }
