@@ -12,7 +12,7 @@ export class UserService {
     public user$$ = new BehaviorSubject<UserLogin | undefined>(undefined);
     private user$ = this.user$$.asObservable();
 
-    user: string | undefined;
+    user: UserLogin | undefined;
     USER_KEY = this.user$$;
 
     userSubscription: Subscription;
@@ -27,9 +27,9 @@ export class UserService {
         });
     }
 
-    login(email: string, password: string): Observable<{ accessToken: string; }> {
-        return this.http.post<{ accessToken: string; }>('http://localhost:3030/users/login', { email, password })
-            .pipe(tap((user) => this.user$$.next(user.accessToken)));
+    login(email: string, password: string): Observable<{ email: string, password: string, accessToken: string; }> {
+        return this.http.post<UserLogin>('http://localhost:3030/users/login', { email, password })
+            .pipe(tap((user) => this.user$$.next(user)));
     };
 
 
