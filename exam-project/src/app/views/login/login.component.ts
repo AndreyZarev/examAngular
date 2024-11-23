@@ -33,11 +33,10 @@ export class LoginComponent {
 
     const { email, password } = form.value
     debugger
-    const reponse = this.userService.login(email, password)
     this.userService.login(email, password).subscribe({
       error: (e) => alert("Incorrect email or password!"),
       complete: () => {
-        localStorage.setItem(email, reponse.USER_KEY)
+        // localStorage.setItem(email,  )
         this.router.navigate(['/home'])
       }
       ,
@@ -46,7 +45,6 @@ export class LoginComponent {
 
 
   }
-
 
 
 
