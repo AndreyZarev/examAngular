@@ -48,9 +48,9 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout(): Observable<void> {
+    logout(): Observable<string> {
         console.log('Logging out...');
-        return this.http.get<void>('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
+        return this.http.get<string>('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
             tap(() => {
                 console.log('User logged out, updating state');
                 this.user$$.next(undefined);
