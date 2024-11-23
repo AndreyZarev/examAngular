@@ -12,7 +12,7 @@ export class UserService {
     public user$$ = new BehaviorSubject<UserLogin | undefined>(undefined);
     private user$ = this.user$$.asObservable();
 
-    user: UserLogin | undefined;
+    user: string | undefined;
     USER_KEY = this.user$$;
 
     userSubscription: Subscription;
@@ -28,21 +28,17 @@ export class UserService {
     }
 
     login(email: string, password: string): Observable<{ accessToken: string; }> {
-        return this.http.post<{ accessToken: string; }>('http://localhost:3030/users/login', { email, password })pipe(tap((user) => this.user$$.next(user)));
+        return this.http.post<{ accessToken: string; }>('http://localhost:3030/users/login', { email, password })
+            .pipe(tap((user) => this.user$$.next(user.accessToken)));
     };
-}
 
 
-login(email: string, password: string) {
-    const api3030 = 'http://localhost:3030/users/login'
-    return this.http
-        .post<UserLogin>(api3030, { email, password })
-        .
 
-        register(
-            email: string,
-            password: string,
-        ) {
+
+    register(
+        email: string,
+        password: string,
+    ) {
         return this.http
             .post<User>('http://localhost:3030/users/register', {
                 email,
@@ -51,7 +47,7 @@ login(email: string, password: string) {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout(): Observable < void> {
+    logout(): Observable<void> {
         console.log('Logging out...');
         return this.http.get<void>('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
             tap(() => {
