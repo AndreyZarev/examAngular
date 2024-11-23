@@ -27,7 +27,14 @@ export class LogoutComponent implements OnInit {
         localStorage.removeItem("user")
         this.router.navigate(['/home']);
       },
-      error: (err) => console.error('Error logging out:', err)
+      error: (err) => {
+        if (err.status === 204) {
+          localStorage.removeItem("user")
+          this.router.navigate(['/home']);
+        } else {
+          console.error('Error logging out:', err)
+        }
+      }
     });
 
 
