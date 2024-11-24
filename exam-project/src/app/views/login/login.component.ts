@@ -34,14 +34,17 @@ export class LoginComponent {
     const { email, password } = form.value
     debugger
     this.userService.login(email, password).subscribe({
-      error: (e) => alert("Incorrect email or password!"),
-      complete: () => {
-        // localStorage.setItem(email,  )
-        this.router.navigate(['/home'])
-      }
-      ,
-    }
-    )
+      next: (response) => {
+        // Save the access token
+        localStorage.setItem('accessToken', response.accessToken);
+        console.log('Access token saved:', response.accessToken);
+
+        // Navigate to home
+        this.router.navigate(['/home']);
+      },
+      error: (e) => alert('Incorrect email or password!')
+    });
+
 
 
   }
