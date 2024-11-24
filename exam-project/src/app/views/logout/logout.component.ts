@@ -20,21 +20,20 @@ export class LogoutComponent implements OnInit {
 
 
   ngOnInit() {
-
+    localStorage.removeItem("accessToken")
     this.userService.logout().subscribe({
       next: () => {
         console.log('Logged out successfully')
-        localStorage.removeItem("user")
+
         this.router.navigate(['/home']);
       },
-      error: (err) => {
-        if (err.status === 204) {
-          localStorage.removeItem("user")
-          this.router.navigate(['/home']);
-        } else {
-          console.error('Error logging out:', err)
-        }
-      }
+      // error: (err) => {
+
+      //     localStorage.removeItem("user")
+      //     this.router.navigate(['/home']);
+
+
+      // }
     });
 
 
