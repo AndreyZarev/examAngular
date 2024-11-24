@@ -57,7 +57,7 @@ export class UserService {
                 console.log('User logged out, updating state');
                 this.user$$.next(undefined);
             })
-        ); asd
+        );
     }
 
     setUser(user: UserLogin): void {
