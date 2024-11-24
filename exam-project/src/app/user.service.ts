@@ -52,7 +52,7 @@ export class UserService {
 
     logout() {
         console.log('Logging out...');
-        return this.http.get('http://localhost:3030/users/logout', {}).pipe(
+        return this.http.get('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
             tap(() => {
                 console.log('User logged out, updating state');
                 this.user$$.next(undefined);
