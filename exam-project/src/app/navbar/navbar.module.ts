@@ -10,7 +10,7 @@ import { LogoutComponent } from '../views/logout/logout.component';
 import { CreateOfferComponent } from '../views/create-offer/create-offer.component';
 import { OfferComponent } from '../views/offers/offers.component';
 import { ErrorPageComponent } from '../views/error-page/error-page.component';
-
+import { OfferEditComponent } from '../views/offer-edit/offer-edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthActivate } from '../guards/auth.guard';
 import { NavbarComponentDirective } from './navbar-component.directive';
@@ -28,7 +28,7 @@ const routes: Routes = [
 
   { path: 'offers', component: OfferComponent },
 
-  { path: 'offers/edit', component: OfferComponent, canActivate: [AuthActivate] },
+  { path: 'offers/edit/:id', component: OfferEditComponent, canActivate: [AuthActivate] },
 
 
 
