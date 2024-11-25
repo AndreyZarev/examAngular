@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   templateUrl: './offer-edit.component.html',
   styleUrls: ['./offer-edit.component.css']
 })
-export class OfferEditComponent {
+export class OfferEditComponent
+// implements OnInit 
+{
   constructor(private apiService: ApiService, private router: Router) { }
 
+
+  ngOnInit() {
+    // this.apiService.getOffer(id)
+  }
   updateOffer(form: NgForm) {
 
     // ev.preventDefault();
