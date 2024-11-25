@@ -21,7 +21,7 @@ export class OfferEditComponent {
 
       let { img, names, email, hand, weight, place, bet } = form.value
       debugger
-      this.apiService.newOffer(img, names, email, hand, weight, place, bet).subscribe({
+      this.apiService.updateOffer(img, names, email, hand, weight, place, bet).subscribe({
         error: (e) => console.error(e),
         complete: () => console.info('complete')
       }
