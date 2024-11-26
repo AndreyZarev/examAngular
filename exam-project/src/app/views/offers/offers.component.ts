@@ -43,16 +43,9 @@ export class OfferComponent implements OnInit {
 
 
 
-    this.apiService.getOffer(id).subscribe((data) => {
-      this.offerDetails = this.myForm.value as Offer[];
-
-      console.log(data);
-      this.catalog = data
 
 
-    })
-
-    this.router.navigate(['/offers/edit']);
+    this.router.navigate(['/offers/edit/' + id], { queryParams: { id: id } });
 
   }
 }
