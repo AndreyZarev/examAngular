@@ -1,0 +1,114 @@
+.new-theme-border {
+    border: 1px solid;
+    border-radius: 1em;
+    width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+
+
+
+
+.header-background span {
+    background-color: #fff;
+    padding: 0.5em;
+    margin-top: 1em;
+    border-radius: 0.3em;
+}
+
+.title,
+.new-theme-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-details {
+    min-height: 100%;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+
+}
+
+/* textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin: 0;
+} */
+
+.new-theme-content label {
+    margin-bottom: 0.3em;
+}
+
+.input {
+    width: 458px;
+    border-radius: 0.3em;
+    padding: 0.35em;
+
+}
+
+button {
+    font-size: 20px;
+    margin-left: 1rem;
+    padding: 20px;
+    width: 458px;
+    color: white;
+    background-color: #32d6c8;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #102f2c;
+}
+
+.new-theme-buttons {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.new-theme-buttons button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+}
+
+
+
+.input-error {
+    border-left-color: red;
+}
+
+.header-background {
+    background-color: #32d6c8;
+    border: 1px solid #32d6c8;
+    padding: 1.5em;
+    padding-bottom: 0;
+    margin-bottom: 1em;
+
+}
+
+p.error {
+    text-align: center;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.container {
+    margin-top: 200px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-bottom: 450px;
+    width: 35%;
+    height: auto;
+    background: #ffffffae;
+    font-size: 25px;
+
+
+}
+
+.form {
+    text-align: center;
+}
