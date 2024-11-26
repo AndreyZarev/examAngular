@@ -8,12 +8,13 @@
 
         <div class="offer-details">
             <label for="img">Image Url: </label>
-            <input type="text" class="input" #img="ngModel" required ngModel name="img" id="img">
+            <input type="text" class="input" #img="ngModel" required ngModel name="img" id="img" value="{{offer.img}}">
 
         </div>
         <div class="offer-details">
             <label for="names">Names: <span class="red">*</span></label>
-            <input type="text" class="input" #names="ngModel" required ngModel name="names" id="names">
+            <input type="text" value="{{offer.names}}" class="input" #names="ngModel" required ngModel name="names"
+                id="names">
 
             <ng-container *ngIf="names.touched">
                 <p class="error" *ngIf="names.errors?.['required'] ">
@@ -24,8 +25,8 @@
         </div>
         <div class="offer-details">
             <label for="email">Email: <span class="red">*</span></label>
-            <textarea type="text" class="input" name="email" required ngModel #inputEmail="ngModel" id="email"
-                rows="1"></textarea>
+            <textarea type="text" class="input" name="email" value="{{offer.email}}" required ngModel
+                #inputEmail="ngModel" id="email" rows="1"></textarea>
 
             <ng-container *ngIf="inputEmail.touched">
                 <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
@@ -41,6 +42,7 @@
         <div class="offer-details">
             <label for="hand">Hand: <span class="red">*</span></label>
             <select id="hand" class="input" #hand="ngModel" required ngModel name="hand">
+
                 <option value="right">Right</option>
                 <option value="left">Left</option>
                 <option value="both">Both</option>
@@ -56,7 +58,7 @@
 
         <div class="offer-details">
             <label for="weight">Weight: <span class="red">*</span></label>
-            <select id="weight" class="input" #weight="ngModel" required ngModel name="weight">
+            <select id="weight" class="input" #weight="ngModel" [value]="offer.weight" required ngModel name="weight">
                 <option value="60kg">Bellow 60 kilograms</option>
                 <option value="70kg">Bellow 70 kilograms</option>
                 <option value="80kg">Bellow 80 kilograms</option>
@@ -77,8 +79,8 @@
 
         <div class="offer-details">
             <label for="place">Place <span class="red">*</span></label>
-            <textarea type="text" class="input" name="place" #place="ngModel" required ngModel id="place"
-                rows="1"></textarea>
+            <textarea type="text" class="input" name="place" value="{{offer.place}}" #place="ngModel" required ngModel
+                id="place" rows="1"></textarea>
 
             <ng-container *ngIf="place.touched">
                 <p class="error" *ngIf="place.errors?.['required'] ">
@@ -91,8 +93,8 @@
 
         <div class="offer-details">
             <label for="bet">Bet price in USD: <span class="red">*</span></label>
-            <textarea type="number" class="input" name="bet" id="bet" required ngModel #bet="ngModel"
-                rows="1"></textarea>
+            <textarea type="number" class="input" name="bet" id="bet" value="{{offer.bet}}" required ngModel
+                #bet="ngModel" rows="1"></textarea>
 
 
             <ng-container *ngIf="bet.touched">
