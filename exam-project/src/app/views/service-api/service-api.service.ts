@@ -24,7 +24,7 @@ export class ApiService {
     getOffer(id: string) {
         let apiUrl = 'http://localhost:3030'
 
-        let result = this.http.get<Offer[]>(`${apiUrl}/jsonstore/offers` + `/${id}`)
+        let result = this.http.get<Offer>(`${apiUrl}/jsonstore/offers` + `/${id}`)
         return result
     }
     getDetails(form: Observable<any>) {
