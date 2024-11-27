@@ -18,10 +18,10 @@ export class LogoutComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
 
+  accessToken: String | null = localStorage.getItem('accessToken');
 
   ngOnInit() {
-    localStorage.removeItem("accessToken")
-    this.userService.logout().subscribe({
+    this.userService.logout(this.accessToken).subscribe({
       next: () => {
         console.log('Logged out successfully')
 
