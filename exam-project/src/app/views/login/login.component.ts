@@ -35,11 +35,8 @@ export class LoginComponent {
     debugger
     this.userService.login(email, password).subscribe({
       next: (response) => {
-        // Save the access token
         localStorage.setItem('accessToken', response.accessToken);
-        console.log('Access token saved:', response.accessToken);
 
-        // Navigate to home
         this.router.navigate(['/home']);
       },
       error: (e) => alert('Incorrect email or password!')
