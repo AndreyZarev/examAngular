@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { User } from "src/interface/user";
 import { UserLogin } from "src/interface/user-login";
 
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
 import { Token } from "@angular/compiler";
 @Injectable({
@@ -51,9 +51,13 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout(token) {
+    logout(token: string) {
+        const headers = new HttpHeaders({
+            'X-Authorization': token
+        })
+
         console.log('Logging out...');
-        return this.http.get('http://localhost:3030/users/logout', { [Headers: string]: string }).pipe(
+        return this.http.get('http://localhost:3030/users/logout', { headers }).pipe(
             tap(() => {
                 console.log('User logged out, updating state');
                 this.user$$.next(undefined);
