@@ -50,7 +50,7 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout(token: string) {
+    logout(token: string | number) {
         const headers = new HttpHeaders({
             'X-Authorization': token
         })
