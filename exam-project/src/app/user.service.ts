@@ -4,6 +4,7 @@ import { UserLogin } from "src/interface/user-login";
 
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
+import { Token } from "@angular/compiler";
 @Injectable({
     providedIn: 'root',
 })
@@ -11,7 +12,7 @@ import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
 export class UserService {
     public user$$ = new BehaviorSubject<User | undefined>(undefined);
     private user$ = this.user$$.asObservable();
-    headers: Headers = new Headers();
+    headers: Headers = { "X-Authorization": Token }
     user: User | undefined;
     USER_KEY = this.user$$;
 
@@ -50,9 +51,9 @@ export class UserService {
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
-    logout() {
+    logout(token) {
         console.log('Logging out...');
-        return this.http.get('http://localhost:3030/users/logout', { withCredentials: true }).pipe(
+        return this.http.get('http://localhost:3030/users/logout', { [Headers: string]: string }).pipe(
             tap(() => {
                 console.log('User logged out, updating state');
                 this.user$$.next(undefined);
