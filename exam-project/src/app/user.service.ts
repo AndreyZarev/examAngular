@@ -41,12 +41,8 @@ export class UserService {
     register(
         email: string,
         password: string,
-    ) {
-        return this.http
-            .post<User>('http://localhost:3030/users/register', {
-                email,
-                password,
-            })
+    ): Observable<{ accessToken: string, email: string }> {
+        return this.http.post<User>('http://localhost:3030/users/register', { email, password })
             .pipe(tap((user) => this.user$$.next(user)));
     }
 
