@@ -32,11 +32,12 @@ export class RegisterComponent {
     debugger
     this.userService.register(email, password).subscribe({
       error: (e) => alert("You have already been registered!"),
-      complete: () => {
-        localStorage.setItem('user', email)
-        this.router.navigate(['/home'])
+      next: (response) => {
+        localStorage.setItem('accessToken', response.accessToken);
+
+        this.router.navigate(['/home']);
       }
-      ,
+
     }
     )
 
