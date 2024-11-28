@@ -21,6 +21,13 @@ export class ApiService {
     }
 
 
+    getComments() {
+
+        let apiUrl = 'http://localhost:3030'
+        return this.http.get<Offer[]>(`${apiUrl}/jsonstore/comments`)
+    }
+
+
     getOffer(id: string) {
         let apiUrl = 'http://localhost:3030'
 
