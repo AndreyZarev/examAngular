@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Comments } from 'src/interface/comments';
 import { Offer } from 'src/interface/offer';
 import { Theme } from 'src/interface/themes';
 // import { environment } from 'src/environments/environment.development';
@@ -24,7 +25,7 @@ export class ApiService {
     getComments() {
 
         let apiUrl = 'http://localhost:3030'
-        return this.http.get<Offer[]>(`${apiUrl}/jsonstore/comments`)
+        return this.http.get<Comments[]>(`${apiUrl}/jsonstore/comments`)
     }
 
 
