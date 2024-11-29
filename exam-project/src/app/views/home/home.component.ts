@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service-api/service-api.service';
+import { Comments } from 'src/interface/comments';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,11 +8,11 @@ import { ApiService } from '../service-api/service-api.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private api: ApiService) { }
-  themes: any = []
+  comments: Comments[] = []
   ngOnInit(): void {
-    this.api.getCatalog().subscribe((themes) => {
-      console.log(themes);
-      this.themes = themes
+    this.api.getComments().subscribe((comment) => {
+      console.log(comment);
+      this.comments = Object.values(comment)
     })
   }
 }
