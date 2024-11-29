@@ -28,6 +28,14 @@
 
 
         </ul>
+
+        <h3 class="servises">Most recent comments: </h3>
+
+        <div class="comments" *ngFor="let comment of comments">
+            <p class="line"><span>User: </span> {{comment.author}}</p>
+            <p><span>Comment: </span>{{comment.content}}</p>
+        </div>
+
         <h3>Register or login to post an offer and review the offers.</h3>
         <div class="logged">
             <ul>
