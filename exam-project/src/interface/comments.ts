@@ -1,5 +1,5 @@
-export interface Offer {
-    autor: string;
+export interface Comments {
+    author: string;
     content: string;
     _id: string;
 
