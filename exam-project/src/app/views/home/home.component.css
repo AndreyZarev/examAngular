@@ -161,7 +161,8 @@ div p span {
 }
 
 div p.line span {
-    бб color: rgb(199, 26, 26);
+
+    color: rgb(199, 26, 26);
     font-size: 1.4em;
 
 }
