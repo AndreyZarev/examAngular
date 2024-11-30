@@ -5,9 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 import { FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
-import { Theme } from 'src/interface/themes';
-import { validateEmail } from 'src/app/shared/utils/email-validator';
 import { FormBuilder } from '@angular/forms';
 import { Offer } from 'src/interface/offer';
 @Component({
@@ -16,7 +13,7 @@ import { Offer } from 'src/interface/offer';
   styleUrls: ['./offers.component.css']
 })
 export class OfferComponent implements OnInit {
-  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService, private fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private acktiveRoute: ActivatedRoute, private router: Router, private userServise: UserService) { }
   catalog: Offer[] = []
 
   user: string | null = localStorage.getItem('user')
@@ -28,14 +25,16 @@ export class OfferComponent implements OnInit {
       this.apiService.getCatalog().subscribe((data) => {
 
 
-        console.log(data);
         this.catalog = Object.values(data)
 
         console.log(this.catalog);
 
 
       })
+
+
     })
+
   }
   offerDetails: Offer[] | null = []
   edit(id: string): void {
