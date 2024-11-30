@@ -35,29 +35,33 @@ export class OfferEditComponent implements OnInit {
   }
 
   updateOffer(form: NgForm) {
+    {
 
-    // ev.preventDefault();
-    if (form.invalid) {
-      alert('Your form is invalid, please follow the text below the fields.')
-      return;
-    }
-    try {
 
-      let { img, names, email, hand, weight, place, bet } = form.value
-      debugger
-      this.apiService.updateOffer(img, names, email, hand, weight, place, bet).subscribe({
-        error: (e) => console.error(e),
-        complete: () => console.info('complete')
+      if (form.invalid) {
+        alert('Your form is invalid, please follow the text below the fields.')
+        return;
       }
-      )
+      try {
 
-      this.router.navigate(['/offers'])
+        let { img, names, email, hand, weight, place, bet } = form.value
 
 
-    } catch (err) {
-      console.log(err);
+        debugger
+        this.apiService.updateOffer(img, names, email, hand, weight, place, bet, this.offerId).subscribe({
+          error: (e) => console.error(e),
+          complete: () => console.info('complete')
+        }
+        )
+
+        this.router.navigate(['/offers'])
+
+
+      } catch (err) {
+        console.log(err);
+
+      }
 
     }
-
   }
 }
