@@ -48,7 +48,7 @@ export class OfferEditComponent implements OnInit {
 
 
         debugger
-        this.apiService.updateOffer(img, names, email, hand, weight, place, bet, this.offerId).subscribe({
+        this.apiService.updateOffer(img, names, email, hand, weight, place, bet, form.value._id).subscribe({
           error: (e) => console.error(e),
           complete: () => console.info('complete')
         }
