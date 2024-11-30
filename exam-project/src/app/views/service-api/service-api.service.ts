@@ -52,7 +52,7 @@ export class ApiService {
 
     }
 
-    updateOffer(img: string, names: string, email: string, hand: string, weight: string, place: string, bet: string): Observable<Offer> {
+    updateOffer(img: string, names: string, email: string, hand: string, weight: string, place: string, bet: string, id: string): Observable<Offer> {
 
         debugger
 
@@ -60,7 +60,7 @@ export class ApiService {
 
         console.log(img, names, email, hand, weight, place, bet);
 
-        return this.http.post<Offer>(`${apiUrl}/jsonstore/offers`, { img, names, email, hand, weight, place, bet })
+        return this.http.put<Offer>(`${apiUrl}/jsonstore/offers/${id}`, { img, names, email, hand, weight, place, bet })
 
 
 
