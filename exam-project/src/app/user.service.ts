@@ -4,14 +4,13 @@ import { UserLogin } from "src/interface/user-login";
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable, Subscription, tap } from 'rxjs';
-import { Token } from "@angular/compiler";
 @Injectable({
     providedIn: 'root',
 })
 
 export class UserService {
     public user$$ = new BehaviorSubject<User | undefined>(undefined);
-    private user$ = this.user$$.asObservable();
+    public user$ = this.user$$.asObservable();
     user: User | undefined;
     USER_KEY = this.user$$;
 
