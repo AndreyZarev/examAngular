@@ -25,7 +25,7 @@
         </div>
         <div class="offer-details">
             <label for="email">Email: <span class="red">*</span></label>
-            <textarea type="text" class="input" name="email" [ngModel]="offer.email" required ngModel
+            <textarea type="text" class="input" name="email" readonly [ngModel]="offer.email" required ngModel
                 #inputEmail="ngModel" id="email" rows="1"></textarea>
 
             <ng-container *ngIf="inputEmail.touched">
