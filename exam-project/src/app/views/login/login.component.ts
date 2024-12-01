@@ -36,6 +36,7 @@ export class LoginComponent {
     this.userService.login(email, password).subscribe({
       next: (response) => {
         localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('email', email);
 
         this.router.navigate(['/home']);
       },
