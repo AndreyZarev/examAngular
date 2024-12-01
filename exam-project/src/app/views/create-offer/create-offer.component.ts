@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class CreateOfferComponent {
   constructor(private apiService: ApiService, private router: Router) { }
+
+  email: string | null = localStorage.getItem('email') || null;
   createOffer(form: NgForm) {
 
     // ev.preventDefault();
