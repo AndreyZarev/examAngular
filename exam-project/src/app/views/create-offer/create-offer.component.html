@@ -24,8 +24,8 @@
         </div>
         <div class="offer-details">
             <label for="email">Email: <span class="red">*</span></label>
-            <textarea type="text" class="input" name="email" [appValidators]="['bg', 'com']" required ngModel
-                #inputEmail="ngModel" id="email" rows="1"></textarea>
+            <textarea type="text" class="input" [ngModel]="email" name="email" [appValidators]="['bg', 'com']" required
+                ngModel #inputEmail="ngModel" id="email" readonly rows="1"></textarea>
 
             <ng-container *ngIf="inputEmail.touched">
                 <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
