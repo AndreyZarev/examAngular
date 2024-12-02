@@ -1,0 +1,128 @@
+/* login register forms  */
+form.login {
+    width: 20em;
+    margin: 2em auto 0;
+    text-align: center;
+}
+
+.login fieldset {
+    border-radius: 0.3em;
+    padding: 0.8em;
+    background-color: #ffffff;
+}
+
+.login h2 {
+    padding-top: 0;
+    border-bottom: none;
+}
+
+
+
+
+.emailPassword {
+    padding: 40px;
+    height: 50px;
+    /* border: 1px solid;
+    padding: 0.3em;
+    border-left: 0.3em solid green;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+ */
+}
+
+.login select {
+    border-color: black;
+}
+
+
+
+.login a {
+    color: #007bff;
+}
+
+
+
+
+
+.field {
+    display: flex;
+    padding-bottom: 0;
+}
+
+
+/* errors  */
+.error {
+    text-align: center;
+    color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.email {
+    margin-bottom: -1.55em;
+    margin-top: -0.4em;
+}
+
+.pass {
+    margin-top: -2em;
+}
+
+
+.input-error {
+    border-left-color: red;
+}
+
+
+.login {
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.6em 1.2em;
+    margin-top: 1.5rem;
+    width: 10em;
+    outline: none;
+
+}
+
+.login {
+    background-color: #32d6c8;
+}
+
+.button {
+    color: white;
+
+}
+
+.button:hover {
+    background-color: #102f2c;
+}
+
+
+
+.container {
+    margin-top: 12em;
+    margin-bottom: 20em;
+
+    color: black;
+}
+
+.emailPassword {
+    margin-top: 2em;
+
+}
+
+.passwordInput {
+    margin-top: -2.4em;
+    margin-bottom: -2.4em;
+}
+
+.passwordInput,
+.emailInput {
+    width: 15em;
+    height: 50px;
+    border: #32d6c8 10px solid;
+    border-radius: 20%;
+    font-size: 1em;
+
+}
