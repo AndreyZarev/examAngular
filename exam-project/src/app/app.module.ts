@@ -3,21 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './views/app-routing.module';
 import { AppComponent } from './app.component';
-// import { ViewsModel } from './views/views.module'
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
-import { NavbarModule } from './navbar/navbar.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
-import { OfferEditComponent } from './views/offer-edit/offer-edit.component';
+import { ViewsModel } from './views/views.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OfferEditComponent,
 
 
 
@@ -28,7 +25,7 @@ import { OfferEditComponent } from './views/offer-edit/offer-edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NavbarModule,
+    ViewsModel,
     RouterLink,
     FormsModule,
     ReactiveFormsModule,
