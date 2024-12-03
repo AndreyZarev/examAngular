@@ -9,13 +9,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { ViewsModel } from './views/views.module';
+import { NavbarComponent } from './views/navbar/navbarComppnent/navbar.component';
+import { NavbarComponentDirective } from './views/navbar/navbar-component.directive';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    NavbarComponent,
+    NavbarComponentDirective
 
 
 
@@ -29,6 +32,7 @@ import { ViewsModel } from './views/views.module';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+
 
   ],
 
