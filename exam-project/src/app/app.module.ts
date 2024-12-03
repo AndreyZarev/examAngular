@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './views/app-routing.module';
+import { OffersModule } from './views/offers-create-edit/offer.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
@@ -23,7 +23,6 @@ import { ViewsModel } from './views/views.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     ViewsModel,
     RouterLink,
