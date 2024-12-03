@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
-import { UserService } from "../user.service";
+import { UserService } from "../service-api/user.service";
 
 @Injectable({ providedIn: 'root' })
 
@@ -18,3 +18,10 @@ export class AuthActivate implements CanActivate {
         return this.userService.isLogged;
     }
 }
+
+class UserToken { }
+class Permissions {
+    canActivate(): boolean {
+        return true;
+    }
+}  
