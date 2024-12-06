@@ -13,12 +13,13 @@ export class UserService {
     public user$ = this.user$$.asObservable();
     user: User | undefined;
     // USER_KEY = this.user$$;
-    email = localStorage.getItem("email")
+    email: string | null = null;
     accessToken = localStorage.getItem("accessToken")
 
     userSubscription: Subscription;
 
     get isLogged(): boolean {
+        this.email = localStorage.getItem("email")
         if (!!this.user) {
             debugger
             return !!this.user;
@@ -65,9 +66,9 @@ export class UserService {
 
         return this.http.get('http://localhost:3030/users/logout', { headers }).pipe(
             tap(() => {
+
                 this.user$$.next(undefined);
-                localStorage.removeItem("accessToken")
-                localStorage.removeItem("email")
+
             })
         );
     }
