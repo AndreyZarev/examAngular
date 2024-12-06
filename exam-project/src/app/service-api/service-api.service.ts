@@ -27,6 +27,12 @@ export class ApiService {
         let apiUrl = 'http://localhost:3030'
         return this.http.get<Comments[]>(`${apiUrl}/jsonstore/comments`)
     }
+    createComments(email: string | null, comment: string) {
+        console.log(`in api content ${comment}`);
+
+        let apiUrl = 'http://localhost:3030'
+        return this.http.post<Comments>(`${apiUrl}/jsonstore/comments`, { author: email, content: comment })
+    }
 
 
     getOffer(id: string) {
