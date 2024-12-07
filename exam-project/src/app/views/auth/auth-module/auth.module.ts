@@ -25,9 +25,14 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterLink,
     FormsModule,
     RouterModule.forChild(routes),
+  ],
+  exports: [
+    RegisterComponent,
+    LoginComponent,
+    LogoutComponent,
+    ValidatorsDirective
   ]
 })
 export class AuthModule { }
