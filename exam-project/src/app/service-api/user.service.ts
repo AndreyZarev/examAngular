@@ -21,11 +21,9 @@ export class UserService {
     get isLogged(): boolean {
         this.email = localStorage.getItem("email")
         if (!!this.user) {
-            debugger
             return !!this.user;
 
         } else if (this.email !== null) {
-            debugger
             return true
 
         } else {
