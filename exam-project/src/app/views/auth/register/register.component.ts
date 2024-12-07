@@ -34,6 +34,7 @@ export class RegisterComponent {
       error: (e) => alert("You have already been registered!"),
       next: (response) => {
         localStorage.setItem('accessToken', response.accessToken);
+        localStorage.setItem('email', email);
 
         this.router.navigate(['/home']);
       }
