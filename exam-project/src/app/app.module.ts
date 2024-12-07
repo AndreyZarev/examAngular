@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { OffersModule } from './views/offers-create-edit/offer.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterLink } from '@angular/router';
@@ -9,16 +8,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { ViewsModel } from './views/views.module';
-import { NavbarComponent } from './views/navbar/navbarComppnent/navbar.component';
-import { NavbarComponentDirective } from './views/navbar/navbar-component.directive';
+import { NavbarComponentDirective } from './views/home-navbar/navbar-component.directive';
+import { NavbarComponent } from './views/home-navbar/navbarComppnent/navbar.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    NavbarComponentDirective
+    NavbarComponentDirective,
+    NavbarComponent
 
 
 
@@ -28,10 +27,9 @@ import { NavbarComponentDirective } from './views/navbar/navbar-component.direct
     BrowserModule,
     HttpClientModule,
     ViewsModel,
-    RouterLink,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
+    RouterModule.forRoot([])
 
 
   ],
