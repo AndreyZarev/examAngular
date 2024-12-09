@@ -1,0 +1,81 @@
+<!-- homepage -->
+<div class="container">
+    <div class="welcome">
+        <h1>Welcome to the Armwrestling challenge page!</h1>
+        <div class="header-container">
+            <div class="header">
+                <iframe width="1200" height="700" class="video"
+                    src="https://www.youtube.com/embed/Al0n1QiPDso?si=fR027cfV7FBIPJk5" title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <h3 class="servises">Servises and options: </h3>
+        <ul>
+
+
+            <li> You can state your rules and name the price.
+            </li>
+            <li> Agree to and offer and compete in your chosen class.
+            </li>
+            <li> Request a licensed referee or one from the voluntary ones.
+            </li>
+            <li> Have regeonal rankings that get updated every day, based on the matches and rule set.
+            </li>
+            <li> Organize a tournament or a few super maches with our help.
+            </li>
+
+
+        </ul>
+
+        <h3 class="servises">Most recent comments: </h3>
+
+        <div class="comments" *ngFor="let comment of comments">
+            <p class="line"><span>User: </span> {{comment.author}}</p>
+            <p><span>Comment: </span>{{comment.content}}</p>
+        </div>
+
+        <ng-container class="ng" *ngIf="email">
+            <h3 class="h3">Leave your comment here...</h3>
+
+            <div class="comments">
+                <form #form="ngForm" class="form" (ngSubmit)="createComment(form)">
+
+                    <p class="line"><span>User: </span> {{email}}</p>
+                    <div class="input-btn">
+                        <p><span>Comment: </span> <input type="text" ngModel required class="input" name="content"></p>
+                        <button type="submit" class="form-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </ng-container>
+
+
+        <ng-container class="ng" *ngIf="!email">
+
+            <h3 class="h3">Register or login to post an offer and review the offers.</h3>
+
+            <div class="logged">
+                <ul>
+                    <li>
+                        <a class="buttons" routerLink="/login">
+
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <p>Or</p>
+                    </li>
+                    <li>
+                        <a class="buttons" routerLink="/register">
+
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </ng-container>
+        <div class="filler"></div>
+    </div>
+</div>
