@@ -1,0 +1,113 @@
+<!-- homepage -->
+<div class="container">
+
+    <div class="header-background">
+        <span>New Offer</span>
+    </div>
+    <form #form="ngForm" class="form" (ngSubmit)="createOffer(form)">
+
+        <div class="offer-details">
+            <label for="img">Image Url: </label>
+            <input type="text" class="input" #img="ngModel" required ngModel name="img" id="img">
+
+        </div>
+        <div class="offer-details">
+            <label for="names">Names: <span class="red">*</span></label>
+            <input type="text" class="input" #names="ngModel" required ngModel name="names" id="names">
+
+            <ng-container *ngIf="names.touched">
+                <p class="error" *ngIf="names.errors?.['required'] ">
+                    Name is required!
+                </p>
+            </ng-container>
+
+        </div>
+        <div class="offer-details">
+            <label for="email">Email: <span class="red">*</span></label>
+            <textarea type="text" class="input" [ngModel]="email" name="email" required ngModel #inputEmail="ngModel"
+                id="email" readonly rows="1"></textarea>
+
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="errorRequired" *ngIf="inputEmail.errors?.['required'] ">
+                    Email is required!
+                </p>
+                <p *ngIf="inputEmail.errors?.['validateEmail']" class="error">
+                    Email is not valid!
+                </p>
+            </ng-container>
+        </div>
+
+
+        <div class="offer-details">
+            <label for="hand">Hand: <span class="red">*</span></label>
+            <select id="hand" class="input" #hand="ngModel" required ngModel name="hand">
+                <option value="right">Right</option>
+                <option value="left">Left</option>
+                <option value="both">Both</option>
+
+            </select>
+            <ng-container *ngIf="hand.touched">
+                <p class="error" *ngIf="hand.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
+        </div>
+
+
+        <div class="offer-details">
+            <label for="weight">Weight: <span class="red">*</span></label>
+            <select id="weight" class="input" #weight="ngModel" required ngModel name="weight">
+                <option value="60kg">Bellow 60 kilograms</option>
+                <option value="70kg">Bellow 70 kilograms</option>
+                <option value="80kg">Bellow 80 kilograms</option>
+                <option value="90kg">Bellow 90 kilograms</option>
+                <option value="100kg">Bellow 100 kilograms</option>
+                <option value="110kg">Bellow 110 kilograms</option>
+                <option value="above 110kg">Above 110 kilograms</option>
+
+
+            </select>
+
+            <ng-container *ngIf="weight.touched">
+                <p class="error" *ngIf="weight.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
+        </div>
+
+        <div class="offer-details">
+            <label for="place">Place <span class="red">*</span></label>
+            <textarea type="text" class="input" name="place" #place="ngModel" required ngModel id="place"
+                rows="1"></textarea>
+
+            <ng-container *ngIf="place.touched">
+                <p class="error" *ngIf="place.errors?.['required'] ">
+                    The field is required!
+                </p>
+            </ng-container>
+
+
+        </div>
+
+        <div class="offer-details">
+            <label for="bet">Bet price in USD: <span class="red">*</span></label>
+            <textarea type="number" class="input" name="bet" id="bet" required ngModel #bet="ngModel"
+                rows="1"></textarea>
+
+
+            <ng-container *ngIf="bet.touched">
+                <p class="error" *ngIf="bet.errors?.['required'] ">
+                    The field is required.
+                </p>
+            </ng-container>
+
+        </div>
+
+
+        <div class="offer-details">
+
+            <button class="create-btn">Create Offer</button>
+        </div>
+
+    </form>
+</div>
