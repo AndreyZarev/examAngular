@@ -1,32 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthModule } from './auth/auth-module/auth.module';
+import { RouterModule } from '@angular/router';
+import { HomeNavbarModule } from './home-navbar/home-navbar.module';
+import { OffersModule } from './offers-edit-create/offers-module/offers.module';
 
-// import { RouterLink } from '@angular/router';
-import { NavbarModule } from '../navbar/navbar.module';
-// import { HomeComponent } from '../views/home/home.component'; '';
-// import { RegisterComponent } from '../views/register/register.component';
-// import { LoginComponent } from '../views/login/login.component';
-// import { LogoutComponent } from '../views/logout/logout.component';
-// import { CreateOfferComponent } from '../views/create-offer/create-offer.component';
-// import { OfferComponent } from '../views/offer/offer.component';
-// import { ErrorPageComponent } from '../views/error-page/error-page.component';
 
-// import { RouterModule, Routes } from '@angular/router';
 
-// const routes: Routes = [
-
-//     { path: 'home', component: HomeComponent },
-
-//     { path: 'register', component: RegisterComponent },
-//     { path: 'create-offer', component: CreateOfferComponent },
-//     { path: 'login', component: LoginComponent },
-
-//     { path: 'logout', component: LogoutComponent },
-
-//     { path: 'offer', component: OfferComponent },
-
-//     { path: '**', component: ErrorPageComponent },
-// ];
 
 @NgModule({
     declarations: [
@@ -34,14 +14,16 @@ import { NavbarModule } from '../navbar/navbar.module';
 
     ],
     imports: [
-        // CommonModule,
-        // RouterLink,
-        NavbarModule,
+        CommonModule,
+        AuthModule,
+        OffersModule,
+        HomeNavbarModule,
 
+        RouterModule
 
 
 
     ],
-    exports: [NavbarModule]
+    exports: []
 })
 export class ViewsModel { }
