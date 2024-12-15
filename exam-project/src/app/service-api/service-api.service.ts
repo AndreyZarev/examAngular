@@ -73,7 +73,6 @@ export class ApiService {
     }
     deleteOffer(id: string) {
 
-        debugger
 
         let apiUrl = 'http://localhost:3030'
 
