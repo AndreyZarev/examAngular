@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../service-api/user.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, NgModel, NgForm } from '@angular/forms';
-import { validateEmail } from 'src/app/shared/utils/email-validator';
-import { passMatch } from 'src/app/shared/utils/pass-match'
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
