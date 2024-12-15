@@ -29,7 +29,10 @@ export class RegisterComponent {
     }
 
     const { email, password, rePassword } = form.value
-    debugger
+    if (password !== rePassword) {
+      alert("Your passwords does't match!")
+      return;
+    }
     this.userService.register(email, password).subscribe({
       error: (e) => alert("You have already been registered!"),
       next: (response) => {
