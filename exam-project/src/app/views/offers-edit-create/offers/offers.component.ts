@@ -28,7 +28,6 @@ export class OffersComponent implements OnInit {
 
           this.catalog = Object.values(data)
 
-          console.log("refreshed" + this.catalog);
 
         })
       })
